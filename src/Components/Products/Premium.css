@@ -19,6 +19,7 @@
     bottom: 0;
     left: 0;
     right: 0;   
+    z-index: -1;
 }
 .div1-img-contents{
     position: absolute;
@@ -230,14 +231,14 @@ a{
         color: rgb(36, 30, 18);
     }
 
-    .compare-button-lite{
-        color: rgb(255, 155, 122);
+    .compare-button-premium{
+        color: #012943;
         font-family: "aktiv-grotesk" ;
         font-size: 18px;
         line-height: 16px;
         padding: 12.5px 24px;
         font-weight: 500; 
-        background-color: rgb(250, 240, 237);
+        background-color: rgb(225, 240, 250);
         border-radius: 20px;        
     }
 
@@ -249,9 +250,9 @@ a{
         margin-top: 50px;
     }
 
-    .div4-svg-icon-lite{
+    .div4-svg-icon{
         overflow: hidden;
-        stroke: #f76c3d;
+        stroke: #012943;
         left: 0;
         position: relative;
         width: 24px;
@@ -260,13 +261,13 @@ a{
         margin-bottom: 20px;
     }
     
-    .div4-cards-heading-lite{
+    .div4-cards-heading{
         display: block;
         text-align: left;
         font-family: "Walsheim";
         font-size: 28px;
         line-height: 32.5px;
-        color: rgb(255, 155, 122);
+        color: #006274;
         text-decoration: none solid;
         font-weight: 600;
     }
