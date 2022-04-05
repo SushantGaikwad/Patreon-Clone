@@ -15,9 +15,9 @@ function App() {
               <Route path='/' element={<Lite />} />
               <Route path='/premium' element={<Premium />} />
               <Route path='/pro' element={<Pro />} />
-          </Routes>
-        {/* <div style={{height:"300px", width:"400px",background:  "black", position:"absolute",zIndex:"1"}}>Hello</div>
-        <div style={{height:"300px", width:"200px",background:  "red",zIndex:"1",position:"absolute"}}>Sushant</div> */}
+          </Routes>            
+    
+      
     </div>
   );
 }
