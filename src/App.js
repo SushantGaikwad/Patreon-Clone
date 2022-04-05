@@ -10,6 +10,7 @@ function App() {
     <div className="App">
       <Router>
         <Navbar/>
+<<<<<<< HEAD
         {/* <HomePage/> */}
         
        
@@ -19,6 +20,15 @@ function App() {
         
         </Routes>
         <Footer/>
+=======
+        <HomePage/>
+        <Footer/>
+       
+        
+        <Routes>
+        <Route path='/' ></Route>
+        </Routes>
+>>>>>>> 04cf51af3d39cb9638726198a9474abd39de5a24
       </Router>
       
     </div>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .Box{
     background: #141518;
 position:relative;
@@ -61,4 +62,69 @@ position:relative;
     font-size: 16px;
   color: white;
   margin-top: 30px;
+=======
+.Box{
+    background: #141518;
+position:relative;
+ margin-top: 40px;
+  bottom: 0;
+  width: 100%;
+  height: fit-content;
+}
+.Container{
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+}
+.Row{
+    display: grid;
+    justify-content: space-evenly;
+   grid-template-columns: repeat(6, 15%);
+}
+.Col{
+    color: #FFFFFF;
+    margin-top: 40px;
+}
+.Heading{
+    font-size : 10px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.FooterLink{
+    font-weight: 14px;
+  margin-bottom: 5px;
+}
+.Div{
+    height: 80px;
+   border: 1.5px solid white;
+   width: 95%;
+   border-radius: 4px;
+   margin-bottom: 15px;
+   text-align: center;
+}
+.H1{
+    font-size: 17px;
+  font-weight: 700;
+  margin-top: 15px;
+  color : white;
+}
+.H1-copyright{
+    font-size:14px;
+    color:white;
+    margin-top:5px;
+
+}
+.ThirdCont{
+    width: 18%;
+  height: 130px;
+  margin-top: 20px;
+  
+  margin-left: 5%;
+  text-align: center;
+}
+.P{
+    font-size: 16px;
+  color: white;
+  margin-top: 30px;
+>>>>>>> 04cf51af3d39cb9638726198a9474abd39de5a24
 }
