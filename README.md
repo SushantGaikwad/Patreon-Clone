@@ -1,70 +1,317 @@
-# Getting Started with Create React App
+import React from 'react';
+import './Navbar.css'
+import { Link } from 'react-router-dom';
+import { BsChevronDown, BsCameraVideo,BsBrush,BsPencil,BsController,BsHeart } from "react-icons/bs";
+import { BiPodcast } from "react-icons/bi";
+import { FaGuitar,FaGraduationCap } from "react-icons/fa";
+import { AiOutlineWechat } from "react-icons/ai";
+import { IoLocationOutline,IoCubeSharp,IoSearchOutline } from "react-icons/io5";
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+const Navbar = () => {
+  return (
+    <div className="navbar">
+        <div className="logo">
+            <Link to="/"><img className="main_logo" src="https://seeklogo.com/images/P/patreon-logo-93191455CE-seeklogo.com.png" alt="" /></Link>
+        </div>
+        <div className="options">
+        <div class="dropdown">
+       
+            <div className="dropdown_title">
+            <a href="">Product 
+      <div className="drop"><BsChevronDown color="black" /></div>
+       </a></div>
+            <div className="dropdown-content">
+            <br />
+                <div className="inside_dropdown">
+                    <a href="#">Lite</a>
+                    <div className="desc">simple tools to setup recurring support from your fans.</div><br />
+                </div>
+                <div className="inside_dropdown">
+                    <a href="#">Pro</a>
+                    <div className="desc">All the tools to build and grow a thriving memebership business.</div><br />
+                </div>
+                <div className="inside_dropdown">
+                    <a href="#">Premium</a>
+                    <div className="desc">For established and creative businesses</div>
+                </div> 
+              </div>
+        </div>
 
-In the project directory, you can run:
+        <div class="dropdown">
+       
+            <div className="dropdown_title"><a href="">For Creators  <div className="drop-1"><BsChevronDown color="black" /></div></a></div>
+            <div className="dropdown-content">
+            <br />
+                <div className="inside_dropdown">
+                    <a href="#"><BiPodcast color='blue'/> &nbsp; &nbsp; Podcasters</a>
+                </div>
+                <div className="inside_dropdown">
+                    <a href="#"><BsCameraVideo color='blue'/> &nbsp; &nbsp;Video creators</a>
+                    
+                </div>
+                <div className="inside_dropdown">
+                    <a href="#"><FaGuitar color='blue'/> &nbsp;&nbsp; Musicians</a>
+                </div> 
+                <div className="inside_dropdown">
+                    <a href="#"><BsBrush color='blue'/>&nbsp;&nbsp;Visual Artist</a>
+                </div>
+                <div className="inside_dropdown">
+                    <a href="#"><AiOutlineWechat color='blue'/>&nbsp;&nbsp;Communities</a>
+                </div>
+                <div className="inside_dropdown">
+                    <a href="#"><BsPencil color='blue'/>&nbsp;&nbsp;Writers and Journalists</a>
+                </div>
+                <div className="inside_dropdown">
+                    <a href="#"><BsController color='blue'/>&nbsp;&nbsp;Gaming Creators</a>
+                </div>
+                <div className="inside_dropdown">
+                    <a href="#"><BsHeart color='blue'/>&nbsp;&nbsp;NonProfits</a>
+                </div>
+                <div className="inside_dropdown">
+                    <a href="#"><FaGraduationCap color='blue'/>&nbsp;Tutorial and Educations</a>
+                </div>
+                <div className="inside_dropdown">
+                    <a href="#"><IoLocationOutline color='blue'/>&nbsp;&nbsp;Local Businesses</a>
+                </div>
+                <div className="inside_dropdown">
+                    <a href="#"><IoCubeSharp color='blue'/>&nbsp;&nbsp;Creator of all Kinds</a>
+                </div>  
+              </div>
+        </div>
 
-### `npm start`
+        {/* for pricing */}
+        <div className="Pricing"><a href="#">Pricing</a></div>   
+        {/* <div>Resources</div> */}
+        <div class="dropdown">
+       
+       <div className="dropdown_title"><a href="">Resources <div className="drop-2"><BsChevronDown color="black" /></div></a></div>
+       <div className="dropdown-content">
+       <br />
+           <div className="inside_dropdown">
+               <a href="#">Blog</a>
+           </div>
+           <div className="inside_dropdown">
+               <a href="#"> Creator Community</a>
+               
+           </div>
+           <div className="inside_dropdown">
+               <a href="#">Events</a>
+           </div>
+           <div className="inside_dropdown">
+               <a href="#">Patreon U</a>
+           </div>
+           <div className="inside_dropdown">
+               <a href="#">App Directory</a>
+           </div>
+           <div className="inside_dropdown">
+               <a href="#">Help Center & FAQ</a>
+           </div> 
+           
+         </div>
+     </div>
+        <div className='Pricing'><a href="#">Starter Kits</a></div>
+        </div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+        {/* for search */}
+        <div className='right_flex'>
+        <div className="search-icon"><IoSearchOutline color='grey'/></div>
+            <div className="search">
+                {/* <SearchIcon/> */}
+               
+                
+            <input id='search-box' type="search" placeholder=' &nbsp;&nbsp; Find a creator'/>
+            </div>
+            <div className="login"> <Link className="link" to="">Log In</Link></div>
+            <div className="create"> <Link className="link1" to="" >Create on Patreon</Link></div>
+        </div>
+    </div>
+  )
+}
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+export default Navbar
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<!-- ****************CSS*****************
+ -->
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+.navbar{
+    width:100%;
+    height:65px;
+    position:fixed;
+    z-index:1;
+    display:flex;
+    background-color: #ffffff;
+    border-bottom: 0.1px solid grey;
+}
+.options{
+    margin-top:20px;
+    margin-left:20px;
+    display:flex;
+    gap:35px;
+    /* justify-content: center; */
+    width:50%;
+    /* background-color:green; */
+    height:40px;
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.inside_dropdown{
+    padding:10px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f5f5f5;
+    min-width: 200px;
+    padding:10px;
+    /* margin-top:8px; */
+    /* margin-bottom:20px; */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    }
+    .dropdown-content a {
+        /* opacity:1; */
+    /* margin-left:10px; */
+    /* margin-top:5px; */
+    color: black;
+    font-weight: 50;
+    font-size:0.900rem;
+    /* padding: 12px 16px; */
+   
+    text-decoration: none;
+    display: block;
+    margin-left:10px;
+    font-family: sans-serif;
+  
+    }
+    .dropdown_title{
+        margin-top: 2px;
 
-## Learn More
+        color:black;
+        /* font-weight:500; */
+        font-size:0.875rem;
+        position:relative;
+        cursor:pointer;
+    }
+    .dropdown_title a{
+        color:black;
+        text-decoration: none;
+        position:relative;
+    }
+    .dropdown_title a:hover{
+     color:#0e0d0de2;
+    }
+    .desc{
+        margin-left:10px;
+        color:black;
+        font-weight:400;
+        font-size:0.875rem;
+        position:relative;
+        cursor:pointer;
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    }
+    .Pricing a{
+        font-size:0.875rem;
+        text-decoration:none;
+        color:black;
+    }
+    .right_flex{
+        margin-top:20px;
+        /* margin-left:66%; */
+        margin-left:10px;
+        display:flex;
+        flex-direction: row;
+        /* justify-content: center; */
+        width:44%;
+        /* background-color:pink; */
+        height:40px;
+    }
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    #search-box{
+        vertical-align: top;
+        width: 250px;
+        height: 40px;
+        padding-left: 20px;
+        margin-left: 70px;
+        margin-top: -8px;
+       border-radius: 20px;
+      
+       background-color: rgb(233,236,239);
+       outline:none;
+       border: none;
+     }
+     .login{
+        margin-left: 25px;
+        font-size: 0.875rem;
+        text-decoration: none;
+        margin-top: 3px;
+        font-family: sans-serif;
+      }
+     .create{
+         background-color:#cecece;
+        padding: 10px;
+        margin-left: 40px;
+        border-radius: 100px;
+        height: 15px;
+        width: 140px;
+        color: white;
+        padding-bottom: 15px;
+        text-align: center;
+        margin-top: -8px;
+        
+       outline:black;
+       font-family: sans-serif;
+       background-color: rgb(255,66,77);
+     }
+     .link{
+         text-decoration:none;
+         color:black;
+         font-size:0.875rem;
+     }
+     .link1{
+         text-decoration:none;
+         color:white;
+     }
 
-### Code Splitting
+     .drop{
+         margin-top:-15px;
+         margin-left:55px;
+         display:flex;
+         flex-direction: row;
+         position: absolute;
+     }
+     .drop-1{
+        margin-top:-15px;
+        margin-left:80px;
+        display:flex;
+        flex-direction: row;
+        position: absolute;
+    }
+    .drop-2{
+        margin-top:-15px;
+        margin-left:65px;
+        display:flex;
+        flex-direction: row;
+        position: absolute;
+    }
+    .search-icon{
+        position: absolute;
+        margin-left:6%;
+        margin-top: 3px;
+    }
+     .create a:hover{outline:black;}
+     .inside_dropdown a:hover{text-decoration: none;}
+    .dropdown-content a:hover {background-color: #fff; font-weight:400}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    .dropdown:hover .dropdown-content {display: block;}
