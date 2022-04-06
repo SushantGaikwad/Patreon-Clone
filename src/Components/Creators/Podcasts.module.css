@@ -8,12 +8,12 @@
 }
 
 .div1{
-    width: 50%;
+    width: 65%;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 20px;
-    margin: auto;
-    border: 1px solid black;
+    margin: 100px auto;
+    /* border: 1px solid black; */
 }
 
 .div1_img img{
@@ -40,6 +40,36 @@
     line-height: 24px;
     font-weight: 400;
     text-decoration: none solid;
+    width: 580px;
     display: block;
     text-align: left;
+}
+
+.div2{
+    width: 100%;
+    height: 500px;
+    background-color: rgb(1,53,87);
+    margin-top: 50px 0;
+}
+.div2_span1{
+    display: block;
+    font-family: "Walsheim";
+    font-size: 48px;
+    line-height: 52.5px;
+    font-weight: 700;
+    color: white;
+    padding-top: 100px;
+}
+.div2_grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:20px;
+}
+.div2_grid_card{
+    display: flex;
+    flex-direction: column;
+}
+.div2_grid_card_icon{
+    height: 5rem;
+    width: 5rem;
 }

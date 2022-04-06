@@ -1,11 +1,12 @@
 
-import React from 'react';
+import React,{useState} from 'react';
 import SlideShow from './SlideShow';
 import './HomePage.css';
 import { IoSearchOutline } from "react-icons/io5";
 import { MdArrowForwardIos } from "react-icons/md";
 import { Link } from 'react-router-dom';
-const HomePage = () => {
+const HomePage = () =>{
+
   return (
     <>
       <div> 

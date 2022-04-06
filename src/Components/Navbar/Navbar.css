@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "aktiv-grotesk";
+    src: url(../fonts/AktivGrotesk-Regular.ttf);
+}
+@font-face {
+    font-family: "Walsheim";
+    src: url(../fonts/GTWalsheimPro-Medium.ttf);
+}
 
 .main_logo{
     margin-top:20px;
@@ -179,3 +187,49 @@
     .dropdown-content a:hover {background-color: #fff; font-weight:400}
 
     .dropdown:hover .dropdown-content {display: block;}
+
+    .search_box{
+       box-shadow:  2px 3px 5px #999;
+        box-sizing: border-box;
+        margin-top: 5px;
+        width: 200px;
+        position: absolute;
+        margin-left: 100px;
+        z-index: -1;
+        min-height: fit-content;
+        max-height: 400px;
+        overflow-y: scroll;
+        background-color: white;
+    }
+    .search_box_card{
+        display: flex;
+        border-top: 0.5px solid rgb(213, 213, 213);
+    }
+    .search_box_card div{
+        margin:5px;
+    }
+    .search_box_card_img{
+       max-width: 60px;
+    }
+    .search_box_card_img img{
+        width: 60%;
+
+        border-radius: 50%;
+    }
+    .search_box_card_name{
+        display: block;
+        font-family: "aktiv-grotesk";
+        font-size: 13px;
+        line-height: 21px;
+        font-weight: 700;
+        text-align: left;
+    }
+    .search_box_card_description{
+        display: block;
+        font-family: "aktiv-grotesk";
+        font-size: 13px;
+        line-height: 21px;
+        font-weight: 400;
+        color: rgb(112, 108, 100);
+        text-align: left;
+    }

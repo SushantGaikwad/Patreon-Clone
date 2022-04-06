@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React,{ useState} from 'react';
 import './Navbar.css'
 import { Link } from 'react-router-dom';
 import { BsChevronDown, BsCameraVideo,BsBrush,BsPencil,BsController,BsHeart } from "react-icons/bs";
@@ -10,6 +10,19 @@ import { IoLocationOutline,IoCubeSharp,IoSearchOutline } from "react-icons/io5";
 
 
 const Navbar = () => {
+    const [searchData, setSearchData] = useState([]);
+
+    const handleSearch =(key) =>{
+            console.log(key);
+            fetch(`http://localhost:3004/creators?q=${key}`)
+            .then((res)=>res.json())
+            .then((res)=> { 
+                // console.log(res);
+                setSearchData(res);
+                console.log(searchData);
+            })
+            .catch((err)=> console.log(err));
+    }
   return (
     <div className="navbar">
         <div className="logo">
@@ -120,10 +133,35 @@ const Navbar = () => {
         <div className='right_flex'>
         <div className="search-icon"><IoSearchOutline color='grey'/></div>
             <div className="search">
-                {/* <SearchIcon/> */}
-               
+                {/* <SearchIcon/> */}               
                 
-            <input id='search-box' type="search" placeholder=' &nbsp;&nbsp; Find a creator'/>
+            <input id='search-box' type="search" placeholder=' &nbsp;&nbsp; Find a creator' onChange={(e) =>handleSearch(e.target.value)}/>
+        
+                        {
+                            searchData ?
+                            <div className="search_box">
+                            {
+                            searchData.map((item,index)=>{
+                             return  <div  key={index}>
+                                    <div className="search_box_card">
+                                        <div className="search_box_card_img">
+                                            <img src={item.img} alt="creator_photo" />
+                                        </div>
+                                        <div className="search_box_card_text">
+                                                <span className="search_box_card_name">{item.name}</span> 
+                                                <span className="search_box_card_description">{item.description}</span>
+                                        </div>
+                                    </div>
+                                 </div>
+                            })
+                        }
+                            </div>
+                            :""
+                        }
+                  
+                
+            
+        
             </div>
             <div className="login"> <Link className="link" to="/login">Log In</Link></div>
             <div className="create"> <Link className="link1" to="" >Create on Patreon</Link></div>
