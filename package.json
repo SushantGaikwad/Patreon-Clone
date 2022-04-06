@@ -1,19 +1,39 @@
 {
+<<<<<<< HEAD
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+=======
+  "name": "patreon-clone",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@testing-library/jest-dom": "^5.16.3",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+>>>>>>> Sushant
     "@material-ui/icons": "^4.11.2",
     "@reduxjs/toolkit": "^1.8.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+<<<<<<< HEAD
+=======
+    "i": "^0.3.7",
+>>>>>>> Sushant
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-icons": "^4.3.1",
     "react-redux": "^7.2.8",
     "react-router-dom": "^6.3.0",
+<<<<<<< HEAD
     "react-scripts": "5.0.0"
+=======
+    "react-scripts": "5.0.0",
+    "web-vitals": "^2.1.4"
+>>>>>>> Sushant
   },
   "scripts": {
     "start": "react-scripts start",
@@ -22,7 +42,14 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
+<<<<<<< HEAD
     "extends": "react-app"
+=======
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+>>>>>>> Sushant
   },
   "browserslist": {
     "production": [
