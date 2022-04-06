@@ -92,24 +92,27 @@
         margin-top:20px;
         /* margin-left:66%; */
         margin-left:10px;
+        /* gap:15px; */
         display:flex;
         flex-direction: row;
         /* justify-content: center; */
-        width:44%;
+        /* width:44%; */
+        width:45%;
         /* background-color:pink; */
         height:40px;
     }
 
     #search-box{
         vertical-align: top;
-        width: 250px;
+        /* width: 250px; */
+        width:16rem;
         height: 40px;
         padding-left: 35px;
         margin-left: 28%;
         margin-top: -8px;
        border-radius: 20px;
       
-       background-color: rgb(233,236,239);
+       background-color: rgb(245,244,242);
        outline:none;
        border: none;
      }
@@ -117,12 +120,33 @@
         /* margin-left: 25px; */
         margin-left:15%;
         font-size: 0.875rem;
+        display:inline-block;
+        max-width:100%;
+        overflow:hidden;
+        vertical-align: bottom;
+        line-height:1.5 !important;
         text-decoration: none;
         margin-top: 3px;
         font-family: sans-serif;
       }
      .create{
-         background-color:#cecece;
+         display:inline-block;
+         background-color:#ff424d;
+         border-radius:9999px;
+         color:#fff;
+         font-weight:500;
+         border: 2px solid transparent;
+         line-height:2.2;
+         padding:1 rem 1 rem;
+         font-size:0.975 rem !important;
+         cursor:pointer;
+         margin-top:-11px;
+         margin-bottom:8px;
+         width:150px;
+         margin-left:7%;
+         text-align:center;
+         /* margin-left:30%; */
+         /* background-color:#cecece;
         padding: 10px;
         margin-left: 40px;
         border-radius: 100px;
@@ -135,16 +159,20 @@
         
        outline:black;
        font-family: sans-serif;
-       background-color: rgb(255,66,77);
+       background-color: rgb(255,66,77); */
      }
      .link{
+         /* margin-top:10px; */
          text-decoration:none;
          color:black;
          font-size:0.875rem;
      }
-     .link1{
+     .link-create{
          text-decoration:none;
          color:white;
+     }
+     .create Link{
+         text-decoration:none;
      }
 
      .drop{
@@ -172,6 +200,9 @@
         position: absolute;
         margin-left:6%;
         margin-top: 3px;
+    }
+    .create .link-create:hover{
+        text-decoration:none;
     }
      .create a:hover{outline:black;}
      .inside_dropdown a:hover{text-decoration: none;}

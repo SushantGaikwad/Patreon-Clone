@@ -12,9 +12,10 @@
     padding: 40px;
     outline:rgb(71, 71, 71);
 }
+
 .child-div-1 {
     margin-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 90px;
 }
 .para-1{
     color: #fff;
@@ -29,8 +30,10 @@
 
   
   .mydivchid2 {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 125px;
+    margin-bottom: 75px;
+    /* z-index:1; */
+    /* position:absolute; */
   }
   .mydivchid2 img {
     width: 100%;
