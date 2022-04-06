@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Roboto+Condensed:wght@400;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
+
+header{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 2px solid;
+    border-top: none;
+    border-left: none;
+    border-right:none;
+    border-color: #e5e3ddc5;
+    font-size: 62.5%;
+}
+.navs{
+    padding:.5rem;
+    padding-top: .7rem;
+
+    
+}
+ .navs .navs-logo{
+
+     padding: .9rem;
+    float: left;
+}
+ .navs .navs-item{
+    float: right;
+    display: flex;
+
+}
+.navs::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.navs-logo .logo1{
+    
+    font-size: 19px;
+    text-decoration: none;
+    margin-right: .7rem;
+    color: rgb(19 19 19);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+.navs-logo .logo2{
+    
+    font-size: 19px;
+    text-decoration: none;
+    margin-right: 1rem;
+    background-color: rgb(19 19 19);
+    color: #fff;
+    padding-right: 5px;
+    padding-top: 1px;
+    padding-left: 6px;
+    padding-bottom:3px;
+    font-weight: 700;
+    cursor: pointer;
+}
+ .input{
+    border: 1px solid #e5e3dd;
+    padding: 0.5rem 2.5rem 0.5rem 1.5rem;
+    width: 15rem;
+    font-size: 16px;
+    font-weight: 500;
+    appearance: none;
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    word-spacing: normal;
+    text-transform: none;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    cursor: text;
+    color: #968b83;
+    margin-right: .8rem;
+    margin-top: .5rem;
+    margin-bottom: .2rem;
+
+}
+.navs-item .break{
+    font-size: 45px; 
+    font-weight: 300; 
+    color:  #e5e3dd;
+    opacity: .5;
+
+
+    margin: 0;
+    margin-top: -4px;
+    margin-right: .7rem;
+}
+.navs-btn{
+    background-color: #ff424d;
+    width: 7.7rem;
+    height: 37px;
+    font-size: 14.25px;
+    color: #fff;
+    display: inline-block;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    vertical-align: baseline;
+    border-radius: 100px;
+    margin-top: .6rem;
+    margin-right: 2rem;
+    padding-top: 3px;
+}

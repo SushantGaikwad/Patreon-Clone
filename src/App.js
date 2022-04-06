@@ -1,23 +1,35 @@
+import React from 'react';
 import './App.css';
-import Lite from './Components/Products/Lite';
-import {Routes,Route, Link} from "react-router-dom";
-import Pro from './Components/Products/Pro';
-import Premium from './Components/Products/Premium';
-import Podcasts from "./Components/Creators/Podcasts"
-
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Navbar from './Components/Navbar/Navbar';
+import HomePage from './Components/HomePage/HomePage.jsx';
+import Footer from './Components/Footer/Footer';
+import Lite from "./Components/Products/Lite"
+import Pro from "./Components/Products/Pro"
+import Premium from "./Components/Products/Premium"
+import Podcasts from './Components/Creators/Podcasts';
+import {Blog} from './Components/Blogs/Blog';
+import {Login} from './Components/Login/Login';
 
 function App() {
   return (
     <div className="App">
-      <Link style={{color:"white",fontSize:"50px"}} to="/premium"> Premium </Link>     
-      <Link style={{color:"white",fontSize:"50px"}} to="/pro"> Pro </Link>     
-      <Link style={{color:"white",fontSize:"50px"}} to="/"> Lite </Link>     
-          <Routes>
-              <Route path='/' element={<Podcasts />} />
-              <Route path='/premium' element={<Premium />} />
-              <Route path='/pro' element={<Pro />} />
-          </Routes>            
-    
+      <Router>
+       <Navbar />
+        {/* <HomePage/> */} 
+       
+        <Routes>
+        <Route path="/" element={<HomePage/>}/>
+        <Route path='/lite' element={<Lite />} />
+        <Route path='/pro' element={<Pro />} />
+        <Route path='/premium' element={<Premium />} />
+        <Route path='/podcasters' element={<Podcasts />} />
+        <Route path='/blog' element={<Blog />} />
+        <Route path="/login" element={<Login />} />
+        
+        </Routes>
+        <Footer/>
+      </Router>
       
     </div>
   );

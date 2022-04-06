@@ -27,7 +27,7 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 40px;
-    z-index: 1;
+    /* z-index: 1; */
     left: 0;
     right: 0;
     margin: auto;
@@ -168,7 +168,6 @@ a{
         width: 90%;
         display: flex;
         gap: 40px;
-        z-index: 1;
         left: 0;
         right: 0;
         margin: auto;
@@ -292,6 +291,8 @@ a{
         margin: 32px 0 0;
         text-decoration: none solid rgb(36,30,18);
         font-weight: 700;
+        display: block;
+        text-align: center;
     }
 
     .div5-button{

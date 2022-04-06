@@ -3,8 +3,10 @@ import "./Premium.css";
 import { Link } from "react-router-dom";
 
 const Premium = () =>{
+    window.scrollTo(0, 0);
     return (
         <div>
+            <br /><br />
             <div className="div1">
                 <div className="div1-background">                
                 <svg height="100%" width="100%" fill="#012943"><svg viewBox="0 0 1440 600" preserveAspectRatio="none"><path d="M0 0h1440v575s-88 16-153 14c-58.04-1.786-159.94 7.931-181.09 10.031-2.65.264-5.25.399-7.91.407L921 600H0V0z" data-fill="1"></path></svg></svg>
