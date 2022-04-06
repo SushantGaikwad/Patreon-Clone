@@ -1,3 +1,4 @@
+
 import React from 'react';
 import './Footer.css';
 import { FaRegCopyright } from "react-icons/fa";
@@ -101,5 +102,6 @@ const Footer = () => {
    
   )
 }
+
 
 export default Footer
