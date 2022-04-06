@@ -24,16 +24,19 @@ const Navbar = () => {
             <div className="dropdown-content">
             <br />
                 <div className="inside_dropdown">
-                    <a href="#">Lite</a>
+                    <Link to="/lite">Lite
                     <div className="desc">simple tools to setup recurring support from your fans.</div><br />
+                    </Link>
                 </div>
                 <div className="inside_dropdown">
-                    <a href="#">Pro</a>
+                <Link to="/pro">Pro
                     <div className="desc">All the tools to build and grow a thriving memebership business.</div><br />
+                </Link>
                 </div>
                 <div className="inside_dropdown">
-                    <a href="#">Premium</a>
+                <Link to="/premium">Premium
                     <div className="desc">For established and creative businesses</div>
+                </Link>
                 </div> 
               </div>
         </div>
@@ -44,7 +47,7 @@ const Navbar = () => {
             <div className="dropdown-content">
             <br />
                 <div className="inside_dropdown">
-                    <a href="#"><BiPodcast color='blue'/> &nbsp; &nbsp; Podcasters</a>
+                    <Link to="/podcasters"><BiPodcast color='blue'/> &nbsp; &nbsp; Podcasters</Link>
                 </div>
                 <div className="inside_dropdown">
                     <a href="#"><BsCameraVideo color='blue'/> &nbsp; &nbsp;Video creators</a>

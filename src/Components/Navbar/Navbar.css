@@ -75,12 +75,13 @@
      color:#0e0d0de2;
     }
     .desc{
-        margin-left:10px;
+        /* margin-left:10px; */
         color:black;
         font-weight:400;
         font-size:0.875rem;
         position:relative;
         cursor:pointer;
+        text-align: left;
 
     }
     .Pricing a{

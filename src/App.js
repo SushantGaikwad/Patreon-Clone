@@ -4,18 +4,24 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Navbar from './Components/Navbar/Navbar';
 import HomePage from './Components/HomePage/HomePage.jsx';
 import Footer from './Components/Footer/Footer';
+import Lite from "./Components/Products/Lite"
+import Pro from "./Components/Products/Pro"
+import Premium from "./Components/Products/Premium"
+import Podcasts from './Components/Creators/Podcasts';
 
 function App() {
   return (
     <div className="App">
       <Router>
        <Navbar />
-        {/* <HomePage/> */}
-        
+        {/* <HomePage/> */} 
        
         <Routes>
         <Route path="/" element={<HomePage/>}/>
-        
+        <Route path='/lite' element={<Lite />} />
+        <Route path='/pro' element={<Pro />} />
+        <Route path='/premium' element={<Premium />} />
+        <Route path='/podcasters' element={<Podcasts />} />
         
         </Routes>
         <Footer/>
