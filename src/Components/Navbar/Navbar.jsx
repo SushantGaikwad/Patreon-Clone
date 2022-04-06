@@ -92,7 +92,7 @@ const Navbar = () => {
        <div className="dropdown-content">
        <br />
            <div className="inside_dropdown">
-               <a href="#">Blog</a>
+               <Link to="/blog">Blog</Link>
            </div>
            <div className="inside_dropdown">
                <a href="#"> Creator Community</a>
@@ -125,7 +125,7 @@ const Navbar = () => {
                 
             <input id='search-box' type="search" placeholder=' &nbsp;&nbsp; Find a creator'/>
             </div>
-            <div className="login"> <Link className="link" to="">Log In</Link></div>
+            <div className="login"> <Link className="link" to="/login">Log In</Link></div>
             <div className="create"> <Link className="link1" to="" >Create on Patreon</Link></div>
         </div>
     </div>

@@ -30,6 +30,7 @@
 }
 .inside_dropdown{
     padding:10px;
+    text-align: left;
 }
 .dropdown-content {
     display: none;
@@ -132,8 +133,7 @@
         color: white;
         padding-bottom: 15px;
         text-align: center;
-        margin-top: -8px;
-        
+        margin-top: -8px;        
        outline:black;
        font-family: sans-serif;
        background-color: rgb(255,66,77);

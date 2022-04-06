@@ -4,8 +4,6 @@ import './SlideShow.css';
 
 
 
-
-
 const SlideShow = () => {
     const [image, setImage] = useState("");
     return (

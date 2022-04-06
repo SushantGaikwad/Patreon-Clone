@@ -4,7 +4,6 @@ import './Blog.css';
 export const Blog = () => {
   return (
       <>
-    
 
     <section className='sec-1 container'>
         <div className='sec1 container'>

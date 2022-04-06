@@ -8,6 +8,8 @@ import Lite from "./Components/Products/Lite"
 import Pro from "./Components/Products/Pro"
 import Premium from "./Components/Products/Premium"
 import Podcasts from './Components/Creators/Podcasts';
+import {Blog} from './Components/Blogs/Blog';
+import {Login} from './Components/Login/Login';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path='/pro' element={<Pro />} />
         <Route path='/premium' element={<Premium />} />
         <Route path='/podcasters' element={<Podcasts />} />
+        <Route path='/blog' element={<Blog />} />
+        <Route path="/login" element={<Login />} />
         
         </Routes>
         <Footer/>

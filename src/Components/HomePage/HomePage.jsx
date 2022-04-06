@@ -13,7 +13,7 @@ const HomePage = () => {
            <div className='child-div-1'>
                <h1 className='heading-1'>Change the way art is valued</h1> <br />
                <p className="para-1">Let your most passionate fans support your creative work via monthly membership.</p>
-           <button className="btn-1">Get started</button>
+           <Link to="/login"><button className="btn-1">Get started</button></Link>
            </div>
            <div className='mydivchid2'>
                <img alt='dic' src='https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/coe-optimize.gif'></img>
@@ -121,7 +121,7 @@ Writer, comedian, commentator
            <div className='mydiv9'>
            <div className='mydiv9child1'>
                <h1>Are you ready to take back control?</h1>
-               <button>Get Started</button>
+               <Link to="/login"><button>Get Started</button></Link>
            </div>
            </div>
          
