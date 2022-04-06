@@ -9,14 +9,9 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar/>
-        {/* <HomePage/> */}
-        
-       
+        <Navbar/>      
         <Routes>
-        <Route path="/" element={<HomePage/>}/>
-        
-        
+        <Route path="/" element={<HomePage/>}/>       
         </Routes>
         <Footer/>
       </Router>
