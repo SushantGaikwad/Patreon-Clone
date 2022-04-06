@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 
 import { Nav } from '../Nav-Blog/Nav'
 export const Login = () => {
+  window.scrollTo(0, 0);
   const { register, handleSubmit, watch, formState: { errors } } = useForm({
     mode:'onTouched'
   });

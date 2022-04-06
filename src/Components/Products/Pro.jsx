@@ -3,6 +3,7 @@ import "./Pro.css";
 import { Link } from "react-router-dom";
 
 const Pro = () =>{
+    window.scrollTo(0, 0);
     return (
         <div>
             <br /><br /><br />

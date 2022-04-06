@@ -3,6 +3,7 @@ import "./Premium.css";
 import { Link } from "react-router-dom";
 
 const Premium = () =>{
+    window.scrollTo(0, 0);
     return (
         <div>
             <br /><br />

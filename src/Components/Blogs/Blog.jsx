@@ -2,6 +2,7 @@ import React from 'react'
 import './Blog.css';
 
 export const Blog = () => {
+    window.scrollTo(0, 0);
   return (
       <>
 

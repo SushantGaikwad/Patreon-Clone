@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const Lite = () =>{
+    window.scrollTo(0, 0);
     return (
         <div>
             <br /><br /><br />
