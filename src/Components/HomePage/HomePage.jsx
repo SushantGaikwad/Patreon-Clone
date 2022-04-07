@@ -16,9 +16,15 @@ const HomePage = () => {
            <button className="btn-1">Get started</button>
            </div>
            <div className='mydivchid2'>
-               <img alt='dic' src='https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/coe-optimize.gif'></img>
+               <img alt='dic' src='https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/coe-optimize.gif'></img>              
            </div>
+          
+                
+           
         </div>
+        
+      
+        
         <div className='div-2'>
            <h2 className="heading-2">Search the 200,000+ creators on Patreon</h2> <br />
            <div className="search-icon-home">< IoSearchOutline color='grey'/></div>

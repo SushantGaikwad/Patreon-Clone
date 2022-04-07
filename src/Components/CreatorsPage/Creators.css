@@ -1,0 +1,107 @@
+
+.img-bg{
+    /* margin-top:40px; */
+    border: 1px solid black;
+    /* height:300px; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 25vw;
+    width: 100%;
+    align-items: flex-end;
+    display: flex;
+    position: relative;
+    background-image: url(https://c10.patreonusercontent.com/4/patreon-media/p/campaign/2243773/8f4401190d61426daa332c669a0f58c7/eyJ3IjoxOTIwLCJ3ZSI6MX0%3D/2.jpg?token-time=1651622400&token-hash=Bxoyl_yfvkxQnZCPRHzusNYljysWg2iuhde34POMj_U%3D);
+}
+.icon-img{
+    /* position:absolute; */
+    display: block;
+    border: 4px solid rgb(255, 255, 255);
+    /* border-radius: 50%; */
+    background-clip: padding-box;
+    
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
+    /* border:1px solid red; */
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    padding:5px;
+    margin:auto;
+    margin-top:250px;
+    /* position: absolute; */
+   background-color: white;
+   background-image: url(https://c10.patreonusercontent.com/4/patreon-media/p/campaign/2243773/1a031bfd94cd4fc09f754cad4e89decc/eyJ3IjoyMDB9/1.jpg?token-time=2145916800&token-hash=Hi37ycjyu01ztnrsIC3lmGUaYuo6AsLIfRQXvHdRN8k%3D);  
+}
+.about_creator{
+    margin-top:100px;
+    margin-left:35%;
+    width:30%;
+    /* border:1px solid red; */
+    text-align: center;
+}
+.small-title{
+    font-size:0.775rem;
+    color: rgb(50, 49, 49);
+}
+.button-patron{
+    /* border: 1px solid black; */
+    border-radius: 9999px;
+    height:20px;
+    padding:10px;
+    /* text-align: center; */
+    margin:auto;
+    width:90%;
+    background-color:#ff424d;
+    color:white;
+    font-weight:500;
+    cursor:pointer;
+   justify-content: center;
+
+}
+.share_follow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:20px;
+
+}
+.share_follow> div{
+    /* border:1px solid grey; */
+    background-color:rgb(250,231,232);
+    border:1px solid rgb(250,231,232);
+    border-radius:9999px;
+    font-weight:500;
+    width:90%;
+    font-size:0.875rem !important;
+    /* height:10px; */
+    padding:10px;
+    color: rgb(255,66,77);
+    white-space: unset;
+}
+.about_creator_info{
+    /* border:1px solid green; */
+    margin:auto;
+    width:40%;
+    text-align:center;
+
+}
+.text-about{
+    border:1px solid grey;
+    text-align:left;
+    padding:20px;
+    /* bottom: blur; */
+    overflow:auto;
+}
+.text-about>span{
+    color:rgb(227,108,9);
+}
+.Show-more{
+    font-size:0.975rem;
+    color: rgb(255,66,77);
+    text-decoration: underline rgb(255,66,77);
+
+}

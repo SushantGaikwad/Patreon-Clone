@@ -6,7 +6,7 @@ import { BsChevronDown, BsCameraVideo,BsBrush,BsPencil,BsController,BsHeart } fr
 import { BiPodcast } from "react-icons/bi";
 import { FaGuitar,FaGraduationCap } from "react-icons/fa";
 import { AiOutlineWechat } from "react-icons/ai";
-import { IoLocationOutline,IoCubeSharp,IoSearchOutline } from "react-icons/io5";
+import { IoLocationOutline,IoCubeSharp,IoSearchOutline,IoChevronDown} from "react-icons/io5";
 
 
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
         <div class="dropdown">
        
             <div className="dropdown_title"><a href="">Product 
-      <div className="drop"><BsChevronDown color="black" /></div>
+      <div className="drop"><IoChevronDown color="black" /></div>
        </a></div>
             <div className="dropdown-content">
             <br />
@@ -40,7 +40,7 @@ const Navbar = () => {
 
         <div class="dropdown">
        
-            <div className="dropdown_title"><a href="">For Creators  <div className="drop-1"><BsChevronDown color="black" /></div></a></div>
+            <div className="dropdown_title"><a href="">For creators  <div className="drop-1"><IoChevronDown color="black" /></div></a></div>
             <div className="dropdown-content">
             <br />
                 <div className="inside_dropdown">
@@ -85,7 +85,7 @@ const Navbar = () => {
         {/* <div>Resources</div> */}
         <div class="dropdown">
        
-       <div className="dropdown_title"><a href="">Resources <div className="drop-2"><BsChevronDown color="black" /></div></a></div>
+       <div className="dropdown_title"><a href="">Resources <div className="drop-2"><IoChevronDown color="black" /></div></a></div>
        <div className="dropdown-content">
        <br />
            <div className="inside_dropdown">
@@ -123,7 +123,7 @@ const Navbar = () => {
             <input id='search-box' type="search" placeholder=' &nbsp;&nbsp; Find a creator'/>
             </div>
             <div className="login"> <Link className="link" to="">Log In</Link></div>
-            <div className="create"> <Link className="link1" to="" >Create on Patreon</Link></div>
+            <div className="create"> <Link className="link-create" to="" >Create on Patreon</Link></div>
         </div>
     </div>
   )
