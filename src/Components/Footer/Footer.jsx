@@ -2,6 +2,7 @@
 import React from 'react';
 import './Footer.css';
 import { FaRegCopyright } from "react-icons/fa";
+import { BsTwitter,BsFacebook,BsInstagram,BsYoutube } from "react-icons/bs";
 
 const Footer = () => {
   return (
@@ -15,6 +16,7 @@ const Footer = () => {
             <div className='H1'>Language: English (United States) </div>
           </div>
           <div className='Div' style={{height:"50px"}}>
+         
              <div className='H1'> India</div>
           </div>
           <div className='Div' style={{height:"50px"}}>
@@ -77,19 +79,21 @@ const Footer = () => {
        </div>
       </div>
       <div className='SecondCont'>
-        {/* <Logo>
-        <TwitterIcon sx={{ color: blue[500] }}/>
-        </Logo>
-        <Logo>
-        <FacebookRoundedIcon sx={{ color: blue[500] }}/>
-        </Logo>
-        <Logo>
-        <InstagramIcon sx={{ color: blue[500] }}/>
+        <div>
+          <BsTwitter color="white"/>
+        </div>
+        <div>
+          < BsFacebook color="white"/>
+          
+        </div>
+        <div>
+          <BsInstagram color="white"/>
+          
+        </div>
+        <div>
+          <BsYoutube color="white"/>
+        </div>
 
-        </Logo>
-        <Logo>
-        <YouTubeIcon sx={{ color: red[500] }}/>
-        </Logo> */}
       </div>
       <div className='ThirdCont'>
         <div className='H1-copyright'><FaRegCopyright color='white'/>Patreon&nbsp; &nbsp; &nbsp; &nbsp;Sitemap</div>
