@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Navbar from './Components/Navbar/Navbar';
 import HomePage from './Components/HomePage/HomePage.jsx';
 import Footer from './Components/Footer/Footer';
-import Creators from './Components/Creators/Creators'
+import Creators from './Components/CreatorsPage/Creators'
 
 function App() {
   return (

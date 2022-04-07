@@ -1,0 +1,106 @@
+
+.Box{
+    background: #141518;
+position:relative;
+ margin-top: 40px;
+  bottom: 0;
+  width: 100%;
+  height: fit-content;
+}
+.Container{
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.ColRow{
+    display:flex;
+    flex-direction:row;
+    width:90%;
+    gap:10px;
+    margin-left:2.8%;
+    /* border:1px solid white; */
+}
+.main-division{
+    height:500px;
+    display:flex;
+    flex-direction:row;
+    gap:20px;
+    padding:20px;
+}
+.main-division>div{
+    /* border:1px solid white; */
+    width:50%;
+}
+.left-main{
+    padding:10px;
+    /* margin-left:10px; */
+}
+.left-main>span{
+    font-size:0.675rem;
+    font-weight:500;
+    color:white;
+    margin-left:12px;
+}
+.Col{
+    color: #FFFFFF;
+    margin-top: 10px;
+    margin-left:12px;
+}
+.Heading{
+    font-size : 10px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.FooterLink{
+    font-weight: 14px;
+  margin-bottom: 5px;
+  cursor:pointer;
+}
+.Div{
+    height: 80px;
+   /* border: 1.5px solid white; */
+   width: 95%;
+   border-radius: 4px;
+   margin-bottom: 15px;
+   text-align: center;
+}
+.H1{
+    font-size: 17px;
+  font-weight: 700;
+  margin-top: 15px;
+  color : white;
+}
+.H1-copyright{
+    font-size:14px;
+    color:white;
+    margin-top:5px;
+    margin-left:-20%;
+
+}
+.ThirdCont{
+    width: 40%;
+    /* border:1px solid white; */
+  height: 130px;
+  margin-top: 20px;
+  cursor:pointer;
+  
+  /* margin-left: 5%; */
+  text-align: left;
+}
+.P{
+    font-size: 16px;
+  color: white;
+  margin-top: 30px;
+}
+.SecondCont{
+  width:14%;
+  /* height:100px; */
+  /* border:1px solid white; */
+  display:flex;
+  cursor:pointer;
+  gap:32px;
+  margin-left:50%;
+  margin-top:-20%;
+  cursor:pointer;
+}
