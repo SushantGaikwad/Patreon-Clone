@@ -117,8 +117,7 @@
         padding-left: 35px;
         margin-left: 28%;
         margin-top: -8px;
-       border-radius: 20px;
-      
+       border-radius: 20px;      
        background-color: rgb(233,236,239);
        outline:none;
        border: none;
@@ -200,10 +199,21 @@
         max-height: 400px;
         overflow-y: scroll;
         background-color: white;
+        text-decoration: none;
+    }
+    .search_box::-webkit-scrollbar{
+        display: none;
     }
     .search_box_card{
         display: flex;
         border-top: 0.5px solid rgb(213, 213, 213);
+        text-decoration: none;
+    }
+    #search_box_card_text:hover{
+        text-decoration: none;
+    }
+    #search_box_card_name:hover{
+        text-decoration: none;
     }
     .search_box_card div{
         margin:5px;
@@ -223,7 +233,9 @@
         line-height: 21px;
         font-weight: 700;
         text-align: left;
+        color: black;
     }
+
     .search_box_card_description{
         display: block;
         font-family: "aktiv-grotesk";
@@ -232,4 +244,8 @@
         font-weight: 400;
         color: rgb(112, 108, 100);
         text-align: left;
+        text-decoration: none;
+    }
+    .search_box_card_description:hover{
+        text-decoration: none;
     }

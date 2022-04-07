@@ -1,5 +1,5 @@
 
-import React,{ useState} from 'react';
+import React,{ useState,useEffect, useRef} from 'react';
 import './Navbar.css'
 import { Link } from 'react-router-dom';
 import { BsChevronDown, BsCameraVideo,BsBrush,BsPencil,BsController,BsHeart } from "react-icons/bs";
@@ -7,10 +7,28 @@ import { BiPodcast } from "react-icons/bi";
 import { FaGuitar,FaGraduationCap } from "react-icons/fa";
 import { AiOutlineWechat } from "react-icons/ai";
 import { IoLocationOutline,IoCubeSharp,IoSearchOutline } from "react-icons/io5";
+import styled from "styled-components";
 
+const LinkWrapper = styled(Link)`
+    color:black;
+`;
 
 const Navbar = () => {
     const [searchData, setSearchData] = useState([]);
+    let searchBoxref = useRef();
+
+useEffect(()=>{
+    let handler = (event)=>{
+        if(!searchBoxref.current.contains(event.target)){        
+        setSearchData([]);
+        }
+    }
+    document.addEventListener("mousedown",handler);
+
+    return () =>{
+        document.removeEventListener("mousedown",handler)
+    }
+})
 
     const handleSearch =(key) =>{
             console.log(key);
@@ -31,9 +49,9 @@ const Navbar = () => {
         <div className="options">
         <div class="dropdown">
        
-            <div className="dropdown_title"><a href="">Product 
+            <div className="dropdown_title">Product 
       <div className="drop"><BsChevronDown color="black" /></div>
-       </a></div>
+    </div>
             <div className="dropdown-content">
             <br />
                 <div className="inside_dropdown">
@@ -56,7 +74,7 @@ const Navbar = () => {
 
         <div class="dropdown">
        
-            <div className="dropdown_title"><a href="">For Creators  <div className="drop-1"><BsChevronDown color="black" /></div></a></div>
+            <div className="dropdown_title">For Creators  <div className="drop-1"><BsChevronDown color="black" /></div></div>
             <div className="dropdown-content">
             <br />
                 <div className="inside_dropdown">
@@ -137,22 +155,25 @@ const Navbar = () => {
                 
             <input id='search-box' type="search" placeholder=' &nbsp;&nbsp; Find a creator' onChange={(e) =>handleSearch(e.target.value)}/>
         
-                        {
+                  { 
                             searchData ?
-                            <div className="search_box">
+                            <div ref={searchBoxref} className="search_box">
                             {
                             searchData.map((item,index)=>{
-                             return  <div  key={index}>
+                                return <div  key={index}>         
+                                <LinkWrapper to="/">                        
                                     <div className="search_box_card">
                                         <div className="search_box_card_img">
                                             <img src={item.img} alt="creator_photo" />
                                         </div>
-                                        <div className="search_box_card_text">
+                                        <div id="search_box_card_text">
                                                 <span className="search_box_card_name">{item.name}</span> 
                                                 <span className="search_box_card_description">{item.description}</span>
                                         </div>
                                     </div>
+                                    </LinkWrapper>
                                  </div>
+                        
                             })
                         }
                             </div>
