@@ -10,6 +10,7 @@ import Premium from "./Components/Products/Premium"
 import Podcasts from './Components/Creators/Podcasts';
 import {Blog} from './Components/Blogs/Blog';
 import {Login} from './Components/Login/Login';
+// import Creators from './Components/CreatorsPage/Creators';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path='/podcasters' element={<Podcasts />} />
         <Route path='/blog' element={<Blog />} />
         <Route path="/login" element={<Login />} />
+        {/* <Route path="/:username" element={<Creators />} /> */}
         
         </Routes>
         <Footer/>

@@ -68,10 +68,10 @@
     }
     .dropdown_title{
         margin-top: 2px;
-
+        line-height:21px;
         color:black;
-        /* font-weight:500; */
-        font-size:0.875rem;
+        font-weight:500;
+        font-size:16px;
         position:relative;
         cursor:pointer;
     }
@@ -93,92 +93,107 @@
         text-align: left;
 
     }
-    .Pricing a{
-        font-size:0.875rem;
-        text-decoration:none;
+    .Pricing{
+        display: block;
+        margin-top: 2px;
+        margin-right: -20px;
+        line-height:21px;
         color:black;
+        font-weight:500;
+        font-size:16px;
+        position:relative;
+        cursor:pointer;
+        text-decoration: none;
     }
     .right_flex{
         margin-top:20px;
         /* margin-left:66%; */
         margin-left:10px;
+        gap:15px;
         display:flex;
         flex-direction: row;
         /* justify-content: center; */
-        width:44%;
+        /* width:44%; */
+        width:45%;
         /* background-color:pink; */
         height:40px;
     }
-
+.search{
+    /* border: 1px solid black; */
+}
     #search-box{
         vertical-align: top;
-        width: 250px;
+        /* width: 250px; */
+        width:16rem;
         height: 40px;
         padding-left: 35px;
-        margin-left: 28%;
+        margin-left: 300px;
+        margin-right: 40px;
         margin-top: -8px;
        border-radius: 20px;      
-       background-color: rgb(233,236,239);
        outline:none;
        border: none;
+       background-color: #efefef;
      }
-     .login{
-        /* margin-left: 25px; */
-        margin-left:15%;
-        font-size: 0.875rem;
-        text-decoration: none;
-        margin-top: 3px;
-        font-family: sans-serif;
+     .login-btn{
+         display: block;
+         font-size: 16px;
+         text-decoration: none;
+         margin-top: 3px;
+         font-family: sans-serif;
+         color: black;
+         margin-right: 8px;
+         width: 80px;
       }
      .create{
-         background-color:#cecece;
-        padding: 10px;
-        margin-left: 40px;
-        border-radius: 100px;
-        height: 15px;
-        width: 140px;
-        color: white;
-        padding-bottom: 15px;
-        text-align: center;
-        margin-top: -8px;        
-       outline:black;
-       font-family: sans-serif;
-       background-color: rgb(255,66,77);
+         display:inline-block;
+         background-color:#ff424d;
+         border-radius:9999px;
+         color:#fff;
+         font-weight:500;
+         border: 2px solid transparent;
+         line-height:2.2;
+         padding:4px 6px;
+         font-size:0.975 rem !important;
+         cursor:pointer;
+         margin-top:-11px;
+         margin-bottom:8px;
+         width:150px;
+         /* margin-left:50px; */
+         text-align:center;
      }
-     .link{
-         text-decoration:none;
-         color:black;
-         font-size:0.875rem;
+     .create:hover{
+         background-color: white;
+         color: #ff424d;
+         border: 3px solid #ff424d;
      }
-     .link1{
-         text-decoration:none;
-         color:white;
-     }
+
 
      .drop{
          margin-top:-15px;
-         margin-left:55px;
+         margin-left:65px;
          display:flex;
          flex-direction: row;
          position: absolute;
      }
      .drop-1{
         margin-top:-15px;
-        margin-left:80px;
+        margin-left:95px;
         display:flex;
         flex-direction: row;
         position: absolute;
     }
     .drop-2{
         margin-top:-15px;
-        margin-left:65px;
+        margin-left:75px;
         display:flex;
         flex-direction: row;
         position: absolute;
     }
     .search-icon{
         position: absolute;
-        margin-left:6%;
+        display: block;
+        margin-left:310px;
         margin-top: 3px;
     }
      .create a:hover{outline:black;}
@@ -191,9 +206,9 @@
        box-shadow:  2px 3px 5px #999;
         box-sizing: border-box;
         margin-top: 5px;
-        width: 200px;
+        width: 220px;
         position: absolute;
-        margin-left: 100px;
+        margin-left: 320px;
         z-index: -1;
         min-height: fit-content;
         max-height: 400px;
