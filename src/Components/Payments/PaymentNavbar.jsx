@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './CreatorNavbar.css'
+import './PaymentNavbar.css'
 import { Link } from 'react-router-dom';
 import { BsChevronDown, BsCameraVideo,BsBrush,BsPencil,BsController,BsHeart } from "react-icons/bs";
 import { BiPodcast } from "react-icons/bi";
@@ -12,20 +12,20 @@ import { IoLocationOutline,IoCubeSharp,IoSearchOutline,IoChevronDown} from "reac
 const Navbar = () => {
   return (
       <>
-    <div className="navbar-1">
-        <div className="logo-1">
-            <Link to="/"><img className="main_logo-1" src="https://seeklogo.com/images/P/patreon-logo-93191455CE-seeklogo.com.png" alt="" /></Link>
+    <div className="navbar-3">
+        <div className="logo-3">
+            <Link to="/"><img className="main_logo-3" src="https://seeklogo.com/images/P/patreon-logo-93191455CE-seeklogo.com.png" alt="" /></Link>
         </div>
        
        
-        <div className='right_flex-1'>
-        <div className="search-icon-1"><IoSearchOutline color='grey'/>
+        <div className='right_flex-3'>
+        <div className="search-icon-3"><IoSearchOutline color='grey'/>
         </div>
-            <div className="search-1">
-            <input id='search-box-1' type="search" placeholder=' &nbsp;&nbsp; Find a creator'/>
+            <div className="search-3">
+            <input id='search-box-3' type="search" placeholder=' &nbsp;&nbsp; Find a creator'/>
             </div>
         </div>
-       <div className="right-options-1">
+       <div className="right-options-3">
            <div><a href="">Create on Patreon</a></div>
            <div><a href="">Log In</a></div>
        </div>

@@ -1,11 +1,11 @@
 
-.main_logo{
+.main_logo-1{
     margin-top:20px;
     margin-left:15px;
     width:23px;
     height:23px;
 }
-.navbar{
+.navbar-1{
     width:100%;
     height:65px;
     position:fixed;
@@ -14,18 +14,34 @@
     background-color: #ffffff;
     border-bottom: 0.1px solid grey;
 }
-.right_flex{
+.right_flex-1{
     /* border:1px solid black; */
     width:35%;
     margin-left:55%;
 }
-.search{
-    margin-left:10px;
+.search-1{
+    margin-top:20px;
+    margin-left:-100px;
 }
-.search-icon{
-    margin-left:95px;
+#search-box-1{
+    vertical-align: top;
+    /* width: 250px; */
+    width:16rem;
+    height: 40px;
+    padding-left: 35px;
+    margin-left: 40%;
+    margin-top: -8px;
+   border-radius: 20px;
+  
+   background-color: rgb(245,244,242);
+   outline:none;
+   border: none;
 }
-.right-options{
+.search-icon-1{
+    margin-left:100px;
+    margin-top:22px;
+}
+.right-options-1{
     /* border:1px solid red; */
     width:20%;
     display:flex;
@@ -33,7 +49,7 @@
     margin-top:20px;
     margin-left:0%;
 }
-.right-options>div>a{
+.right-options-1>div>a{
     font-size:0.875rem;
     color:black;
     text-decoration:none;
