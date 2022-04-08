@@ -11,11 +11,17 @@ import Podcasts from './Components/Creators/Podcasts';
 import {Blog} from './Components/Blogs/Blog';
 import {Login} from './Components/Login/Login';
 import Creators from './Components/CreatorsPage/Creators';
+import Payment from './Components/Payments/Payment';
+import ProfilePage from './Components/ProfilePage/ProfilePage';
+import { Register } from './Components/Register/Register';
 
+
+
+
+ 
 function App() {
   return (
     <div className="App">
-      <Router>
        <Navbar />
         {/* <HomePage/> */} 
        
@@ -28,12 +34,17 @@ function App() {
         <Route path='/blog' element={<Blog />} />
         <Route path="/login" element={<Login />} />
         <Route path="/:username" element={<Creators />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/creators" element={<HomePage />} />
+        <Route path="/profile" element={<ProfilePage />} />       
+
         
         </Routes>
         <Footer/>
-      </Router>
-      
-    </div>
+   
+     
+</div>
   );
 }
 

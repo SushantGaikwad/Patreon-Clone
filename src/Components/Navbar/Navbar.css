@@ -105,6 +105,9 @@
         cursor:pointer;
         text-decoration: none;
     }
+    .P:hover{
+        text-decoration: none;
+    }
     .right_flex{
         margin-top:20px;
         /* margin-left:66%; */
@@ -145,6 +148,17 @@
          margin-right: 8px;
          width: 80px;
       }
+      .logout-btn{
+        display: block;
+        font-size: 16px;
+        text-decoration: none;
+        margin-top: 3px;
+        font-family: sans-serif;
+        color: black;
+        margin-right: 8px;
+        min-width: 80px;
+        cursor: pointer;
+      }
      .create{
          display:inline-block;
          background-color:#ff424d;
@@ -159,8 +173,9 @@
          margin-top:-11px;
          margin-bottom:8px;
          width:150px;
-         /* margin-left:50px; */
+         /* margin-left:30px; */
          text-align:center;
+         cursor: pointer;
      }
      .create:hover{
          background-color: white;
@@ -197,7 +212,7 @@
         margin-top: 3px;
     }
      .create a:hover{outline:black;}
-     .inside_dropdown a:hover{text-decoration: none;}
+     .inside_dropdown, .navbar a:hover{text-decoration: none;}
     .dropdown-content a:hover {background-color: #fff; font-weight:400}
 
     .dropdown:hover .dropdown-content {display: block;}
@@ -261,3 +276,25 @@
         color: red !important;
         text-decoration: none;        
     }
+.atag_decoration{
+    text-decoration: none;
+}
+
+.div_circle_icon_navbar{   
+    display: block;
+    border: 4px solid rgb(255, 255, 255);
+    /* border-radius: 50%; */
+    background-clip: padding-box;    
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin-top: -12px;
+    width:40px;
+    height:40px;
+    margin-left:50px;
+    border-radius:100%;
+    background-image:url("https://static.showit.co/1600/KY4rr175TueWGUoP7Xv_XA/128788/professional_branding_mens_portraits_frisco_texas_korey_howell_photography_group_corporate.jpg");
+    cursor: pointer;
+}
+  

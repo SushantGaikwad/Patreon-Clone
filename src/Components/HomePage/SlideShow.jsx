@@ -50,7 +50,7 @@ const SlideShow = () => {
           >
             <span className="shadow">
               <div>
-                <h2>Podcasters</h2>
+                <h2 className="shadow">Podcasters</h2>
               </div>
             </span>
           </a>
@@ -65,7 +65,7 @@ const SlideShow = () => {
           >
             <span className="shadow">
               <div>
-                <h2>Video Creators</h2>
+                <h2 className="shadow">Video Creators</h2>
               </div>
             </span>
           </a>
@@ -80,7 +80,7 @@ const SlideShow = () => {
           >
             <span className="shadow">
               <div>
-                <h2>Musicians</h2>
+                <h2 className="shadow">Musicians</h2>
               </div>
             </span>
           </a>
@@ -95,7 +95,7 @@ const SlideShow = () => {
           >
             <span className="shadow">
               <div>
-                <h2>Visual Artists</h2>
+                <h2 className="shadow">Visual Artists</h2>
               </div>
             </span>
           </a>
@@ -110,7 +110,7 @@ const SlideShow = () => {
           >
             <span className="shadow">
               <div>
-                <h2>Communities</h2>
+                <h2 className="shadow">Communities</h2>
               </div>
             </span>
           </a>
@@ -125,7 +125,7 @@ const SlideShow = () => {
           >
             <span className="shadow">
               <div>
-                <h2>Writers & Journalists</h2>
+                <h2 className="shadow">Writers & Journalists</h2>
               </div>
             </span>
           </a>
@@ -140,7 +140,7 @@ const SlideShow = () => {
           >
             <span className="shadow">
               <div>
-                <h2>Gaming Creators</h2>
+                <h2 className="shadow">Gaming Creators</h2>
               </div>
             </span>
           </a>
@@ -155,7 +155,7 @@ const SlideShow = () => {
           >
             <span className="shadow">
               <div>
-                <h2>Nonprofits</h2>
+                <h2 className="shadow">Nonprofits</h2>
               </div>
             </span>
           </a>
@@ -170,7 +170,7 @@ const SlideShow = () => {
           >
             <span className="shadow">
               <div>
-                <h2>Tutorials and Education</h2>
+                <h2 className="shadow">Tutorials and Education</h2>
               </div>
             </span>
           </a>
@@ -185,7 +185,7 @@ const SlideShow = () => {
           >
             <span className="shadow">
               <div>
-                <h2>Creators-of-all-kinds</h2>
+                <h2 className="shadow">Creators-of-all-kinds</h2>
               </div>
             </span>
           </a>

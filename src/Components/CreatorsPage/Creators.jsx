@@ -2,7 +2,10 @@ import React,{useEffect, useState} from 'react';
 import './Creators.css'
 import CreatorNavbar from './CreatorNavbar.jsx';
 import CreatorFooter from './CreatorFooter.jsx';
-import { useParams } from 'react-router-dom';
+import { Link,useParams } from 'react-router-dom';
+import ProfileNavbar from '../ProfilePage/ProfilePageNavbar';
+import Navbar from '../Navbar/Navbar';
+
 
 
 const Creators = () => { 
@@ -26,7 +29,7 @@ const Creators = () => {
   return (
       creator &&
       <>
-      <CreatorNavbar/>
+      <Navbar />
        <br /><br /> <br />
       <div className='content'>
           <div className="img-bg" style={{backgroundImage: `url(${creator[0].background})`}}>
@@ -41,9 +44,11 @@ const Creators = () => {
               <br />
              <h2>{creator[0].patrons}</h2>
              <div className='small-title'>PATRONS</div> <br />
+             <Link to="/payment">
              <div className="button-patron">
                  Become a Patron
-             </div> <br />
+             </div> 
+             </Link><br />
              <div className="share_follow">
                  <div>Share</div>
                  <div>Follow</div>
