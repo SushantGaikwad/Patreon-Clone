@@ -12,6 +12,7 @@ import {Blog} from './Components/Blogs/Blog';
 import {Login} from './Components/Login/Login';
 import Creators from './Components/CreatorsPage/Creators';
 import Payment from './Components/Payments/Payment';
+import ProfilePage from './Components/ProfilePage/ProfilePage';
 
 function App() {
   return (
