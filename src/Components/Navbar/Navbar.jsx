@@ -22,7 +22,7 @@ import {
 
 const LinkWrapper = styled(Link)`
   color: black;
-  text-decoration:none
+  text-decoration:none;
 `;
 
 const Navbar = () => {
@@ -242,7 +242,7 @@ const Navbar = () => {
                           <img src={item.img} alt="creator_photo" />
                         </div>
                         <div id="search_box_card_text">
-                          <span className="search_box_card_name">
+                          <span className="search_box_card_name_navbar">
                             {item.name}
                           </span>
                           <span className="search_box_card_description">

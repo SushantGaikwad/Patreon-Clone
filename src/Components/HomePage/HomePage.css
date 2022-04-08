@@ -146,8 +146,17 @@
     width: 99.8%;
   }
   #secondimg {
-    width: 99%;
+    width: 100%;
+    text-align: left;
   }
+  .secondchilddiv2{
+    text-align: left;
+  }
+ 
+  .mydiv3{
+    text-align: left;
+  }
+  
   
   .searchbar {
     width: 55%;
@@ -204,6 +213,7 @@
   #title_image {
     text-decoration: none;
     color: #241e12;
+    text-align: left;
   }
   #title_image:hover{
      text-decoration: underline red;
@@ -286,6 +296,7 @@
   #myh27 {
     font-size: 42px;
     font-weight: 700;
+    color: black;
   }
   #myp27 {
     font-size: 20px;
@@ -400,4 +411,67 @@
   max-width: 840px;
   min-width: 560px;
   color: #ff424d;
+}
+
+.search_box_homepage{
+  box-shadow:  2px 3px 5px #999;
+   box-sizing: border-box;
+   margin-top: -30px;
+   width: 960px;
+   position: absolute;
+   margin-left: 420px;
+   z-index: 1;
+   min-height: fit-content;
+   max-height: 400px;
+   overflow-y: scroll;
+   background-color: white;
+   text-decoration: none;
+}
+.search_box_homepage::-webkit-scrollbar{
+   display: none;
+}
+.search_box_card_homepage{
+   display: flex;
+   border-top: 0.5px solid rgb(213, 213, 213);
+   text-decoration: none;
+}
+#search_box_card_text_homepage:hover{
+   text-decoration: none;
+}
+#search_box_card_name_homepage:hover{
+   text-decoration: none;
+}
+.search_box_card_homepage div{
+   margin:5px;
+}
+.search_box_card_img_homepage{
+  max-width: 60px;
+}
+.search_box_card_img_homepage img{
+   width: 60%;
+
+   border-radius: 50%;
+}
+.search_box_card_name_homepage{
+   display: block;
+   font-family: "aktiv-grotesk";
+   font-size: 13px;
+   line-height: 21px;
+   font-weight: 700;
+   text-align: left;
+   color: black;
+}
+
+.search_box_card_description_homepage{
+   display: block;
+   font-family: "aktiv-grotesk";
+   font-size: 13px;
+   line-height: 21px;
+   font-weight: 400;
+   color: rgb(112, 108, 100);
+   text-align: left;
+   text-decoration: none;
+}
+.search_box_card_description_homepage:hover{
+   text-decoration: none;
 }

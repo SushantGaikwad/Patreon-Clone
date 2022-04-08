@@ -22,7 +22,7 @@ const Navbar = () => {
         <div className={style.search_icon_1}><IoSearchOutline color='grey'/>
         </div>
             <div className={style.search_1}>
-            <input id={style.search_box_1} type="search" placeholder=' &nbsp;&nbsp; Find a creator'/>
+            <input id={style.search_box_1} type="search" placeholder='Find a creator'/>
             </div>
         </div>
        <div className={style.right_options_1}>

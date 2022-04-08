@@ -38,8 +38,10 @@
    border: none;
 }
 .search_icon_1{
-    margin-left:100px;
-    margin-top:22px;
+    margin-left:220px;
+    margin-top:24px;
+    position: absolute;
+    z-index: 1;
 }
 .right_options_1{
     /* border:1px solid red; */

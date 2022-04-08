@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import  { useState } from "react";
 import './SlideShow.css';
 
@@ -6,6 +6,31 @@ import './SlideShow.css';
 
 const SlideShow = () => {
     const [image, setImage] = useState("");
+  let images = ["https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/podcasters.png",
+"https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/videocreators.png",
+"https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/musicians.png",
+"https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/visualartists.png"];
+
+    useEffect(()=>{
+      slideshow();
+    },[]) 
+    let id;
+    const slideshow = () => {
+      let count = 0;
+      var slideshowElement = document.getElementById("imgtag");
+      if (count === 0) {
+        slideshowElement.src = images[0];
+      }
+      var i = 1;
+      id = setInterval(function () {
+        if (i === images.length) {
+          i = 0;
+        }
+        slideshowElement.src = images[i];
+        i++;
+      }, 2000);
+    }
+
     return (
      
       <div id="main">

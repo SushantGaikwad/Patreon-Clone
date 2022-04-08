@@ -4,8 +4,18 @@ import "./HomePage.css";
 import { IoSearchOutline } from "react-icons/io5";
 import { MdArrowForwardIos } from "react-icons/md";
 import { Link } from "react-router-dom";
+import styled from "styled-components"
+
+const LinkWrapper = styled(Link)`
+  color: black;
+  text-decoration:none
+`;
+
+
 const HomePage = () => {
   const [modal, setModal] = useState(false);
+  const[searchData, setSearchData] =useState([]);
+  let searchBoxref = useRef();
 
   const toggleModal = () => {
     setModal(!modal);
@@ -29,6 +39,32 @@ const HomePage = () => {
       document.removeEventListener("mousedown", handler);
     };
   },[]);
+
+
+  useEffect(() => {
+    let handler = (event) => {
+      if (!searchBoxref.current.contains(event.target)) {
+        setSearchData([]);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
+
+  const handleSearch = (key) => {
+    console.log(key);
+    fetch(`http://localhost:3004/creators?q=${key}`)
+      .then((res) => res.json())
+      .then((res) => {
+        // console.log(res);
+        setSearchData(res);
+        console.log(searchData);
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <>
@@ -103,7 +139,35 @@ const HomePage = () => {
             type="search"
             aria-label="search"
             placeholder="Find a Creator You Love"
-          />
+            onChange={(e)=>handleSearch(e.target.value)}
+          />          
+          {searchData ? (
+            <div ref={searchBoxref} className="search_box_homepage">
+              {searchData.map((item, index) => {
+                return (
+                  <div key={index}>
+                    <LinkWrapper to={`/${item.username}`}>
+                      <div className="search_box_card_homepage">
+                        <div className="search_box_card_img_homepage">
+                          <img src={item.img} alt="creator_photo" />
+                        </div>
+                        <div id="search_box_card_text_homepage">
+                          <span className="search_box_card_name_homepage">
+                            {item.name}
+                          </span>
+                          <span className="search_box_card_description_homepage">
+                            {item.description}
+                          </span>
+                        </div>
+                      </div>
+                    </LinkWrapper>
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+            ""
+          )}
           <button className="btn-2" type="search">
             Search
           </button>
