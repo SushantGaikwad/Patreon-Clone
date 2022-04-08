@@ -32,6 +32,7 @@ import {Routes,Route} from 'react-router-dom'
 function App() {
   return (
    <>
+<<<<<<< HEAD
    <React.Fragment>
       <Routes>
            <Route path='/' element ={<Login />}/>
@@ -43,6 +44,15 @@ function App() {
     {/* <Nav />  
     <MblogNav />
     <Mblog /> */}
+=======
+   {/* <React.Fragment>
+
+</React.Fragment> */}
+    <Nav />  
+    <MblogNav />
+    <Mblog />
+    {/* <Login /> */}
+>>>>>>> 9c61d884c5aab311937945bd97e11095ee765da7
   
    </>
   );

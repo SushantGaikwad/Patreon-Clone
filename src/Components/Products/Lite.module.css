@@ -1,0 +1,358 @@
+@font-face {
+    font-family: "aktiv-grotesk";
+    src: url(../fonts/AktivGrotesk-Regular.ttf);
+}
+@font-face {
+    font-family: "Walsheim";
+    src: url(../fonts/GTWalsheimPro-Medium.ttf);
+}
+
+.div1{
+    width: 100%;
+    height: 500px;
+}
+
+.div1_background{
+    height: 650px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;   
+}
+.div1_img_contents{
+    position: absolute;
+    width: 65%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 40px;
+    /* z-index: 1; */
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top:50px;
+}
+.div1_img_contents div{
+    color: rgb(255, 255, 255);
+    margin: auto;
+}
+.div1_span >  span{
+    display: block;
+    text-align: left;
+     margin-bottom: 15px;
+}
+
+.div1_img_contents img{
+    width: 570px;
+}
+.span1{
+    font-family: "aktiv-grotesk" ;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+.span2{
+    font-family: "Walsheim";
+    font-size: 70px;
+    font-weight: 700;
+}
+.span3{
+    font-family: "aktiv-grotesk" ;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    vertical-align: baseline;
+    letter-spacing: normal;
+    word-spacing: 0px;
+    margin: 0px 0px 16px;
+    text-decoration: none solid rgb(255, 255, 255);
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.span4_button{
+    background-color: rgb(255, 66, 77);
+    font-family: "aktiv-grotesk" ;
+    font-size: 20px;
+    font-weight: 590;
+    border-radius: 25px;
+    padding: 15px 24px;
+    display: grid;
+    width: 170px;
+    }
+
+    .div2_image_contents{
+        display: grid;
+        width: 60%;
+        grid-template-columns: repeat(2,1fr);
+        gap: 50px;
+        margin: auto;
+        margin-top: 300px;
+        text-align: left;
+    }
+
+    .div2_image_contents img{
+        width: 570px;
+    }
+
+    
+    .div2_contents div{
+        margin: 30px 0;
+    }
+    .div2_contents span{
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+    
+    .div2_contents .span_heading{
+        color: rgb(255, 155, 122);
+        font-size: 24px;
+        line-height: 31.5px;
+        font-family: "aktiv-grotesk";
+        font-weight: 500;
+        text-decoration: none solid rgb(255,155,122);
+    
+    }
+
+    .div2_contents > .main_heading{
+        font-size: 40px;
+        font-family: "Walsheim";
+        line-height: 42.5px;
+        font-weight: 700;
+        text-decoration: none solid rgb(36,30,18);
+        
+    }
+
+    .div2_contents .span_text{
+        font-size: 18px;
+        line-height: 24px;
+        font-family: "aktiv-grotesk" ;
+        font-weight: 400;
+        text-decoration: none solid rgb(112,108,100);
+    }
+
+    .div3{
+        width: 60%;
+        height: 500px;        
+        position: relative;
+        left: 0;
+        right: 0;
+        margin: auto;
+        margin-top: 100px;
+    }
+    .Background_leftImage{
+        position: absolute;
+        bottom: 0rem;
+        left: 0;
+    }
+    .Background_rightImage{
+        position: absolute;
+        top: -3rem;
+        right: 0;
+    }
+    .div3_background{
+        width: 100%;
+        height: 500px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;   
+    }
+    .div3_image_contents{
+        position: absolute;
+        width: 90%;
+        display: flex;
+        gap: 40px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        margin-top:50px;
+    }
+    .div3_image_contents_span{
+        width: 60%;
+        margin-left: 50px;
+    }
+
+    .div3_text{        
+        color: rgb(36, 30, 18);
+        display: block;
+        font-size: 38px;
+        font-family: "Walsheim";
+        font-weight: 700;
+        line-height: 42.5px;
+        text-align: left;
+    }
+    .div3_image_contents_img{
+        width: 30%;
+    }
+
+    .div3_name{
+        color: rgb(36, 30, 18);
+        display: block;
+        width: 200px;
+        margin: 0 auto;
+        font-size: 20px;
+        letter-spacing: 1.8px;
+        line-height: 24px;
+        font-weight: 700;
+        font-family:  "aktiv-grotesk";
+    }
+    .div3_creator{
+        color: rgb(36, 30, 18);
+        font-size: 20px;
+        font-family:  "aktiv-grotesk";
+        line-height: 24px;
+        font-weight: 400;
+    }
+
+    .div4{
+        position: relative;
+        width: 55%;
+        padding: 50px;
+        /* background-color: aqua; */
+        margin: auto;
+    }
+    .div4_heading{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .heading_text{
+        font-size: 42px;
+        font-family: "Walsheim";
+        line-height: 52.5px;
+        font-weight: 700;
+        color: rgb(36, 30, 18);
+    }
+
+    .compare_button_lite{
+        color: rgb(255, 155, 122);
+        font-family: "aktiv-grotesk" ;
+        font-size: 18px;
+        line-height: 16px;
+        padding: 12.5px 24px;
+        font-weight: 500; 
+        background-color: rgb(250, 240, 237);
+        border-radius: 20px;        
+    }
+
+    .div4_cards{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);        
+        text-align: left;
+        gap: 40px;
+        margin-top: 50px;
+    }
+
+    .div4_svg_icon_lite{
+        overflow: hidden;
+        stroke: #f76c3d;
+        left: 0;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        fill: transparent;
+        margin-bottom: 20px;
+    }
+    
+    .div4_cards_heading_lite{
+        display: block;
+        text-align: left;
+        font-family: "Walsheim";
+        font-size: 28px;
+        line-height: 32.5px;
+        color: rgb(255, 155, 122);
+        text-decoration: none solid;
+        font-weight: 600;
+    }
+
+    .div4_cards_text{
+        font-family: "aktiv-grotesk";
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 500;
+        text-decoration: none solid rgb(36, 30, 18);
+    }
+
+    .div5{
+        width: 40%;
+        margin: 6% auto;
+
+    }
+    .div5_text{
+        font-family: "Walsheim";
+        font-size: 50px;
+        line-height: 52.5px;
+        margin: 32px 0 0;
+        text-decoration: none solid rgb(36,30,18);
+        font-weight: 700;
+        display: block;
+        text-align: center;
+    }
+
+    .div5_button{
+        background-color: rgb(254, 48, 59);
+        font-family: "aktiv-grotesk" ;
+        font-size: 20px;
+        font-weight: 550;
+        line-height: 16px;
+        border-radius: 20px;
+        padding: 15px 24px;
+        text-decoration: none solid;
+        color: rgb(255,255,255);
+        display: block;
+        text-align: center;
+        margin: 40px auto;
+        width: 200px;
+    }
+
+    @media(max-width: 960px){
+        .div1_background{
+            height: 430px;
+        }
+            .div2_image_contents,  .div3_image_contents{
+                display: flex;
+                flex-direction: column;
+            }
+            .div4_cards{
+                grid-template-columns: repeat(2,1fr);
+            }
+            .div4_heading{
+                flex-direction: column;
+                text-align: center;
+            }
+            .compare_button{
+                display: block;
+                width: 200px;
+                margin: 30px auto;
+            }
+            .div3-image-contents-img{
+                margin: auto;
+                width: 400px;
+                border: 1px solid black;
+            }
+            .div3_text{
+                font-size: 18px;
+                line-height: 20px;
+                width: 400px;
+            }
+            .div3_background{
+                height: 500px;
+            }
+            .div1_img_contents img{
+                width: 400px;
+            }
+
+            .span2{
+                font-family: "Walsheim";
+                font-size: 30px;
+                font-weight: 700;
+            }
+            .div2_image_contents{
+                margin-top: 100px;
+            }
+
+    }
