@@ -115,7 +115,7 @@ const Navbar = () => {
 
         {/* for search */}
         <div className='right_flex'>
-        <div className="search-icon-1"><IoSearchOutline color='grey'/></div>
+        <div className="search-icon"><IoSearchOutline color='grey'/></div>
             <div className="search">
                 {/* <SearchIcon/> */}
                

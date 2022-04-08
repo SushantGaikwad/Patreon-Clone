@@ -28,6 +28,7 @@ const Creators = () => {
              <div className="share_follow">
                  <div>Share</div>
                  <div>Follow</div>
+                 
              </div>
 
           </div>
