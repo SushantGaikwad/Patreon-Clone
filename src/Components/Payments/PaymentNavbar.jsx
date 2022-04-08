@@ -9,6 +9,7 @@ import { AiOutlineWechat } from "react-icons/ai";
 import { IoLocationOutline,IoCubeSharp,IoSearchOutline,IoChevronDown} from "react-icons/io5";
 
 
+
 const Navbar = () => {
   return (
       <>

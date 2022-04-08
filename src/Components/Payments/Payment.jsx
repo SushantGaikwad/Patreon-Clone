@@ -3,6 +3,14 @@ import PaymentNavbar from './PaymentNavbar.jsx';
 import './Payment.css';
 import { BsPaypal,BsLock } from "react-icons/bs";
 
+
+const handleDollar = (key) =>{
+  let dollar = document.getElementById("dollar");
+  let dollar1 = document.getElementById("dollar1");
+  dollar.innerText =key;
+  dollar1.innerText =key;
+}
+
 const Payment = () => {
   return (
     <>
@@ -19,7 +27,7 @@ const Payment = () => {
                 <div className='left_heading_1'>Choose what <br /> you pay</div> 
 
                 <div class="dollar_currency">$</div>
-                <input type="text" name="" id="input_1_payment"  max="1000"/>
+                <input type="text" name="" id="input_1_payment" onChange={(e) => handleDollar(e.target.value)}  max="1000"/>
             </div>
             <br /><br />
 
@@ -33,25 +41,25 @@ const Payment = () => {
                 </div>
                 <br />
                 <form action="">
-                  <label htmlFor="">Name</label> <br />
+                  <label className='label_text' htmlFor="">Name</label>
                   <input type="text" name="" className="input_for_text" placeholder='Name on Card' />
                   <br /> <br />
-                  <label htmlFor="">Card Number</label> 
+                  <label className='label_text' htmlFor="">Card Number</label> 
                   <input type="text" name="" className="input_for_text" placeholder='Credit Card Number' />
                   <br /> <br/>
                   
                   <div className="for_cvv_input">
                     <div className="for_expiration">
-                    <label htmlFor="">Expiration</label> <br />
+                    <label className='label_text'l htmlFor="">Expiration</label>
                     <input type="text" name="" className="input_for_text" placeholder='09/29' />
 
                     </div>
                     <div className="for_cvv">
-                    <label htmlFor="">CVV</label> <br />
+                    <label className='label_text' htmlFor="">CVV</label>
                     <input type="text" name="" className="input_for_text" placeholder='123' />
                     </div>
                     <div className="for_postal_code">
-                    <label htmlFor="">Postal Code</label> <br />
+                    <label className='label_text' htmlFor="">Postal Code</label> 
                     <input type="text" name="" className="input_for_text" placeholder='12345' />
                     </div>
                    
@@ -77,22 +85,22 @@ const Payment = () => {
           </div>
           <div className="right_payment_box">
             <div className="left_heading_1">SUMMARY</div> <br />
-            <div className="left_heading_1">Custom Pledge  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; USD $5.00*</div>
+            <div className="left_heading_1" >Custom Pledge  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; USD $ <span id="dollar"></span>*</div>
             <br /><hr /> <br />
-            <div className="left_heading_1">May 1st Charge  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; USD $5.00*</div>
+            <div className="left_heading_1" >May 1st Charge  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; USD $ <span id="dollar1"></span>*</div>
             <br /><hr />
             <div className="left_heading_1">Currency &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; USD</div>
-            <div className="change_right">Change</div>
+            <div className="change_right" >Change</div>
             <br /><hr />
             <div className="main_content_right">
               <div className="left_heading_1">
               Renews automatically on May 1 at 12am Pacific Time
               </div> <br />
               <div className="right_para_1">
-              You can cancel auto-renew at any time or edit your payment. By making this payment, you agree to <br/>Patreon's Terms of Use.
+              You can cancel auto-renew at any time or edit your payment. By making this payment, you agree to <br/> <span style={{textDecoration:"underline" , cursor:"pointer"}}>  Patreon's Terms of Use.</span>
               </div> <br />
               <div className="right_para_2">
-              *Depending on your location your bank might charge an additional foreign transaction fee for your membership to<br /> this Creator. 
+              *Depending on your location your bank might charge an additional foreign transaction fee for your membership to this Creator. 
               </div>
             </div>
             <hr />

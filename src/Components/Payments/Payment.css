@@ -12,6 +12,10 @@
     font-weight:700;
     color:rgb(36,30,18);
 }
+.label_text{
+    display: block;
+    text-align: left;
+}
 .main_payment_page{
     /* border:1px solid black; */
     margin:auto;
@@ -37,6 +41,8 @@
 }
 #input_1_payment{
     width:20%;
+    font-size: 24px;
+    font-weight: bold;
 }
 .dollar_currency{
     margin-left:3.5%;
@@ -117,8 +123,6 @@
     transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
     border-radius: 4px;
     font-size: 1rem !important;
-    background-color: rgb(250, 233, 234);
-    border-color: rgb(204, 50, 63);
     margin-top:2px;
     
 }
@@ -216,9 +220,11 @@
 .change_right{
     color:rgb(204, 50, 63);
     text-decoration:underline rgb(204,50,63);
+    text-align: left;
+    cursor: pointer;
 }
 .right_para_3{
-    margin-left:25%;
+    margin:auto;
 }
 .left_heading_1{
     color: rgb(36, 30, 18);
@@ -243,3 +249,8 @@
     font-size: 1rem !important;
     line-height: 1.5 !important;
 }
+
+.right_para_1, .right_para_2{
+    text-align: left;
+}
+
