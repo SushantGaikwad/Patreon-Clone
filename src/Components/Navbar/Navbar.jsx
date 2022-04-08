@@ -22,6 +22,7 @@ import {
 
 const LinkWrapper = styled(Link)`
   color: black;
+  text-decoration:none
 `;
 
 const Navbar = () => {
@@ -107,7 +108,7 @@ const Navbar = () => {
           <div className="dropdown_title">
             For Creators{" "}
             <div className="drop-1">
-              <BsChevronDown color="black" />
+              <IoChevronDown color="black" />
             </div>
           </div>
           <div className="dropdown-content">
@@ -226,7 +227,7 @@ const Navbar = () => {
           <input
             id="search-box"
             type="search"
-            placeholder=" &nbsp;&nbsp; Find a creator"
+            placeholder="Find a creator"
             onChange={(e) => handleSearch(e.target.value)}
           />
 

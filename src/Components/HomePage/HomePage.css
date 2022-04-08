@@ -52,23 +52,23 @@
     display: block;
     width: 80%;
     /* border: 1px solid white; */
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
     
   }
+
   .animated-gif{
     display: block;
     position: absolute;
   }
-  .transform-img:hover{
-    position:relative;
-    top:-25px;
-    left:-35px;
-    width:520px;
-    height:auto;
-    display:block;
-    /* transition-delay: 100ms; */
-    /* z-index:999; */
-    transition: 100ms;
+  .animated-gif:hover img{
+    transform: scale(1.1);
   }
+
+  .animated-gif:hover  svg{
+      transform: scale(1.5);
+  }
+
   .play-btn-span{
     display: block;
     margin: auto;
@@ -96,7 +96,9 @@
   }
   .play-btn-svg{
     fill: #FE424C;
+    transform: scale(1);
   }
+
   .heading-1 {
     color: #ff424d;
     width: 500px;
@@ -148,13 +150,12 @@
   }
   
   .searchbar {
-    width: 70%;
-    margin-left: 13%;
-    padding-left: 40px;
+    width: 55%;
+    padding-left: 60px;
+    margin: 35px auto  ;
     border:none;
     outline:none;
     height: 48px;
-    margin-top: 35px;
     border-radius: 30px;
     background-color: #f5f4f2;
     border: none;
@@ -364,14 +365,14 @@
     font-size: 16px;
     border-radius: 25px;
     color: white;
-    margin-left: 40%;
+    margin-left: 0;
     border: 1px solid #ff424d;
     cursor:pointer;
   }
   .search-icon-home{
     position:absolute;
     margin-top:50px;
-    margin-left:14%;
+    margin-left:20px;
   }
 
   .modal, .overlay{

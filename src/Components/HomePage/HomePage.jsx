@@ -10,7 +10,11 @@ const HomePage = () => {
   const toggleModal = () => {
     setModal(!modal);
   };
+
+  
+
   let videoref = useRef();
+  
 
   useEffect(() => {
     let handler = (event) => {
@@ -91,14 +95,14 @@ const HomePage = () => {
         <div className="div-2">
           <h2 className="heading-2">Search the 200,000+ creators on Patreon</h2>{" "}
           <br />
-          <div className="search-icon-home">
+          <span className="search-icon-home">
             <IoSearchOutline color="grey" />
-          </div>
+          </span>
           <input
             className="searchbar"
             type="search"
             aria-label="search"
-            placeholder="&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;Find a Creator You Love"
+            placeholder="Find a Creator You Love"
           />
           <button className="btn-2" type="search">
             Search
@@ -301,7 +305,7 @@ const HomePage = () => {
           <div className="mydiv9child1">
             <h1>Are you ready to take back control?</h1>
             <Link to="/login">
-              <button>Get Started</button>
+              <button className="btn-1">Get Started</button>
             </Link>
           </div>
         </div>
