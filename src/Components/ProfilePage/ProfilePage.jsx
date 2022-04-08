@@ -71,7 +71,6 @@ const ProfilePage = () => {
             
         </div>
         <br />
-        <Footer/>
     </div>
   )
 }
