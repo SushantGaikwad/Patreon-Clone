@@ -38,9 +38,10 @@ const Navbar = () => {
     document.addEventListener("mousedown", handler);
 
     return () => {
+      setSearchData([]);
       document.removeEventListener("mousedown", handler);
     };
-  });
+  },[]);
 
   const handleSearch = (key) => {
     console.log(key);

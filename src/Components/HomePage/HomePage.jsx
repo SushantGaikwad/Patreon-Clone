@@ -50,9 +50,10 @@ const HomePage = () => {
     document.addEventListener("mousedown", handler);
 
     return () => {
+      setSearchData([]);
       document.removeEventListener("mousedown", handler);
     };
-  });
+  },[searchData]);
 
   const handleSearch = (key) => {
     console.log(key);

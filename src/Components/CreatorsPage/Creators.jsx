@@ -6,37 +6,40 @@ import { useParams } from 'react-router-dom';
 
 
 const Creators = () => { 
-    const [creator, setCreator] = useState([]);
+    window.scrollTo(0, 0);
+    const [creator, setCreator] = useState(null);
     const {username} = useParams();
+    console.log(username);
 
     useEffect(()=>{
         fetch(`http://localhost:3004/creators?q=${username}`)
         .then((res) => res.json())
-        .then((res) => {
-          setCreator(res);
-        //   console.log(res);
-        })
-    },[])
+        .then((res) => setCreator(res));
 
-    console.log(creator);
-        
+        return (setCreator(null));
+    },[username]);
+
+    console.log(creator);    
+    
+
 
   return (
+      creator &&
       <>
       <CreatorNavbar/>
        <br /><br /> <br />
       <div className='content'>
-          <div className="img-bg" style={{backgroundImage: `url(https://c10.patreonusercontent.com/4/patreon-media/p/campaign/2243773/8f4401190d61426daa332c669a0f58c7/eyJ3IjoxOTIwLCJ3ZSI6MX0%3D/2.jpg?token-time=1651622400&token-hash=Bxoyl_yfvkxQnZCPRHzusNYljysWg2iuhde34POMj_U%3D)`}}>
+          <div className="img-bg" style={{backgroundImage: `url(${creator[0].background})`}}>
               {/* <img src="https://c10.patreonusercontent.com/4/patreon-media/p/campaign/2243773/8f4401190d61426daa332c669a0f58c7/eyJ3IjoxOTIwLCJ3ZSI6MX0%3D/2.jpg?token-time=1651622400&amp;token-hash=Bxoyl_yfvkxQnZCPRHzusNYljysWg2iuhde34POMj_U%3D" alt="" /> */}
-              <div className="icon-img" style={{backgroundImage: `url(https://c10.patreonusercontent.com/4/patreon-media/p/campaign/2243773/1a031bfd94cd4fc09f754cad4e89decc/eyJ3IjoyMDB9/1.jpg?token-time=2145916800&token-hash=Hi37ycjyu01ztnrsIC3lmGUaYuo6AsLIfRQXvHdRN8k%3D)`}}>
+              <div className="icon-img" style={{backgroundImage: `url(${creator[0].img})`}}>
 
               </div>
           </div>
           <div className="about_creator">
               <h3>{creator[0].name}</h3>
-              <p color="grey"> is creating Movie and Web Series Reviews</p>
+              <p color="grey"> {creator[0].description}</p>
               <br />
-             <h2>6</h2>
+             <h2>{creator[0].patrons}</h2>
              <div className='small-title'>PATRONS</div> <br />
              <div className="button-patron">
                  Become a Patron
@@ -50,7 +53,7 @@ const Creators = () => {
           </div>
           <br />
           <div className="about_creator_info">
-              <h1>About Pratik Borade</h1>
+              <h1>About {creator[0].name}</h1>
               <div className="text-about">
                   <span >संक्षेप में जानकारी -</span>
                   <br /> <br />
