@@ -62,7 +62,7 @@ const Payment = () => {
                     </div>
                 </form>
                 <div className="for_paypal">
-                <input type="radio" name="" class="radio_button_2" />
+                <input type="radio" name="" class="radio_button_2" /><br />
                    <button>Pay using Paypal <BsPaypal color="blue"/></button>
                 </div>
                 <div className="secure_checkout">
