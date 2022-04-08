@@ -15,9 +15,10 @@ function App() {
    <>
    <React.Fragment>
       
-      {/* <Register /> */}
-      < Login />
-      
+     < Routes>      
+     <Route path='/' element ={<Register />} />
+     <Route path="/login" element={< Login /> } />
+      </Routes>
      
       {/* <Register /> */}
    </React.Fragment>

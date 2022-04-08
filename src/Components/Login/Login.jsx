@@ -13,10 +13,10 @@ export const Login = () => {
   const navigate = useNavigate()
 
   const onSubmit = data => {
-    alert(JSON.stringify(data));
+    alert("Login Successfull !");
     navigate('../Register/Register.jsx')
-
   }
+  
   const email = watch('email')
   const password = watch('password')
   const isValid = email&&password

@@ -21,7 +21,7 @@ export const Register = () => {
 //   const{currentUser} = useSelector((state) => state.user);
   
 
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
 
 //   useEffect(() => {
 //       if(currentUser){
@@ -37,7 +37,9 @@ export const Register = () => {
 
 // const {email,password,displayName,emailReconfirm} = state;
 
-  const onSubmit = data => alert(JSON.stringify(data));
+  const onSubmit = data => {
+    navigate('/login')
+    alert("Signup Successfull !")};
   const email1 = watch('email')
   const another_email = watch('another_email')
   const isValid = email1&&another_email
