@@ -24,7 +24,7 @@
 }
 .options{
     margin-top:20px;
-    margin-left:20px;
+    margin-left:0;
     display:flex;
     gap:35px;
     /* justify-content: center; */

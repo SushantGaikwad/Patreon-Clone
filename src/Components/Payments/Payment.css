@@ -1,0 +1,14 @@
+.pay-start-heading{
+    width:50%;
+    height:50px;
+    /* margin-top:200px; */
+    /* border:1px solid red; */
+    margin:auto;
+    padding:20px;
+    text-align:center;
+}
+.title-pay{
+    font-size:1.5rem;
+    font-weight:700;
+    color:rgb(36,30,18);
+}
