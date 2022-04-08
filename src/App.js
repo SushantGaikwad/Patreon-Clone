@@ -13,16 +13,20 @@ import {Login} from './Components/Login/Login';
 import Creators from './Components/CreatorsPage/Creators';
 import Payment from './Components/Payments/Payment';
 import ProfilePage from './Components/ProfilePage/ProfilePage';
+import { Register } from './Components/Register/Register';
 
+
+
+
+ 
 function App() {
   return (
     <div className="App">
-      <Router>
        <Navbar />
         {/* <HomePage/> */} 
        
         <Routes>
-        <Route path="/" element={<ProfilePage/>}/>
+        <Route path="/" element={<HomePage/>}/>
         <Route path='/lite' element={<Lite />} />
         <Route path='/pro' element={<Pro />} />
         <Route path='/premium' element={<Premium />} />
@@ -31,12 +35,16 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/:username" element={<Creators />} />
         <Route path="/payment" element={<Payment />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/creators" element={<HomePage />} />
+        <Route path="/profile" element={<ProfilePage />} />       
+
         
         </Routes>
         <Footer/>
-      </Router>
-      
-    </div>
+   
+     
+</div>
   );
 }
 

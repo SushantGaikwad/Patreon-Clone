@@ -2,6 +2,9 @@ import React from 'react';
 import PaymentNavbar from './PaymentNavbar.jsx';
 import './Payment.css';
 import { BsPaypal,BsLock } from "react-icons/bs";
+import { Link } from 'react-router-dom';
+import Navbar from '../Navbar/Navbar.jsx';
+
 
 
 const handleDollar = (key) =>{
@@ -11,11 +14,16 @@ const handleDollar = (key) =>{
   dollar1.innerText =key;
 }
 
+const handlePayment =() =>{
+  alert("Thank You for Supporting !")  
+}
+
 const Payment = () => {
+  window.scrollTo(0, 0);
   return (
     <>
     
-    <PaymentNavbar/> <br /><br /><br /><br />
+    <Navbar/> <br /><br /><br /><br />
     <div className="pay-start-heading">
         <div className="title-pay">Complete your monthly payment to Pratik Borade</div>
         <br/> <br />
@@ -66,7 +74,7 @@ const Payment = () => {
 
                   </div>
                   <div className="pay_with_card">
-                      <button disabled="">Pay with card</button>
+                  <Link to="/profile"><button disabled="" className="card_button" onClick={handlePayment}>Pay with card</button></Link>
                     </div>
                 </form>
                 <div className="for_paypal">

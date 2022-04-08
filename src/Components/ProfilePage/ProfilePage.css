@@ -32,13 +32,21 @@
     text-align:center;
 }
 .circle_profile{
-    /* border:1px solid black; */
-    margin:auto;
-    margin-top:10px;
+    display: block;
+    border: 4px solid rgb(255, 255, 255);
+    /* border-radius: 50%; */
+    background-clip: padding-box;    
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin-top: 15px;
     width:70px;
     height:70px;
+    margin-left:150px;
     border-radius:100%;
-    background:url(https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80)
+    background-image:url("https://static.showit.co/1600/KY4rr175TueWGUoP7Xv_XA/128788/professional_branding_mens_portraits_frisco_texas_korey_howell_photography_group_corporate.jpg");
+    cursor: pointer;
 }
 .name_user{
     font-size:0.875rem;
@@ -105,6 +113,7 @@
     width:95%;
     padding:10px;
     border:2px solid rgb(229, 227, 221);
+    text-align: left;
 }
 .post_of_creators>span{
     color:rgb(227,108,9);

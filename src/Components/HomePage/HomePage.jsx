@@ -53,7 +53,7 @@ const HomePage = () => {
       setSearchData([]);
       document.removeEventListener("mousedown", handler);
     };
-  },[searchData]);
+  },[]);
 
   const handleSearch = (key) => {
     console.log(key);

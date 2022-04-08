@@ -3,11 +3,12 @@ import ProfilePageNavbar from './ProfilePageNavbar';
 import './ProfilePage.css';
 import Footer from '../Footer/Footer';
 import { IoChevronDown} from "react-icons/io5";
+import Navbar from '../Navbar/Navbar';
 
 const ProfilePage = () => {
   return (
     <div>
-        <ProfilePageNavbar/> <br /><br /> <br /><br /><br /><br />
+        <Navbar/> <br /><br /> <br /><br /><br /><br />
         <div className="style_main_page">
             <div className="style_first_half">
                 <div className="style_profile_image_section">

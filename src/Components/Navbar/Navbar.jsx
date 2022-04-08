@@ -19,6 +19,7 @@ import {
   IoSearchOutline,
   IoChevronDown,
 } from "react-icons/io5";
+import { isLogin } from "../../ContextAPI/AuthContext";
 
 const LinkWrapper = styled(Link)`
   color: black;
@@ -28,6 +29,7 @@ const LinkWrapper = styled(Link)`
 const Navbar = () => {
   const [searchData, setSearchData] = useState([]);
   let searchBoxref = useRef();
+  const{isAuth, LoginAuth} = React.useContext(isLogin);
 
   useEffect(() => {
     let handler = (event) => {
@@ -54,6 +56,9 @@ const Navbar = () => {
       })
       .catch((err) => console.log(err));
   };
+
+console.log("isAUth: ", isAuth);
+
   return (
     <div className="navbar">
       <div className="logo">
@@ -115,64 +120,64 @@ const Navbar = () => {
           <div className="dropdown-content">
             <br />
             <div className="inside_dropdown">
-              <Link to="/podcasters">
+              <a href="https://www.patreon.com/c/podcasts">
                 <BiPodcast color="blue" /> &nbsp; &nbsp; Podcasters
-              </Link>
+              </a>
             </div>
             <div className="inside_dropdown">
-              <a href="#">
+              <a href="https://www.patreon.com/c/video">
                 <BsCameraVideo color="blue" /> &nbsp; &nbsp;Video creators
               </a>
             </div>
             <div className="inside_dropdown">
-              <a href="#">
+              <a href="https://www.patreon.com/c/music">
                 <FaGuitar color="blue" /> &nbsp;&nbsp; Musicians
               </a>
             </div>
             <div className="inside_dropdown">
-              <a href="#">
+              <a href="https://www.patreon.com/c/visualartists">
                 <BsBrush color="blue" />
                 &nbsp;&nbsp;Visual Artist
               </a>
             </div>
             <div className="inside_dropdown">
-              <a href="#">
+              <a href="https://www.patreon.com/c/communities">
                 <AiOutlineWechat color="blue" />
                 &nbsp;&nbsp;Communities
               </a>
             </div>
             <div className="inside_dropdown">
-              <a href="#">
+              <a href="https://www.patreon.com/c/writing">
                 <BsPencil color="blue" />
                 &nbsp;&nbsp;Writers and Journalists
               </a>
             </div>
             <div className="inside_dropdown">
-              <a href="#">
+              <a href="https://www.patreon.com/c/gaming">
                 <BsController color="blue" />
                 &nbsp;&nbsp;Gaming Creators
               </a>
             </div>
             <div className="inside_dropdown">
-              <a href="#">
+              <a href="https://www.patreon.com/c/nonprofits">
                 <BsHeart color="blue" />
                 &nbsp;&nbsp;NonProfits
               </a>
             </div>
             <div className="inside_dropdown">
-              <a href="#">
+              <a href="https://www.patreon.com/c/tutorials-and-education">
                 <FaGraduationCap color="blue" />
                 &nbsp;Tutorial and Educations
               </a>
             </div>
             <div className="inside_dropdown">
-              <a href="#">
+              <a href="patreon.com/c/local-businesses">
                 <IoLocationOutline color="blue" />
                 &nbsp;&nbsp;Local Businesses
               </a>
             </div>
             <div className="inside_dropdown">
-              <a href="#">
+              <a href="https://www.patreon.com/explore">
                 <IoCubeSharp color="blue" />
                 &nbsp;&nbsp;Creator of all Kinds
               </a>
@@ -181,11 +186,11 @@ const Navbar = () => {
         </div>
 
         {/* for pricing */}
-        <div className="Pricing">Pricing</div>
+        <a className="atag_decoration" href="https://www.patreon.com/pricing"><div className="Pricing">Pricing</div></a>
         {/* <div>Resources</div> */}
         <div class="dropdown">
           <div className="dropdown_title">
-            <a href="">
+            <a className="atag_decoration" href="">
               Resources{" "}
               <div className="drop-2">
                 <IoChevronDown color="black" />
@@ -198,23 +203,23 @@ const Navbar = () => {
               <Link to="/blog">Blog</Link>
             </div>
             <div className="inside_dropdown">
-              <a href="#"> Creator Community</a>
+              <a href="https://discord.com/invite/patreon"> Creator Community</a>
             </div>
             <div className="inside_dropdown">
-              <a href="#">Events</a>
+              <a href="https://events.patreon.com/">Events</a>
             </div>
             <div className="inside_dropdown">
-              <a href="#">Patreon U</a>
+              <a href="https://blog.patreon.com/patreon-u">Patreon U</a>
             </div>
             <div className="inside_dropdown">
-              <a href="#">App Directory</a>
+              <a href="https://www.patreon.com/apps">App Directory</a>
             </div>
             <div className="inside_dropdown">
-              <a href="#">Help Center & FAQ</a>
+              <a href="https://support.patreon.com/hc/en-us">Help Center & FAQ</a>
             </div>
           </div>
         </div>
-        <div className="Pricing">Starter Kits</div>
+       <a href="https://www.patreon.com/themes/browse"> <div className="Pricing">Starter Kits</div></a>
       </div>
 
       {/* for search */}
@@ -260,14 +265,21 @@ const Navbar = () => {
             ""
           )}
         </div>
+        {!isAuth ? <>
         <Link to="/login">
         <span className="login-btn">
             Log In
         </span>
           </Link>
-        <Link  to="">
+          </>
+          : <span className="logout-btn" onClick={LoginAuth}>Log Out</span>
+        }
+        {!isAuth ?
+        <Link  to="/register">
           <span className="create"> Create on Patreon</span>
         </Link>
+        :<div className="div_circle_icon_navbar"></div>
+        }
       </div>
     </div>
   );

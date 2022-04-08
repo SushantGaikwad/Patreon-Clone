@@ -3,6 +3,9 @@ import './Creators.css'
 import CreatorNavbar from './CreatorNavbar.jsx';
 import CreatorFooter from './CreatorFooter.jsx';
 import { Link,useParams } from 'react-router-dom';
+import ProfileNavbar from '../ProfilePage/ProfilePageNavbar';
+import Navbar from '../Navbar/Navbar';
+
 
 
 const Creators = () => { 
@@ -26,7 +29,7 @@ const Creators = () => {
   return (
       creator &&
       <>
-      <CreatorNavbar/>
+      <Navbar />
        <br /><br /> <br />
       <div className='content'>
           <div className="img-bg" style={{backgroundImage: `url(${creator[0].background})`}}>

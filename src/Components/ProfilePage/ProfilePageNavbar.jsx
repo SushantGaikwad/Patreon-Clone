@@ -9,7 +9,7 @@ import { AiOutlineWechat } from "react-icons/ai";
 import { IoLocationOutline,IoCubeSharp,IoSearchOutline,IoChevronDown} from "react-icons/io5";
 
 
-const Navbar = () => {
+const ProfileNavbar = () => {
   return (
       <>
     <div className="navbar-3">
@@ -19,14 +19,14 @@ const Navbar = () => {
        
        
         <div className='right_flex-3'>
-        <div className="search-icon-3"><IoSearchOutline color='grey'/>
+        <div className="search-icon-profile"><IoSearchOutline color='grey'/>
         </div>
             <div className="search-3">
-            <input id='search-box-3' type="search" placeholder=' &nbsp;&nbsp; Find a creator'/>
+            <input id='search-box-profile' type="search" placeholder='Find a creator'/>
             </div>
         </div>
        <div className="right-options-3">
-           <div className="title_right_options_3"><a href="">Create on Patreon</a></div>
+           {/* <div className="title_right_options_3"><a href="">Log Out</a></div> */}
            <div className="div_circle_icon"></div>
        </div>
        
@@ -36,4 +36,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default ProfileNavbar

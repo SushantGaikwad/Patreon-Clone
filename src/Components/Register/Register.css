@@ -3,7 +3,7 @@
 .login{
     width: 30%;
     margin: 0 auto; 
-    /* justify-content: center; */
+    justify-content: center;
 }
 .login h2{
     text-align: center;
@@ -36,7 +36,7 @@
 .form input{
     width: 100%;
     font-weight: normal;
-    appearance: none;
+    /* appearance: none; */
     background: rgb(245, 244, 242);
     border: 1px solid rgb(229, 227, 221);
     box-shadow: none;
@@ -50,17 +50,13 @@
     font-size: 1rem !important
     
 }
-
-.space-y-8{
-    text-align: left;
-}
-
 .form .submit{
     cursor: default;
     border: 1px solid rgb(245, 244, 242);
     background-color:  rgb(245, 244, 242);;
     border-radius: 9999px;
     color: rgb(177, 172, 163) !important;
+    margin-top: 2rem;
 }
 .form .submit2{
     cursor: pointer;
@@ -104,16 +100,7 @@
 .frame-1:hover{
     background-color: rgb(245, 244, 242);
 }
-    .img-icon{
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin-top: 10px;
-        margin-right: 10px;
-    }
-    .frame-1, .frame-2, .frame-3{
-        cursor: pointer;
-    }
+    
 
 .frame-1 img{
     margin-right: 1rem;
@@ -147,4 +134,18 @@
     font-weight: 400;
     text-decoration: underline;
     font-size: 16px;
+}
+.form .terms{
+     text-align: center;
+     justify-content: center;
+     color: rgb(36, 30, 18);
+     font-size: 16px;
+}
+.terms a{
+    text-decoration: underline;
+    color: rgb(36, 30, 18);
+    font-size: 17px;
+}
+.text-left{
+    text-align: left;
 }
