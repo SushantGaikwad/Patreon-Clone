@@ -25,11 +25,11 @@ export const Register = () => {
 
   useEffect(() => {
       if(currentUser){
-        navigate('')
+        navigate('/register')
       }
-      return navigate('/')
+      return navigate('/register')
 
-  },[])
+  },[currentUser,navigate])
 
   
 
@@ -44,20 +44,20 @@ const {email,password,displayName,emailReconfirm} = state;
  
 
 
-  // const onSubmit = (e,data) =>{
-  //    e.preventDefault();
-  //   console.log(JSON.stringify(data))
+  
 
 
+const handelFinish =(e) => {
+    e.preventDefault();
+    if(email!==emailReconfirm){
+      return;
+    }
+    dispatch(registerInitiate(email,password,displayName))
+    setState({email:'',displayName:'',password:'',emailReconfirm:''})
 
-  //   if(email !== emailReconfirm){
-  //     return;
-  //   }
-  //   dispatch(registerInitiate(email,password,displayName));
-  //   setState({email:"",displayName:"",password:"",emailReconfirm:""})
-  //   console.log(state)
 
-  // }
+}
+ 
 
   const handelChange = (e) =>{
     const {name,value} =e.target;
@@ -128,7 +128,7 @@ const {email,password,displayName,emailReconfirm} = state;
 
        
         <div>
-          <input className={`submit ${isValid && `submit2`}`}  type="submit" value='Sign up' disabled = {isValid} />
+          <input className={`submit ${isValid && `submit2`}`} onClick ={handelFinish}  type="submit" value='Sign up' disabled = {!isValid} />
         </div>
         <p className='terms'>By signing up, you agree to Patreon's <a href="">Terms of Use</a>,<a href="">Privacy Policy</a>and<a href="">Cookie Policy</a> .</p>
         
