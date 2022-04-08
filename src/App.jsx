@@ -4,6 +4,7 @@ import {Login} from './Components/Login/Login'
 // import {Blog} from "./Components/Blogs/Blog"
 import {Mblog} from "./Components/MainBlog/Mblog"
 import { MblogNav } from './Components/MainBlog/MblogNav';
+import {Register} from './Components/Register/Register'
 // import {Patreon} from "./Components/MainBlog/Patreon"
 // import {Product } from './Components/MainBlog/Product';
 // import {PateronU } from './Components/MainBlog/PateronU';
@@ -30,13 +31,14 @@ import { MblogNav } from './Components/MainBlog/MblogNav';
 function App() {
   return (
    <>
-   {/* <React.Fragment>
+   <React.Fragment>
 
-      <Login />
-   </React.Fragment> */}
-    <Nav />  
+      {/* <Login /> */}
+      <Register />
+   </React.Fragment>
+    {/* <Nav />  
     <MblogNav />
-    <Mblog />
+    <Mblog /> */}
   
    </>
   );
