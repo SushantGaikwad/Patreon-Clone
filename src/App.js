@@ -11,10 +11,10 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Creators/>
+        {/* <Creators/> */}
         {/* <Payment/> */}
-        {/* <Navbar/> */}
-        {/* <HomePage/> */}
+        <Navbar/>
+        <HomePage/>
         
        
         <Routes>
