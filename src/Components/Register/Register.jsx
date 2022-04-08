@@ -11,31 +11,31 @@ export const Register = () => {
   const { register, handleSubmit, watch, formState: { errors } } = useForm({
     mode:'onTouched'
   });
-  const [state,setState] = React.useState({
-      displayName:"",
-      email:"",
-      emailReconfirm:"",
-      password:""
-  });
+  // const [state,setState] = React.useState({
+  //     displayName:"",
+  //     email:"",
+  //     emailReconfirm:"",
+  //     password:""
+  // });
 
-  const{currentUser} = useSelector((state) => state.user);
+//   const{currentUser} = useSelector((state) => state.user);
   
 
-  const navigate = useNavigate();
+//   const navigate = useNavigate();
 
-  useEffect(() => {
-      if(currentUser){
-        navigate('/register')
-      }
-      return navigate('/register')
+//   useEffect(() => {
+//       if(currentUser){
+//         navigate('/register')
+//       }
+//       return navigate('/register')
 
-  },[currentUser,navigate])
+//   },[currentUser,navigate])
 
   
 
-  const dispatch = useDispatch();
+//   const dispatch = useDispatch();
 
-const {email,password,displayName,emailReconfirm} = state;
+// const {email,password,displayName,emailReconfirm} = state;
 
   const onSubmit = data => alert(JSON.stringify(data));
   const email1 = watch('email')
@@ -47,22 +47,22 @@ const {email,password,displayName,emailReconfirm} = state;
   
 
 
-const handelFinish =(e) => {
-    e.preventDefault();
-    if(email!==emailReconfirm){
-      return;
-    }
-    dispatch(registerInitiate(email,password,displayName))
-    setState({email:'',displayName:'',password:'',emailReconfirm:''})
+// const handelFinish =(e) => {
+//     e.preventDefault();
+//     if(email!==emailReconfirm){
+//       return;
+//     }
+//     dispatch(registerInitiate(email,password,displayName))
+//     setState({email:'',displayName:'',password:'',emailReconfirm:''})
 
 
-}
+// }
  
 
-  const handelChange = (e) =>{
-    const {name,value} =e.target;
-    setState({ ...state,[name]:value});
-  };
+  // const handelChange = (e) =>{
+  //   const {name,value} =e.target;
+  //   setState({ ...state,[name]:value});
+  // };
 
   return (
     <>
@@ -89,7 +89,7 @@ const handelFinish =(e) => {
         <div className='space-y-8'>
         <p className='or'>or</p>
         <p>Name</p>
-        <input type="text" name='displayName'  autoComplete='off' onChange={handelChange} className={`${errors.name && <span classname = 'error'>{errors.name.message}</span>}`} {...register("name",{required:{
+        <input type="text" name='displayName'   autoComplete='off'  className={`${errors.name && <span classname = 'error'>{errors.name.message}</span>}`} {...register("name",{required:{
         value:true,
         message:'Name is required.'
         },
@@ -99,7 +99,7 @@ const handelFinish =(e) => {
 
         <p>Email</p>
 
-        <input type="email" name='email' autoComplete='off' onChange={handelChange} className={`${errors.email && <span className='error'>{errors.email.message}</span>}`}  {...register("email", { required:{
+        <input type="email" name='email'  autoComplete='off'  className={`${errors.email && <span className='error'>{errors.email.message}</span>}`}  {...register("email", { required:{
           value: true,
           message: 'Please enter a valid email.'
         } ,
@@ -107,7 +107,7 @@ const handelFinish =(e) => {
         <div>{errors.email && <span className='error'>{errors.email.message}</span> }</div>
         </div>
         <p>Confirm Email</p>
-        <input type="email" name='emailReconfirm' onChange={handelChange} autoComplete='off' {...register("another_email",{required : {
+        <input type="email" name='emailReconfirm'   autoComplete='off' {...register("another_email",{required : {
           value:true,
           message:'Your email confirmation does not match.'
         },
@@ -116,7 +116,7 @@ const handelFinish =(e) => {
         <p>Password</p>
         <div> 
 
-        <input type="password" name='password' onChange={handelChange} autoComplete='off' {...register("password", { required:{
+        <input type="password" name='password'   autoComplete='off' {...register("password", { required:{
           value: true,
           message: 'Please enter a valid password.'
         } ,
@@ -128,7 +128,7 @@ const handelFinish =(e) => {
 
        
         <div>
-          <input className={`submit ${isValid && `submit2`}`} onClick ={handelFinish}  type="submit" value='Sign up' disabled = {!isValid} />
+          <input className={`submit ${isValid && `submit2`}`}   type="submit" value='Sign up' disabled = {!isValid} />
         </div>
         <p className='terms'>By signing up, you agree to Patreon's <a href="">Terms of Use</a>,<a href="">Privacy Policy</a>and<a href="">Cookie Policy</a> .</p>
         
