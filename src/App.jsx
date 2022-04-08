@@ -5,6 +5,7 @@ import {Login} from './Components/Login/Login'
 import {Mblog} from "./Components/MainBlog/Mblog"
 import { MblogNav } from './Components/MainBlog/MblogNav';
 import {Register} from './Components/Register/Register'
+import {Routes,Route} from 'react-router-dom'
 // import {Patreon} from "./Components/MainBlog/Patreon"
 // import {Product } from './Components/MainBlog/Product';
 // import {PateronU } from './Components/MainBlog/PateronU';
@@ -32,9 +33,12 @@ function App() {
   return (
    <>
    <React.Fragment>
-
-      {/* <Login /> */}
-      <Register />
+      <Routes>
+           <Route path='/' element ={<Login />}/>
+           <Route path="/sign" element ={<Register />} />
+      </Routes>
+     
+      {/* <Register /> */}
    </React.Fragment>
     {/* <Nav />  
     <MblogNav />

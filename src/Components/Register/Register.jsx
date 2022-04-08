@@ -25,8 +25,9 @@ export const Register = () => {
 
   useEffect(() => {
       if(currentUser){
-        navigate()
+        navigate('')
       }
+      return navigate('/')
 
   },[])
 
@@ -36,27 +37,27 @@ export const Register = () => {
 
 const {email,password,displayName,emailReconfirm} = state;
 
-  // const onSubmit = data => alert(JSON.stringify(data));
+  const onSubmit = data => alert(JSON.stringify(data));
   const email1 = watch('email')
   const another_email = watch('another_email')
   const isValid = email1&&another_email
  
 
 
-  const onSubmit = (e,data) =>{
-     e.preventDefault();
-    console.log(JSON.stringify(data))
+  // const onSubmit = (e,data) =>{
+  //    e.preventDefault();
+  //   console.log(JSON.stringify(data))
 
 
 
-    // if(email !== emailReconfirm){
-    //   return;
-    // }
-    dispatch(registerInitiate(email,password,displayName));
-    setState({email:"",displayName:"",password:"",emailReconfirm:""})
-    console.log(state)
+  //   if(email !== emailReconfirm){
+  //     return;
+  //   }
+  //   dispatch(registerInitiate(email,password,displayName));
+  //   setState({email:"",displayName:"",password:"",emailReconfirm:""})
+  //   console.log(state)
 
-  }
+  // }
 
   const handelChange = (e) =>{
     const {name,value} =e.target;
@@ -88,7 +89,7 @@ const {email,password,displayName,emailReconfirm} = state;
         <div className='space-y-8'>
         <p className='or'>or</p>
         <p>Name</p>
-        <input type="text" name='displayName' value={displayName} autoComplete='off' onChange={handelChange} className={`${errors.name && <span classname = 'error'>{errors.name.message}</span>}`} {...register("name",{required:{
+        <input type="text" name='displayName'  autoComplete='off' onChange={handelChange} className={`${errors.name && <span classname = 'error'>{errors.name.message}</span>}`} {...register("name",{required:{
         value:true,
         message:'Name is required.'
         },
@@ -98,7 +99,7 @@ const {email,password,displayName,emailReconfirm} = state;
 
         <p>Email</p>
 
-        <input type="email" name='email' value={email} autoComplete='off' onChange={handelChange} className={`${errors.email && <span className='error'>{errors.email.message}</span>}`}  {...register("email", { required:{
+        <input type="email" name='email' autoComplete='off' onChange={handelChange} className={`${errors.email && <span className='error'>{errors.email.message}</span>}`}  {...register("email", { required:{
           value: true,
           message: 'Please enter a valid email.'
         } ,
@@ -106,7 +107,7 @@ const {email,password,displayName,emailReconfirm} = state;
         <div>{errors.email && <span className='error'>{errors.email.message}</span> }</div>
         </div>
         <p>Confirm Email</p>
-        <input type="email" name='emailReconfirm' value={emailReconfirm} onChange={handelChange} autoComplete='off' {...register("another_email",{required : {
+        <input type="email" name='emailReconfirm' onChange={handelChange} autoComplete='off' {...register("another_email",{required : {
           value:true,
           message:'Your email confirmation does not match.'
         },
@@ -115,7 +116,7 @@ const {email,password,displayName,emailReconfirm} = state;
         <p>Password</p>
         <div> 
 
-        <input type="password" name='password' value={password} onChange={handelChange} autoComplete='off' {...register("password", { required:{
+        <input type="password" name='password' onChange={handelChange} autoComplete='off' {...register("password", { required:{
           value: true,
           message: 'Please enter a valid password.'
         } ,
@@ -127,7 +128,7 @@ const {email,password,displayName,emailReconfirm} = state;
 
        
         <div>
-          <input className={`submit ${isValid && `submit2`}`} type="submit" value='Sign up' disabled = {isValid} />
+          <input className={`submit ${isValid && `submit2`}`}  type="submit" value='Sign up' disabled = {isValid} />
         </div>
         <p className='terms'>By signing up, you agree to Patreon's <a href="">Terms of Use</a>,<a href="">Privacy Policy</a>and<a href="">Cookie Policy</a> .</p>
         
@@ -139,7 +140,7 @@ const {email,password,displayName,emailReconfirm} = state;
 
     <div className='regi'>
           <p>Already have an account?</p>
-          <Link to={'./Login'}>Log in</Link>
+          <Link to={'/Login'}>Log in</Link>
         </div>
 
     </div>
