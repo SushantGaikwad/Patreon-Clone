@@ -6,15 +6,17 @@ import HomePage from './Components/HomePage/HomePage.jsx';
 import Footer from './Components/Footer/Footer';
 import Creators from './Components/CreatorsPage/Creators';
 import Payment from './Components/Payments/Payment';
+import ProfilePage from './Components/ProfilePage/ProfilePage';
 
 function App() {
   return (
     <div className="App">
       <Router>
         {/* <Creators/> */}
-        <Payment/>
+        {/* <Payment/> */}
         {/* <Navbar/> */}
         {/* <HomePage/> */}
+        <ProfilePage/>
         
        
         <Routes>
