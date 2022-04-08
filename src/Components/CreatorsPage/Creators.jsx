@@ -2,7 +2,7 @@ import React,{useEffect, useState} from 'react';
 import './Creators.css'
 import CreatorNavbar from './CreatorNavbar.jsx';
 import CreatorFooter from './CreatorFooter.jsx';
-import { useParams } from 'react-router-dom';
+import { Link,useParams } from 'react-router-dom';
 
 
 const Creators = () => { 
@@ -41,9 +41,11 @@ const Creators = () => {
               <br />
              <h2>{creator[0].patrons}</h2>
              <div className='small-title'>PATRONS</div> <br />
+             <Link to="/payment">
              <div className="button-patron">
                  Become a Patron
-             </div> <br />
+             </div> 
+             </Link><br />
              <div className="share_follow">
                  <div>Share</div>
                  <div>Follow</div>
