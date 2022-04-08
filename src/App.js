@@ -11,15 +11,15 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Creators/>
-        {/* <Payment/> */}
+        {/* <Creators/> */}
+        <Payment/>
         {/* <Navbar/> */}
         {/* <HomePage/> */}
         
        
         <Routes>
-        {/* <Route path="/" element={<HomePage/>}/>
-         */}
+         {/* <Route path="/" element={<HomePage/>}/> */}
+         
         
         </Routes>
         {/* <Footer/> */}
