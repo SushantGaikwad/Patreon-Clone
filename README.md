@@ -10,7 +10,7 @@ About: Patreon is an American membership platform that makes it easy for artists
 
 
 # Tech Stack
-<br/>
+
 <h3>React.js (Hooks)<h3/>
 <h3>Redux<h3/>
 <h3>Context Api<h3/>
@@ -19,7 +19,7 @@ About: Patreon is an American membership platform that makes it easy for artists
 <br/>
 
 # Tools
-<br/>
+
 <h3>Visual Studio Code <h3/>
 <h3>Netlify<h3/>
 <h3>Git/GitHub<h3/>
@@ -27,9 +27,10 @@ About: Patreon is an American membership platform that makes it easy for artists
 <br/>
 
 # Communication Tools
-<br/>
+
 <h3>Zoom<h3/>
 <h3>Slack<h3/>
 <br/>
+
 
 
