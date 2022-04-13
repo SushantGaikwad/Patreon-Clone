@@ -1,6 +1,6 @@
 # Patreon Clone Project
 
-Original website: https://www.patreon.com/ <br/>
+Original website: https://www.patreon.com/ <br/><br/>
 About: Patreon is an American membership platform that makes it easy for artists and creators to get paid. 
 <br/> <br/>
 
@@ -11,24 +11,24 @@ About: Patreon is an American membership platform that makes it easy for artists
 
 # Tech Stack
 <br/>
-React.js (Hooks)
-Redux
-Context Api
-Styled-Components
-Json Mock Server
+React.js (Hooks)<br/>
+Redux<br/>
+Context Api<br/>
+Styled-Components<br/>
+Json Mock Server<br/>
 <br/>
 
 # Tools
 <br/>
-Visual Studio Code
-Git/GitHub
-local storage
+Visual Studio Code<br/>
+Git/GitHub<br/>
+local storage<br/>
 <br/>
 
 # Communication Tools
 <br/>
-Zoom
-Slack
+Zoom<br/>
+Slack<br/>
 <br/>
 
 
