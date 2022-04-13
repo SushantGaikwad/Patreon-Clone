@@ -10,23 +10,23 @@ Original website: https://www.patreon.com/ <br/>
 
 <hr>
 # Tech Stack
-<hr>
+<br>
 # React.js (Hooks)
 # Redux
 # Context Api
 # Styled-Components
 # Json Mock Server
+<br>
 
-<hr>
 # Tools
-<hr>
+<br>
 # Visual Studio Code
 # Git/GitHub
 # local storage
+<br>
 
-<hr>
 # Communication Tools
-<hr>
+
 # Zoom
 # Slack
 
