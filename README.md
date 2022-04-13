@@ -1,7 +1,7 @@
 # Patreon Clone Project
 
 Original website: https://www.patreon.com/ <br/>
-# patreon is an American membership platform that makes it easy for artists and creators tp get paid. 
+About: Patreon is an American membership platform that makes it easy for artists and creators to get paid. 
 <br/> <br/>
 
 # Project Snapshot:
@@ -16,7 +16,7 @@ Redux
 Context Api
 Styled-Components
 Json Mock Server
-<b/r>
+<br/>
 
 # Tools
 <br/>
@@ -29,5 +29,6 @@ local storage
 <br/>
 Zoom
 Slack
+<br/>
 
 
