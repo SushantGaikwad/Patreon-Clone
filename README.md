@@ -11,24 +11,24 @@ About: Patreon is an American membership platform that makes it easy for artists
 
 # Tech Stack
 <br/>
-React.js (Hooks)<br/>
-Redux<br/>
-Context Api<br/>
-Styled-Components<br/>
-Json Mock Server<br/>
+<h3>React.js (Hooks)<h3/><br/><br/>
+<h3>Redux<h3/><br/><br/>
+<h3>Context Api<h3/><br/><br/>
+<h3>Styled-Components<h3/><br/><br/>
+<h3>Json Mock Server<h3/><br/><br/>
 <br/>
 
 # Tools
 <br/>
-Visual Studio Code<br/>
-Git/GitHub<br/>
-local storage<br/>
+Visual Studio Code<br/><br/>
+Git/GitHub<br/><br/>
+local storage<br/><br/>
 <br/>
 
 # Communication Tools
 <br/>
-Zoom<br/>
-Slack<br/>
+Zoom<br/><br/>
+Slack<br/><br/>
 <br/>
 
 
