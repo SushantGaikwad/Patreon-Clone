@@ -1,0 +1,270 @@
+.pay-start-heading{
+    width:50%;
+    height:50px;
+    /* margin-top:200px; */
+    /* border:1px solid red; */
+    margin:auto;
+    padding:20px;
+    text-align:center;
+}
+.title-pay{
+    font-size:1.2rem;
+    font-weight:700;
+    color:rgb(36,30,18);
+}
+.label_text{
+    display: block;
+    text-align: left;
+}
+.main_payment_page{
+    /* border:1px solid black; */
+    margin:auto;
+    height:500px;
+    width:80%;
+    display:flex;
+    padding:10px;
+    gap:10px;
+    flex-direction: row;
+}
+.left_payment_box{
+    height:600px;
+    width:100%;
+    border:2px solid rgb(229, 227, 221);
+    padding:10px;
+}
+
+.content_to_pay{
+    display:flex;
+    flex-direction:row;
+    /* gap:20px; */
+    /* border:1px solid yellow; */
+}
+#input_1_payment{
+    width:20%;
+    font-size: 24px;
+    font-weight: bold;
+}
+.dollar_currency{
+    margin-left:3.5%;
+    width:40px;
+    padding:10px;
+    text-align:center;
+    border:1px solid rgb(229, 227, 221);
+    background: rgb(245, 244, 242);
+}
+.content_card_pay{
+    /* border:1px solid green; */
+    display:flex;
+    flex-direction:row;
+}
+.card_payment_form{
+    border:1px solid rgb(229, 227, 221);
+    width:500px;
+    padding:10px;
+    /* height:400px; */
+    margin-left:8.5%
+}
+.card_payment_heading_1{
+    /* border:1px solid red; */
+    padding:2px;
+    width:300px;
+    display:flex;
+    flex-direction:row;
+}
+.radio_button_1{
+    appearance: none;
+    background: none;
+    border: none;
+    cursor: default;
+    display: inline-block;
+    position: relative;
+    width: 1.5rem;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    min-height: 1.5rem;
+    margin-right: 1rem;
+    /* color: rgb(255, 66, 77); */
+}
+.radio_button_1::before{
+    background-color: rgb(255, 66, 77);
+    border: none;
+    content: "";
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.radio_button_1::after{
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    content: "";
+    left: 50%;
+    margin: -0.25rem;
+    position: absolute;
+    top: 50%;
+    width: 0.5rem;
+    height: 0.5rem;
+}
+.input_for_text{
+    resize: none;
+    min-width: 0px;
+    width: 100%;
+    font-weight: normal;
+    appearance: none;
+    background: rgb(245, 244, 242);
+    border: 1px solid rgb(229, 227, 221);
+    box-shadow: none;
+    box-sizing: border-box;
+    color: rgb(36, 30, 18);
+    height: 3rem;
+    outline: none;
+    padding: 0.75rem 1rem;
+    transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    border-radius: 4px;
+    font-size: 1rem !important;
+    margin-top:2px;
+    
+}
+.for_cvv_input{
+    display:flex;
+    flex-direction:row;
+    /* border:1px solid blue; */
+    width:450px;
+    height:100px;
+    gap:10px;
+}
+.for_expiration{
+    width:30%;
+    /* border:1px solid grey; */
+}
+.for_cvv{
+    width:30%;
+    /* border:1px solid grey; */
+}
+.for_postal_code{
+    width:30%;
+    /* border:1px solid grey */
+}
+.pay_with_card>button{
+    box-sizing: border-box;
+    transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    padding: 0.25rem 0rem;
+    margin: 0rem 0rem 0.5rem;
+    width:450px;
+    height:35px;
+    font-size:0.875rem;
+    border-radius:10px;
+    cursor:pointer;
+    color: black;
+}
+.radio_button_2{
+    appearance: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    width: 1.5rem;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    min-height: 1.5rem;
+    margin-right: 1rem;
+    /* color: rgb(255, 66, 77); */
+}
+.radio_button_2::before{
+   
+   
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(177, 172, 163);
+    content: "";
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.radio_button_2::after{
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    content: "";
+    left: 50%;
+    margin: -0.25rem;
+    position: absolute;
+    top: 50%;
+    width: 0.5rem;
+    height: 0.5rem;
+}
+.for_paypal>button{
+    box-sizing: border-box;
+    transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    padding: 0.25rem 0rem;
+    margin: 0rem 0rem 0.5rem;
+    width:450px;
+    height:35px;
+    font-size:0.875rem;
+    border-radius:10px;
+    cursor:pointer;
+    /* background-color: rgb(248, 245, 245); */
+}
+.secure_checkout{
+    /* width:450px; */
+    /* border:1px solid grey; */
+    margin-left:30%;
+}
+.right_payment_box{
+    height:500px;
+    width:80%;
+    border:2px solid rgb(229, 227, 221);
+    padding:20px;
+}
+.change_right{
+    color:rgb(204, 50, 63);
+    text-decoration:underline rgb(204,50,63);
+    text-align: left;
+    cursor: pointer;
+}
+.right_para_3{
+    margin:auto;
+}
+.left_heading_1{
+    color: rgb(36, 30, 18);
+    font-family: aktiv-grotesk, sans-serif;
+    position: relative;
+    transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    text-align: left;
+    font-weight: 700 !important;
+    /* margin: 1em 0px !important; */
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+}
+.end_line_page{
+    color: rgb(112, 108, 100);
+    font-family: aktiv-grotesk, sans-serif;
+    margin: 0px;
+    /* position: relative; */
+    margin-top:140px;
+    margin-left:100px;
+    transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    font-weight: 400 !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+}
+
+.right_para_1, .right_para_2{
+    text-align: left;
+}
+
+.card_button{
+    box-sizing: border-box;
+    transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    padding: 0.25rem 0rem;
+    margin: 0rem 0rem 0.5rem;
+    width:450px;
+    height:35px;
+    font-size:0.875rem;
+    border-radius:10px;
+    cursor:pointer;
+    color: black;
+}
+

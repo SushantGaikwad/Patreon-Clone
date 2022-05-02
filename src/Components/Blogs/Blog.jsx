@@ -2,9 +2,9 @@ import React from 'react'
 import './Blog.css';
 
 export const Blog = () => {
+    window.scrollTo(0, 0);
   return (
       <>
-    
 
     <section className='sec-1 container'>
         <div className='sec1 container'>

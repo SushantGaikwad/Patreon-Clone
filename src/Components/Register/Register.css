@@ -146,3 +146,6 @@
     color: rgb(36, 30, 18);
     font-size: 17px;
 }
+.text-left{
+    text-align: left;
+}

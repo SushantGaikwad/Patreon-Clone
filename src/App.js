@@ -1,10 +1,19 @@
 import React from 'react';
-import {Nav} from './Components/Nav-Blog/Nav'
-import {Login} from './Components/Login/Login'
-import {Mblog} from "./Components/MainBlog/Mblog"
-import { MblogNav } from './Components/MainBlog/MblogNav';
-import {Register} from './Components/Register/Register'
-import {Routes,Route} from 'react-router-dom'
+import './App.css';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Navbar from './Components/Navbar/Navbar';
+import HomePage from './Components/HomePage/HomePage.jsx';
+import Footer from './Components/Footer/Footer';
+import Lite from "./Components/Products/Lite"
+import Pro from "./Components/Products/Pro"
+import Premium from "./Components/Products/Premium"
+import Podcasts from './Components/Creators/Podcasts';
+import {Blog} from './Components/Blogs/Blog';
+import {Login} from './Components/Login/Login';
+import Creators from './Components/CreatorsPage/Creators';
+import Payment from './Components/Payments/Payment';
+import ProfilePage from './Components/ProfilePage/ProfilePage';
+import { Register } from './Components/Register/Register';
 
 
 
@@ -12,21 +21,30 @@ import {Routes,Route} from 'react-router-dom'
  
 function App() {
   return (
-   <>
-   <React.Fragment>
-      
-     < Routes>      
-     <Route path='/' element ={<Register />} />
-     <Route path="/login" element={< Login /> } />
-      </Routes>
+    <div className="App">
+       <Navbar />
+        {/* <HomePage/> */} 
+       
+        <Routes>
+        <Route path="/" element={<HomePage/>}/>
+        <Route path='/lite' element={<Lite />} />
+        <Route path='/pro' element={<Pro />} />
+        <Route path='/premium' element={<Premium />} />
+        <Route path='/podcasters' element={<Podcasts />} />
+        <Route path='/blog' element={<Blog />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/:username" element={<Creators />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/creators" element={<HomePage />} />
+        <Route path="/profile" element={<ProfilePage />} />       
+
+        
+        </Routes>
+        <Footer/>
+   
      
-      {/* <Register /> */}
-   </React.Fragment>
-    {/* <Nav />  
-    <MblogNav />
-    <Mblog /> */}
-  
-   </>
+</div>
   );
 }
 

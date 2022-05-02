@@ -1,13 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import  { useState } from "react";
 import './SlideShow.css';
 
 
 
-
-
 const SlideShow = () => {
     const [image, setImage] = useState("");
+  let images = ["https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/podcasters.png",
+"https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/videocreators.png",
+"https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/musicians.png",
+"https://live-patreon-marketing.pantheonsite.io/wp-content/uploads/2020/12/visualartists.png"];
+
+    useEffect(()=>{
+      slideshow();
+    },[]) 
+    let id;
+    const slideshow = () => {
+      let count = 0;
+      var slideshowElement = document.getElementById("imgtag");
+      if (count === 0) {
+        slideshowElement.src = images[0];
+      }
+      var i = 1;
+      id = setInterval(function () {
+        if (i === images.length) {
+          i = 0;
+        }
+        slideshowElement.src = images[i];
+        i++;
+      }, 2000);
+    }
+
     return (
      
       <div id="main">
@@ -27,7 +50,7 @@ const SlideShow = () => {
           >
             <span className="shadow">
               <div>
-                <h2>Podcasters</h2>
+                <h2 className="shadow">Podcasters</h2>
               </div>
             </span>
           </a>
@@ -42,7 +65,7 @@ const SlideShow = () => {
           >
             <span className="shadow">
               <div>
-                <h2>Video Creators</h2>
+                <h2 className="shadow">Video Creators</h2>
               </div>
             </span>
           </a>
@@ -57,7 +80,7 @@ const SlideShow = () => {
           >
             <span className="shadow">
               <div>
-                <h2>Musicians</h2>
+                <h2 className="shadow">Musicians</h2>
               </div>
             </span>
           </a>
@@ -72,7 +95,7 @@ const SlideShow = () => {
           >
             <span className="shadow">
               <div>
-                <h2>Visual Artists</h2>
+                <h2 className="shadow">Visual Artists</h2>
               </div>
             </span>
           </a>
@@ -87,7 +110,7 @@ const SlideShow = () => {
           >
             <span className="shadow">
               <div>
-                <h2>Communities</h2>
+                <h2 className="shadow">Communities</h2>
               </div>
             </span>
           </a>
@@ -102,7 +125,7 @@ const SlideShow = () => {
           >
             <span className="shadow">
               <div>
-                <h2>Writers & Journalists</h2>
+                <h2 className="shadow">Writers & Journalists</h2>
               </div>
             </span>
           </a>
@@ -117,7 +140,7 @@ const SlideShow = () => {
           >
             <span className="shadow">
               <div>
-                <h2>Gaming Creators</h2>
+                <h2 className="shadow">Gaming Creators</h2>
               </div>
             </span>
           </a>
@@ -132,7 +155,7 @@ const SlideShow = () => {
           >
             <span className="shadow">
               <div>
-                <h2>Nonprofits</h2>
+                <h2 className="shadow">Nonprofits</h2>
               </div>
             </span>
           </a>
@@ -147,7 +170,7 @@ const SlideShow = () => {
           >
             <span className="shadow">
               <div>
-                <h2>Tutorials and Education</h2>
+                <h2 className="shadow">Tutorials and Education</h2>
               </div>
             </span>
           </a>
@@ -162,7 +185,7 @@ const SlideShow = () => {
           >
             <span className="shadow">
               <div>
-                <h2>Creators-of-all-kinds</h2>
+                <h2 className="shadow">Creators-of-all-kinds</h2>
               </div>
             </span>
           </a>

@@ -2,10 +2,13 @@ import React from "react";
 import style from "./Lite.module.css";
 import { Link } from "react-router-dom";
 
+
 const Lite = () =>{
+    window.scrollTo(0, 0);
     return (
         <div>
-            <div className={style.div1}>
+            <br /><br /><br />
+                        <div className={style.div1}>
                 <div className={style.div1_background}>                
                 <svg height="100%" width="100%" fill="#ff9b7a"><svg viewBox="0 0 1440 600" preserveAspectRatio="none"><path d="M0 0h1440v575s-88 16-153 14c-58.04-1.786-159.94 7.931-181.09 10.031-2.65.264-5.25.399-7.91.407L921 600H0V0z" data-fill="1"></path></svg></svg>
                 </div>
@@ -17,7 +20,7 @@ const Lite = () =>{
                             <span className={style.span1}>PATREON LITE</span><br />
                             <span className={style.span2}>Just the basics</span><br />
                             <span className={style.span3}>Simple tools to set up recurring support from your fans and run a membership business.</span><br />
-                            <Link to="/"> <span className={style.span4_button}>Get started</span></Link>
+                            <Link to="/login"> <span className={style.span4_button}>Get started</span></Link>
                     </div>
                 </div>
             </div>

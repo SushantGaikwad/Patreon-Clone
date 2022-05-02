@@ -30,4 +30,13 @@
     text-decoration: underline;
     transition:0.8s;
   }
-  
+  h2{
+    color:gray;
+  }
+  h2:hover{
+    color: black;
+  }
+
+  .shadow{
+    color:grey;
+  }
