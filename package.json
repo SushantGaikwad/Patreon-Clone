@@ -49,5 +49,17 @@
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.0"
-  }
+  },
+  "description": "Original website: https://www.patreon.com/ <br/><br/>\r About: Patreon is an American membership platform that makes it easy for artists and creators to get paid. \r <br/> <br/>",
+  "main": "tailwind.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SushantGaikwad/Patreon-Clone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SushantGaikwad/Patreon-Clone/issues"
+  },
+  "homepage": "https://github.com/SushantGaikwad/Patreon-Clone#readme"
 }
