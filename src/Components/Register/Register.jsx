@@ -24,6 +24,7 @@ export const Register = () => {
     userEmail: "",
     userPassword: "",
   });
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     // console.log("login");
@@ -43,7 +44,7 @@ export const Register = () => {
       'password' : password
      }
     
-    console.log("obj" + JSON.stringify(obj))
+    console.log("obj" + JSON.stringify(obj));
     
     fetch(`https://patreondatabase.herokuapp.com/signUp`,{
         method: "POST",
@@ -57,14 +58,8 @@ export const Register = () => {
   }
 
    const goToGoogle = () => {
-    fetch(`https://patreondatabase.herokuapp.com/google`
-      // method: "GET"
-      // body: JSON.stringify(obj),
-      // headers: {"Content-Type":"application/json" }
-  ).then((res) =>res.json())
-  .then((res) => console.log(res))
-  .catch((err)=>console.log(err))
-     
+    window.open("https://patreondatabase.herokuapp.com/auth/google","_self")
+     navigate('/login')
    }
 
   return (

@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 # Patreon Clone Project
 
 Original website: https://www.patreon.com/ <br/><br/>
@@ -37,4 +34,3 @@ About: Patreon is an American membership platform that makes it easy for artists
 
 
 
->>>>>>> 14af78b92daca2132f5da58dcece3898b8096c76
