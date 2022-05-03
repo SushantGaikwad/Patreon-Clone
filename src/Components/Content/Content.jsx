@@ -1,6 +1,6 @@
 import React from 'react';
-import './Contents.css';
-import Style from "style.module.css";
+// import './Contents.css';
+import Style from "Content.module.css";
 
 const Contents = () => {
   const [checkedOne, setCheckedOne] = React.useState(false);

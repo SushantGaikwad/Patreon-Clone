@@ -1,11 +1,11 @@
 import React from 'react';
-import './Dashboard.css';
+import Style from'./Dashboard.module.css';
 import { IoChatbubblesOutline,IoSettingsOutline } from "react-icons/io5";
 import {BsPencilSquare} from "react-icons/bs";
 import {RiHome4Fill,RiPagesLine,RiContactsLine,RiPagesFill} from "react-icons/ri";
 import {AiOutlineHome} from "react-icons/ai";
 import {FaBullhorn,FaCoins} from "react-icons/fa";
-import Style from "style.module.css";
+// import Style from "style.module.css";
 const Dashboard = () => {
   return (
     <>
