@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
     "@reduxjs/toolkit": "^1.8.1",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
-    "flag-icon-css": "^4.1.7",
     "firebase": "^9.6.10",
+    "flag-icon-css": "^4.1.7",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-hook-form": "^7.29.0",
@@ -17,10 +18,10 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "redux": "^4.1.2",
-    "styled-components": "^5.3.5",
-    "tailwindcss": "^3.0.23",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.1",
+    "styled-components": "^5.3.5",
+    "tailwindcss": "^3.0.23",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

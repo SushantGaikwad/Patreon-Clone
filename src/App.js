@@ -14,6 +14,11 @@ import Creators from './Components/CreatorsPage/Creators';
 import Payment from './Components/Payments/Payment';
 import ProfilePage from './Components/ProfilePage/ProfilePage';
 import { Register } from './Components/Register/Register';
+import Contents from './Components/Content/Content';
+import Dashboard from './Components/Dashboard/Dashboard';
+import Post from './Components/Post/Post';
+import Text from './Components/Text/Text';
+
 
 
  
@@ -50,11 +55,11 @@ function App() {
 
   return (
     <div className="App">
-       <Navbar />
+       {/* <Navbar /> */}
         {/* <HomePage/> */} 
        
         <Routes>
-        <Route path="/" element={<HomePage/>}/>
+        <Route path="/" element={<Text />}/>
         <Route path='/lite' element={<Lite />} />
         <Route path='/pro' element={<Pro />} />
         <Route path='/premium' element={<Premium />} />
@@ -69,7 +74,7 @@ function App() {
 
         
         </Routes>
-        <Footer/>
+        {/* <Footer/> */}
    
      
 </div>
