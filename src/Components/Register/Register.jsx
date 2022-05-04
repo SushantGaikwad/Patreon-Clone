@@ -9,22 +9,28 @@ import { FcGoogle } from "react-icons/fc";
 
 import { Nav } from '../Nav-Blog/Nav'
 import { registerInitiate } from '../../Redux/action';
+
 export const Register = () => {
   const { register, watch, formState: { errors } } = useForm({
     mode:'onTouched'
   });
+
     
   const email = watch("email");
   const password = watch("password");
 
   const isValid = email && password;
   // console.log(email,password)
-
+const [user,setUser] = React.useState("");
   const [state, setState] = React.useState({
     userEmail: "",
     userPassword: "",
   });
   const navigate = useNavigate()
+
+
+  
+
 
   const handleSubmit = (e) => {
     // console.log("login");
@@ -58,8 +64,7 @@ export const Register = () => {
   }
 
    const goToGoogle = () => {
-    window.open("https://patreondatabase.herokuapp.com/auth/google","_self")
-     navigate('/login')
+    window.open("http://localhost:9999/google","_self")  
    }
 
   return (

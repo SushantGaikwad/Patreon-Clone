@@ -6,15 +6,22 @@ import { MdArrowForwardIos } from "react-icons/md";
 import { Link } from "react-router-dom";
 import styled from "styled-components"
 
+
 const LinkWrapper = styled(Link)`
   color: black;
   text-decoration:none
 `;
 
 
+
+
 const HomePage = () => {
   const [modal, setModal] = useState(false);
   const[searchData, setSearchData] =useState([]);
+  const [user, setUser] = useState(null);
+
+
+
   let searchBoxref = useRef();
 
   const toggleModal = () => {

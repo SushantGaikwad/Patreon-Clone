@@ -16,10 +16,38 @@ import ProfilePage from './Components/ProfilePage/ProfilePage';
 import { Register } from './Components/Register/Register';
 
 
-
-
  
 function App() {
+  const [user,setUser]  = React.useState(null);
+  React.useEffect(() => {
+    const getUser = () => {
+          fetch("http://localhost:9999/login/success", {
+          method: "GET",
+          credentials: "include",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Credentials": true,
+          },
+        })
+        .then((response) => response.json())
+        .then((response) => {
+          console.log("RESPONSE :",response);
+          setUser(response.user);
+          console.log("User : ",user);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    getUser();
+  }, []);
+
+
+
+
+
+
   return (
     <div className="App">
        <Navbar />
