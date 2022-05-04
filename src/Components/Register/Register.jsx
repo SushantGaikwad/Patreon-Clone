@@ -52,14 +52,25 @@ const [user,setUser] = React.useState("");
     
     console.log("obj" + JSON.stringify(obj));
     
-    fetch(`https://patreondatabase.herokuapp.com/signUp`,{
+    fetch(`http://localhost:9999/signUp`,{
         method: "POST",
         body: JSON.stringify(obj),
         headers: {"Content-Type":"application/json" }
     }).then((res) =>res.json())
-    .then((res) => console.log(res))
+    .then((res) => {
+      if(res.status === 200){
+        alert("Registration Successfull");
+        navigate("/login");
+      }
+      else if(res.status === 201){
+        alert("This Email Id already used");
+      }
+      else{
+        alert("Something Went Wrong. Please try again");
+      }
+    })
     .catch((err)=>console.log(err))
-    
+  
 
   }
 
