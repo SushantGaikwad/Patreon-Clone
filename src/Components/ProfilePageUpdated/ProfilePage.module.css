@@ -1,0 +1,196 @@
+.style_main_page{
+    /* border:1px solid black; */
+    width:85%;
+    height:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:row;
+    gap:10px;
+    /* margin-top:500px; */
+}
+.style_first_half{
+    width:25%;
+    height:300px;
+    padding:10px;
+    /* border:1px solid green; */
+}
+.style_second_half{
+    width:50%;
+    height:500px;
+    padding:2px;
+    /* border:1px solid blue; */
+}
+.style_third_half{
+    width:25%;
+    height:400px;
+    /* border:1px solid green; */
+}
+.style_profile_image_section{
+    border:2px solid rgb(229, 227, 221);
+    width:98%;
+    height:150px;
+    text-align:center;
+}
+.circle_profile{
+    display: block;
+    border: 4px solid rgb(255, 255, 255);
+    /* border-radius: 50%; */
+    background-clip: padding-box;    
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin-top: 15px;
+    width:70px;
+    height:70px;
+    margin-left:35%;
+    border-radius:100%;
+    background-image:url("https://static.showit.co/1600/KY4rr175TueWGUoP7Xv_XA/128788/professional_branding_mens_portraits_frisco_texas_korey_howell_photography_group_corporate.jpg");
+    cursor: pointer;
+}
+.name_user{
+    font-size:0.875rem;
+    margin:auto;
+    font-weight:400;
+}
+.style_profile_support_section{
+    border:2px solid rgb(229, 227, 221);
+    border-top:none;
+    padding:10px;
+    width:91%;
+}
+.style_profile_support_section>div{
+    margin-left:20px;
+    font-weight:500;
+    font-size:0.975rem;
+
+
+}
+.style_profile_creator_section{
+    border:2px solid rgb(229, 227, 221);
+    border-top:none;
+    padding:10px;
+    width:91%;
+}
+.style_profile_creator_section>div{
+    margin-left:20px;
+    font-weight:500;
+    font-size:0.975rem;
+    color:rgb(204,50,63);
+}
+.style_first_row{
+    /* border:1px solid red; */
+    width:100%;
+    height:50px;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    /* margin-top:10px; */
+    padding-top:10px;
+
+}
+.all_posts{
+    text-decoration:underline;
+    font-weight:700;
+    cursor:pointer;
+    font-size:0.975rem;
+}
+.Patron_only_posts{
+    color:grey;
+    font-size:0.975rem;
+    cursor:pointer;
+}
+.all_creators{
+    margin-top:-5px;
+    height:25px;
+    width:200px;
+    cursor:pointer;
+    color:grey;
+    border:2px solid rgb(229, 227, 221);
+    padding:5px;
+}
+.post_of_creators{
+    width:95%;
+    padding:10px;
+    border:2px solid rgb(229, 227, 221);
+    /* text-align: left; */
+    overflow:none;
+    margin:auto;
+    text-align:center;
+}
+.text_post{
+    font-size:0.975rem;
+    cursor:pointer;
+}
+.button_post{
+    -webkit-box-align: center;
+    align-items: center;
+    backface-visibility: hidden;
+    background-color: rgb(0, 76, 129);
+    border-radius: 9999px;
+    border: 1px solid rgb(0, 76, 129);
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    font-weight: 500;
+    height: unset;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 0.78125rem 1.5rem;
+    position: relative;
+    pointer-events: unset;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    user-select: none;
+    white-space: unset;
+    width: unset;
+    color: rgb(255, 255, 255) !important;
+    font-size: 0.875rem !important;
+}
+.post_of_creators>img{
+    width:100%;
+    height:auto;
+}
+.post_of_creators>span{
+    color:rgb(227,108,9);
+}
+.heading_style{
+    color:rgb(255,66,77);
+}
+.style_profile_support_section_1{
+    border:2px solid rgb(229, 227, 221);
+    /* margin-left:20px; */
+    padding:10px;
+    font-size:0.975rem;
+}
+.button_1_support{
+    -webkit-box-align: center;
+    align-items: center;
+    backface-visibility: hidden;
+    background-color: rgb(225, 240, 250);
+    border-radius: 9999px;
+    border: 1px solid rgb(225, 240, 250);
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    font-weight: 500;
+    height: unset;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 0.46875rem 1rem;
+    position: relative;
+    pointer-events: unset;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    transition: all 300ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    user-select: none;
+    white-space: unset;
+    width: unset;
+    color: rgb(0, 76, 129) !important;
+    font-size: 0.875rem !important;
+
+}
+
