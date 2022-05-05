@@ -29,7 +29,21 @@ const LinkWrapper = styled(Link)`
 const Navbar = () => {
   const [searchData, setSearchData] = useState([]);
   let searchBoxref = useRef();
+  // let isAuth = true
   const{isAuth, LoginAuth} = React.useContext(isLogin);
+  // const LoginAuth = () =>{
+  //   fetch('https://patreondatabase.herokuapp.com/signOut',{
+  //     method: "PUT",
+  //   })
+   
+    
+  //   // .then((res) =>res.json())
+  //   .then((res) => console.log(res))
+  //   .catch((err) => console.log(err))
+   
+
+  // }
+
 
   useEffect(() => {
     let handler = (event) => {

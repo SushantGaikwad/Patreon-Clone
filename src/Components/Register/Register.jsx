@@ -6,9 +6,10 @@ import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import { BsFacebook,  BsApple} from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
-
+import { isLogin } from "../../ContextAPI/AuthContext";
 import { Nav } from '../Nav-Blog/Nav'
 import { registerInitiate } from '../../Redux/action';
+// const[tok,setTok] = React.useState([])
 export const Register = () => {
   const { register, watch, formState: { errors } } = useForm({
     mode:'onTouched'
@@ -25,6 +26,8 @@ export const Register = () => {
     userPassword: "",
   });
   const navigate = useNavigate()
+  const { LoginAuth } = React.useContext(isLogin);
+
 
   const handleSubmit = (e) => {
     // console.log("login");
@@ -51,15 +54,30 @@ export const Register = () => {
         body: JSON.stringify(obj),
         headers: {"Content-Type":"application/json" }
     }).then((res) =>res.json())
-    .then((res) => console.log(res))
+    // .then((res) => res.json())
+    .then((res) => {
+       
+      if(res.token){
+         console.log(res.token)
+      LoginAuth()
+      alert("Registration Successfull !");
+
+      navigate('/')
+      }
+      else{
+        alert("Something is Wrong!!!")
+      }
+    })
     .catch((err)=>console.log(err))
     
 
   }
 
    const goToGoogle = () => {
-    window.open("https://patreondatabase.herokuapp.com/auth/google","_self")
-     navigate('/login')
+    window.open("https://patreondatabase.herokuapp.com/google","_self")
+     navigate('/');
+     
+
    }
 
   return (

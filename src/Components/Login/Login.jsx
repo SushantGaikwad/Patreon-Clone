@@ -22,15 +22,9 @@ export const Login = () => {
 
   const navigate = useNavigate();
 
-  const onSubmit = (data) => {
-    //   LoginAuth();
-
-    console.log(data);
-    
-  
-    //   alert("Login Successfull !");
-    //   navigate('/')
-  };
+  // const onSubmit = (data) => {
+     
+  // };
 
   const email = watch("email");
   const password = watch("password");
@@ -60,8 +54,34 @@ export const Login = () => {
         body: JSON.stringify(obj),
         headers: {"Content-Type":"application/json" }
     }).then((res) =>res.json())
-    .then((res) => console.log(res))
-    .catch((err)=>console.log(err))
+    .then((res) => {
+       
+      if(res.token){
+         console.log(res.token)
+      LoginAuth();
+      alert("Login Successfull !");
+
+      navigate('/')
+      }
+      else{
+        alert("Something is Wrong!!!")
+      }
+    })
+    .catch((err)=> console.log(err))
+      
+  
+
+      
+    
+    
+    
+ 
+   
+    
+   
+    
+    // navigate('/')
+
     
 
     // const { name, value } = e.target;
