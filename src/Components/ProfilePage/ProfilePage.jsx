@@ -5,14 +5,46 @@ import Footer from '../Footer/Footer';
 import { IoChevronDown} from "react-icons/io5";
 import Navbar from '../Navbar/Navbar';
 import { useNavigate } from 'react-router-dom';
+import { isLogin } from '../../ContextAPI/AuthContext';
 
 const ProfilePage = () => {
   const navigate = useNavigate();
+  const {isAuth, isGoogle} =React.useContext(isLogin);
 
   const getStarted = ()=>{
     console.log("Dashboard");
     navigate("/contents")
   }
+
+  const getUser = () => {
+    fetch("http://localhost:9999/login/success", {
+    method: "GET",
+    credentials: "include",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Credentials": true,
+    },
+  })
+  .then((response) => response.json())
+  .then((response) =>{
+      //  console.log(response.user);
+      const UserData = response.user
+      localStorage.setItem("items",JSON.stringify([UserData]));
+      console.log(UserData);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+  // console.log(user);
+};
+isGoogle && getUser();
+
+
+const UserData = JSON.parse(localStorage.getItem("items"));
+let userid = UserData[0]._id;
+console.log(userid);
+
 
   return (
     <div>
@@ -20,8 +52,9 @@ const ProfilePage = () => {
         <div className="style_main_page">
             <div className="style_first_half">
                 <div className="style_profile_image_section">
-                    <div className="circle_profile"></div> <br />
-                    <div className="name_user">Sushant Gaikwad</div>
+                    <div className="circle_profile"  style={{backgroundImage: `url(${UserData[0].profilePic})`}}> </div><br />
+                 
+                    <div className="name_user">{UserData[0].name}</div>
                 </div>
                 <div className="style_profile_support_section">
                    <div>SUPPORTING</div>

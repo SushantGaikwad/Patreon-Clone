@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import { BsFacebook,  BsApple} from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
+import { isLogin } from '../../ContextAPI/AuthContext';
 
 import { Nav } from '../Nav-Blog/Nav'
 import { registerInitiate } from '../../Redux/action';
@@ -15,7 +16,7 @@ export const Register = () => {
     mode:'onTouched'
   });
 
-    
+  const {LoginAuth, GoogleAuth} = React.useContext(isLogin);
   const email = watch("email");
   const password = watch("password");
 
@@ -59,7 +60,7 @@ const [user,setUser] = React.useState("");
         }).then((res) =>res.json())
         .then((res) => {
           if(res.status === 200){
-            alert("Registration Successfull");
+            alert("Registration Successfull");            
             navigate("/login");
           }
           else if(res.status === 201){
@@ -78,7 +79,8 @@ const [user,setUser] = React.useState("");
   }
 
    const goToGoogle = () => {
-    window.open("http://localhost:9999/google","_self")  
+     GoogleAuth();
+    window.open("http://localhost:9999/google","_self")
    }
 
   return (

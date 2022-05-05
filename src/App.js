@@ -26,33 +26,7 @@ import Text from './Components/Text/Text';
 function App() {
   const [user,setUser]  = React.useState(null);
 
-  React.useEffect(() => {
-    const getUser = () => {
-          fetch("http://localhost:9999/login/success", {
-          method: "GET",
-          credentials: "include",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Credentials": true,
-          },
-        })
-        .then((response) => response.json())
-        .then((response) =>{
-      console.log(response.user);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-        console.log(user);
-    };
-    getUser();
-  }, [user]);
-
-
-
-
-
+  
   return (
     <div className="App">
        <Navbar />

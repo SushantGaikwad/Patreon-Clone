@@ -109,9 +109,9 @@ const HomePage = () => {
                     fill="white"
                     d="M29.5 26.917L53.25 38 29.5 49.083V26.917z"
                     data-stroke="1"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   ></path>
                 </svg>
               </span>

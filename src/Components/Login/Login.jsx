@@ -18,12 +18,13 @@ export const Login = () => {
     mode: "onTouched",
   });
 
-  const { LoginAuth } = React.useContext(isLogin);
+  const { LoginAuth} = React.useContext(isLogin);
 
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-      LoginAuth();
+      // LoginAuth();
+      
       console.log(data);     
       alert("Login Successfull !");
       navigate('/profile')
@@ -38,6 +39,11 @@ export const Login = () => {
     userEmail: "",
     userPassword: "",
   });
+
+  const [User, setUser] = React.useState(null);
+
+
+  
 
   const handleSubmit = (e) => {
     // console.log("login");
@@ -59,8 +65,12 @@ export const Login = () => {
     }).then((res) =>res.json())
     .then((res) =>{
       if(res.token){
-        LoginAuth();
+        // LoginAuth();
         console.log(res);
+        let UserData = res.user
+        setUser(UserData);
+        console.log(User);
+        localStorage.setItem('items', JSON.stringify([UserData]));
         alert("Login Successfull");
         navigate("/profile");
       }

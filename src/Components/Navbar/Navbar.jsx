@@ -57,7 +57,6 @@ const Navbar = () => {
       .catch((err) => console.log(err));
   };
 
-console.log("isAUth: ", isAuth);
 
   return (
     <div className="navbar">
@@ -71,7 +70,7 @@ console.log("isAUth: ", isAuth);
         </Link>
       </div>
       <div className="options">
-        <div class="dropdown">
+        <div className="dropdown">
           <div className="dropdown_title">
             Product
             <div className="drop">
@@ -110,7 +109,7 @@ console.log("isAUth: ", isAuth);
           </div>
         </div>
 
-        <div class="dropdown">
+        <div className="dropdown">
           <div className="dropdown_title">
             For Creators{" "}
             <div className="drop-1">
@@ -188,7 +187,7 @@ console.log("isAUth: ", isAuth);
         {/* for pricing */}
         <a className="atag_decoration" href="https://www.patreon.com/pricing"><div className="Pricing">Pricing</div></a>
         {/* <div>Resources</div> */}
-        <div class="dropdown">
+        <div className="dropdown">
           <div className="dropdown_title">
             <a className="atag_decoration" href="">
               Resources{" "}
