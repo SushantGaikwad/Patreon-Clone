@@ -9,24 +9,28 @@ import { FcGoogle } from "react-icons/fc";
 import { isLogin } from "../../ContextAPI/AuthContext";
 import { Nav } from '../Nav-Blog/Nav'
 import { registerInitiate } from '../../Redux/action';
-// const[tok,setTok] = React.useState([])
 export const Register = () => {
   const { register, watch, formState: { errors } } = useForm({
     mode:'onTouched'
   });
+
     
   const email = watch("email");
   const password = watch("password");
 
   const isValid = email && password;
   // console.log(email,password)
-
+const [user,setUser] = React.useState("");
   const [state, setState] = React.useState({
     userEmail: "",
     userPassword: "",
   });
   const navigate = useNavigate()
   const { LoginAuth } = React.useContext(isLogin);
+
+
+
+  
 
 
   const handleSubmit = (e) => {
@@ -74,10 +78,7 @@ export const Register = () => {
   }
 
    const goToGoogle = () => {
-    window.open("https://patreondatabase.herokuapp.com/google","_self")
-     navigate('/');
-     
-
+    window.open("http://localhost:9999/google","_self")  
    }
 
   return (
