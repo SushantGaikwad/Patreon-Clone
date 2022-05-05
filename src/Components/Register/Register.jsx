@@ -69,7 +69,10 @@ const [user,setUser] = React.useState("");
         alert("Something Went Wrong. Please try again");
       }
     })
-    .catch((err)=>console.log(err))
+    .catch((err)=>()=>{
+      alert("Something Went Wrong");
+            console.log(err);
+    })
   
 
   }

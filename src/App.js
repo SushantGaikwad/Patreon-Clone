@@ -14,6 +14,7 @@ import Creators from './Components/CreatorsPage/Creators';
 import Payment from './Components/Payments/Payment';
 import ProfilePage from './Components/ProfilePage/ProfilePage';
 import { Register } from './Components/Register/Register';
+
 import Contents from './Components/Content/Content';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Post from './Components/Post/Post';
@@ -55,11 +56,11 @@ function App() {
 
   return (
     <div className="App">
-       {/* <Navbar /> */}
+       <Navbar />
         {/* <HomePage/> */} 
        
         <Routes>
-        <Route path="/" element={<Text />}/>
+        <Route path="/" element={<HomePage />}/>
         <Route path='/lite' element={<Lite />} />
         <Route path='/pro' element={<Pro />} />
         <Route path='/premium' element={<Premium />} />
@@ -71,10 +72,11 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/creators" element={<HomePage />} />
         <Route path="/profile" element={<ProfilePage />} />       
+        <Route path="/dashboard" element={<Dashboard />} />       
 
         
         </Routes>
-        {/* <Footer/> */}
+        <Footer/>
    
      
 </div>

@@ -23,13 +23,12 @@ export const Login = () => {
   const navigate = useNavigate();
 
   const onSubmit = (data) => {
-    //   LoginAuth();
+      LoginAuth();
 
-    console.log(data);
-    
+      console.log(data);   
   
-    //   alert("Login Successfull !");
-    //   navigate('/')
+      alert("Login Successfull !");
+      navigate('/profile')
   };
 
   const email = watch("email");
@@ -80,7 +79,7 @@ export const Login = () => {
       <div className="login">
         <h2>Log in</h2>
         <React.Fragment>
-          <form className="form" onSubmit={handleSubmit}>
+          <form className="form" onSubmit={onSubmit}>
             <div className="space-y-8">
               <p>Email</p>
 
