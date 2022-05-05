@@ -9,10 +9,19 @@ import {GoTextSize} from "react-icons/go";
 import {FaBullhorn,FaCoins,FaTags} from "react-icons/fa";
 import { TextField } from '@material-ui/core';
 import {GrAttachment} from "react-icons/gr"
+import { useNavigate } from 'react-router-dom';
+
 
 const Text = () => {
+    const navigate = useNavigate();
+    const getPublish = ()=>{
+        navigate("/dashboard");
+    }
   return (
+
+
     <>
+    <div style={{height:"70px"}}></div>
      <div className={Style.maincontent_dashboard}>
          <div className={Style.left_maincontent_dashboard}>
              <div className={Style.left_section1}>
@@ -109,9 +118,8 @@ const Text = () => {
              </div>
              <div className={Styled.right_right}>
                  <div className={Styled.publish_now}>
-                        <button className={Styled.publish}>
+                        <button className={Styled.publish} onClick={getPublish}>
                             PUBLISH
-
                         </button>
                  </div>
 

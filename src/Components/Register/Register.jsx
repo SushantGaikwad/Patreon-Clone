@@ -33,46 +33,46 @@ const [user,setUser] = React.useState("");
 
 
   const handleSubmit = (e) => {
-    // console.log("login");
+        // console.log("login");
 
-    e.preventDefault();
-    let name = document.getElementById('displayName').value
-    let email = document.getElementById('email').value
-    // let confirm = document.getElementById('emailReconfirm').value
-  
+        e.preventDefault();
+        let name = document.getElementById('displayName').value
+        let email = document.getElementById('email').value
+        // let confirm = document.getElementById('emailReconfirm').value
+      
 
-    let password = document.getElementById('password').value
+        let password = document.getElementById('password').value
 
-    console.log(typeof(email),typeof(password))
-     let obj = {
-       'name': name,
-      'email' : email,
-      'password' : password
-     }
-    
-    console.log("obj" + JSON.stringify(obj));
-    
-    fetch(`http://localhost:9999/signUp`,{
-        method: "POST",
-        body: JSON.stringify(obj),
-        headers: {"Content-Type":"application/json" }
-    }).then((res) =>res.json())
-    .then((res) => {
-      if(res.status === 200){
-        alert("Registration Successfull");
-        navigate("/login");
-      }
-      else if(res.status === 201){
-        alert("This Email Id already used");
-      }
-      else{
-        alert("Something Went Wrong. Please try again");
-      }
-    })
-    .catch((err)=>()=>{
-      alert("Something Went Wrong");
-            console.log(err);
-    })
+        console.log(typeof(email),typeof(password))
+        let obj = {
+            'name': name,
+            'email' : email,
+            'password' : password
+        }
+        
+        console.log("obj" + JSON.stringify(obj));
+        
+        fetch(`http://localhost:9999/signUp`,{
+            method: "POST",
+            body: JSON.stringify(obj),
+            headers: {"Content-Type":"application/json" }
+        }).then((res) =>res.json())
+        .then((res) => {
+          if(res.status === 200){
+            alert("Registration Successfull");
+            navigate("/login");
+          }
+          else if(res.status === 201){
+            alert("This Email Id already used");
+          }
+          else{
+            alert("Something Went Wrong. Please try again");
+          }
+        })
+        .catch((err)=>()=>{
+          alert("Something Went Wrong");
+          console.log(err);
+        })
   
 
   }

@@ -5,10 +5,20 @@ import {BsPencilSquare} from "react-icons/bs";
 import {RiHome4Fill,RiPagesLine,RiContactsLine,RiPagesFill} from "react-icons/ri";
 import {AiOutlineHome} from "react-icons/ai";
 import {FaBullhorn,FaCoins} from "react-icons/fa";
+import Footer from '../Footer/Footer';
+import { useNavigate } from 'react-router-dom';
+
 // import Style from "style.module.css";
 const Dashboard = () => {
+    const navigate = useNavigate();
+
+    const getStarted = ()=>{
+        navigate("/post");
+    }
+
   return (
     <>
+    <div style={{height:"70px"}}></div>
      <div className={Style.maincontent_dashboard}>
          <div className={Style.left_maincontent_dashboard}>
              <div className={Style.left_section1}>
@@ -92,29 +102,20 @@ const Dashboard = () => {
                              <br /> <br />
                              Creators who post patron-only content twice a month tend to retain more patrons. This means their patrons pledge longer!
                              <br /> <br />
-                             <div className={Style.button_right_post}><BsPencilSquare/> &nbsp; Make your first post</div>
+                             <div className={Style.button_right_post} onClick={getStarted}><BsPencilSquare/> &nbsp; Make your first post</div>
                          </div>
                          <br />
                          <div className={Style.right_post_2}>
-
                          </div>
                          <br />
-
                      </div>
-                    
-
                  </div>
              </div>
 
          </div>
-
-
-
-
-
-
      </div>
-    
+     <div style={{height:"100px"}}></div>
+    {/* <Footer /> */}
     </>
   )
 }

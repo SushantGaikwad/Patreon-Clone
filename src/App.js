@@ -73,6 +73,9 @@ function App() {
         <Route path="/creators" element={<HomePage />} />
         <Route path="/profile" element={<ProfilePage />} />       
         <Route path="/dashboard" element={<Dashboard />} />       
+        <Route path="/post" element={<Post />} />       
+        <Route path="/makePost" element={<Text />} />       
+        <Route path="/contents" element={<Contents />} />       
 
         
         </Routes>

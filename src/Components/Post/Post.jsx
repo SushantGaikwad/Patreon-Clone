@@ -10,11 +10,17 @@ import {MdVideoSettings,MdLiveTv,MdAudiotrack} from "react-icons/md";
 import {FaBullhorn,FaCoins,FaImages,FaPollH} from "react-icons/fa";
 import {GoTextSize} from "react-icons/go";
 import Styled from "./Post.module.css";
+import { useNavigate } from 'react-router-dom';
 
 
 const Post = () => {
+    const navigate = useNavigate();
+    const goText = ()=>{
+        navigate("/makePost")
+    }
   return (
     <>
+    <div style={{height:"70px"}}></div>
     <div className={Style.maincontent_dashboard}>
          <div className={Style.left_maincontent_dashboard}>
              <div className={Style.left_section1}>
@@ -68,7 +74,7 @@ const Post = () => {
                 <div className={Styled.post_type}>
                     <div className={Styled.top_post}>
                         <div className={Styled.top_1}>
-                            <div><GoTextSize size={42} color={"black"}/><br />Text</div>
+                            <div onClick={goText}><GoTextSize size={42} color={"black"}/><br />Text</div>
                             
                            
                           
@@ -116,15 +122,10 @@ const Post = () => {
 
          </div>
 
-
-
-
-
-
      </div>
     
     
-    
+     <div style={{height:"100px"}}></div>
     </>
   )
 }

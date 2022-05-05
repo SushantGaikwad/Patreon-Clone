@@ -11,7 +11,7 @@ const ProfilePage = () => {
 
   const getStarted = ()=>{
     console.log("Dashboard");
-    navigate("/dashboard")
+    navigate("/contents")
   }
 
   return (
@@ -65,7 +65,7 @@ const ProfilePage = () => {
                 </div>
                 <div className="style_profile_support_section_1">
                    <div>Build a membership for your <br /> fans and get paid to create on <br/>your own terms.</div> <br />
-                   <div className="button_1_support"  onClick={getStarted} >Get Started</div>
+                   <div className="button_1_support"  onClick={getStarted}>Get Started</div>
                 </div>
                 {/* <hr /> */}
                 <div className="style_profile_support_section">

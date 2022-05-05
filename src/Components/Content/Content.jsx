@@ -1,6 +1,7 @@
 import React from 'react';
 // import './Contents.css';
 import Style from "./Content.module.css";
+import { useNavigate } from 'react-router-dom'; 
 
 const Contents = () => {
   const [checkedOne, setCheckedOne] = React.useState(false);
@@ -13,6 +14,14 @@ const Contents = () => {
   const [checkedEight, setCheckedEight] = React.useState(false);
   const [checkedNine, setCheckedNine] = React.useState(false);
   const [checkedTen, setCheckedTen] = React.useState(false);
+  const navigate = useNavigate();
+
+
+
+
+const goDashboard = ()=>{
+  navigate("/dashboard");
+}
 
   const handleChangeOne = () => {
     setCheckedOne(!checkedOne);
@@ -57,6 +66,7 @@ const Contents = () => {
   };
   return (
     <>
+    <div style={{height:"70px"}}></div>
     <div className={Style.center_div}>
         <div className={Style.left_center_div}>
         <div className={Style.titlestep}>STEP 1</div>
@@ -77,7 +87,7 @@ const Contents = () => {
             <br />
             <Checkbox label="Local Business (resturant, yoga studio, venue, etc.)" value={checkedFour} onChange={handleChangeFour}/>
             <br /> <br />
-            <div className={Style.buttonlast}>Continue</div>
+            <div className={Style.buttonlast} onClick={goDashboard}>Continue</div>
 
 
 

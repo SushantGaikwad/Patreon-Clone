@@ -24,9 +24,7 @@ export const Login = () => {
 
   const onSubmit = (data) => {
       LoginAuth();
-
-      console.log(data);   
-  
+      console.log(data);     
       alert("Login Successfull !");
       navigate('/profile')
   };
@@ -46,20 +44,29 @@ export const Login = () => {
     e.preventDefault();
     let email = document.getElementById('email').value
     let password = document.getElementById('password').value
-    console.log(typeof(email),typeof(password))
+    // console.log(typeof(email),typeof(password))
      let obj = {
       'email' : email,
       'password' : password
      }
     
-    console.log("obj" + JSON.stringify(obj))
+    // console.log("obj" + JSON.stringify(obj))
     
     fetch(`https://patreondatabase.herokuapp.com/login`,{
         method: "POST",
         body: JSON.stringify(obj),
         headers: {"Content-Type":"application/json" }
     }).then((res) =>res.json())
-    .then((res) => console.log(res))
+    .then((res) =>{
+      if(res.token){
+        LoginAuth();
+        alert("Login Successfull");
+        navigate("/profile");
+      }
+      else{
+        alert("Please Try Again");
+      }
+    })
     .catch((err)=>console.log(err))
     
 
@@ -79,7 +86,7 @@ export const Login = () => {
       <div className="login">
         <h2>Log in</h2>
         <React.Fragment>
-          <form className="form" onSubmit={onSubmit}>
+          <form className="form" onSubmit={handleSubmit}>
             <div className="space-y-8">
               <p>Email</p>
 
