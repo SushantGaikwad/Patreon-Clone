@@ -25,6 +25,7 @@ import Text from './Components/Text/Text';
  
 function App() {
   const [user,setUser]  = React.useState(null);
+
   React.useEffect(() => {
     const getUser = () => {
           fetch("http://localhost:9999/login/success", {
@@ -37,18 +38,16 @@ function App() {
           },
         })
         .then((response) => response.json())
-        .then((response) => {
-          console.log("RESPONSE :",response);
-          setUser(response.user);
-          console.log("User : ",user);
+        .then((response) =>{
+      console.log(response.user);
         })
         .catch((err) => {
           console.log(err);
         });
+        console.log(user);
     };
     getUser();
-  }, []);
-
+  }, [user]);
 
 
 

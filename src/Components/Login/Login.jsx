@@ -60,6 +60,7 @@ export const Login = () => {
     .then((res) =>{
       if(res.token){
         LoginAuth();
+        console.log(res);
         alert("Login Successfull");
         navigate("/profile");
       }
