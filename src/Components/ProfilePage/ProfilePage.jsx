@@ -15,12 +15,13 @@ const ProfilePage = () => {
     console.log("Dashboard");
     navigate("/contents")
   }
-    const localGoogle = JSON.parse(localStorage.getItem("Google"));
-  console.log(localGoogle);
-
+const localGoogle = JSON.parse(localStorage.getItem("Google"));
+console.log(localGoogle);
+const [UserData, setUserData] =  React.useState();
   
+
   React.useEffect(()=>{
-  const getUser = () => {
+ const getData = ()=>{
     fetch("http://localhost:9999/login/success", {
     method: "GET",
     credentials: "include",
@@ -32,25 +33,21 @@ const ProfilePage = () => {
   })
   .then((response) => response.json())
   .then((response) =>{
-       console.log("User : ",response.user);
-      const UserData = response.user
-      localStorage.setItem("items",JSON.stringify([UserData]));
+      console.log("User : ",response.user);
+      const user = response.user
+      localStorage.setItem('items', JSON.stringify([user]))
       console.log(UserData);
   })
   .catch((err) => {
     console.log(err);
   });
   // console.log(user);
-};
-
-console.log("Google :",localGoogle);
-if(localGoogle)
-{
-  getUser()
-}
+ }
+ localGoogle && getData();
 },[])
 
-const [UserData, setUserData] =  React.useState(null);
+
+
 useEffect(()=>{
   setTimeout(()=>{
     setUserData(JSON.parse(localStorage.getItem("items")));
@@ -61,7 +58,7 @@ useEffect(()=>{
 
 
 
-  return UserData &&  (
+  return UserData && (
     <div>
         <Navbar/> <br /><br /> <br /><br /><br /><br />
         <div className="style_main_page">

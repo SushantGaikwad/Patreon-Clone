@@ -14,40 +14,54 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Post = () => {
+
+    const [UserData, setUserData] =  React.useState(null);
+ 
+    React.useEffect(()=>{
+      setTimeout(()=>{
+        setUserData(JSON.parse(localStorage.getItem("items")));
+        console.log(UserData[0]);
+    },1)
+    },[])
+
+
     const navigate = useNavigate();
     const goText = ()=>{
         navigate("/makePost")
     }
-  return (
+    const dashboard = ()=>{
+        navigate("/dashboard")
+    }
+  return UserData && (
     <>
-    <div style={{height:"70px"}}></div>
+    <div style={{height:"67px"}}></div>
     <div className={Style.maincontent_dashboard}>
          <div className={Style.left_maincontent_dashboard}>
              <div className={Style.left_section1}>
-                <div className={Style.left_section_1_img}>
+                <div className={Style.left_section_1_img} style={{backgroundImage: `url(${UserData[0].profilePic})`}}>
 
                 </div>
                
                 <div className={Style.left_section_1_user_name}>
-                    Ambesh Mishra
+                    {UserData[0].name}
                 </div>
                 <div className={Style.left_section_1_creator}>
                     Creator account
                 </div>
                 <br />
                 <div className={Style.left_section_1_features}>
-                    <div className='circle_icons'><IoChatbubblesOutline/></div>
-                    <div className='circle_icons'><BsPencilSquare/></div>
-                    <div className='circle_icons'><IoSettingsOutline/></div>
+                    <div className={Style.circle_icons}><IoChatbubblesOutline/></div>
+                    <div className={Style.circle_icons}><BsPencilSquare/></div>
+                    <div className={Style.circle_icons}><IoSettingsOutline/></div>
                 </div>
                
 
              </div>
              <div className={Style.left_section_2}>
-                   <div> <AiOutlineHome/>&nbsp;&nbsp;Home</div>
+                   <div onClick={dashboard}> <AiOutlineHome/>&nbsp;&nbsp;Home</div>
              </div>
              <div className={Style.left_section_3}>
-                     <div><RiPagesLine/>&nbsp;&nbsp;Posts</div>
+                     <div ><RiPagesLine/>&nbsp;&nbsp;Posts</div>
                     
              </div>
              <div className={Style.left_section_3}>

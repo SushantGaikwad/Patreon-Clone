@@ -9,6 +9,9 @@ import { isLogin } from "../../ContextAPI/AuthContext";
 import { Nav } from "../Nav-Blog/Nav";
 export const Login = () => {
   window.scrollTo(0, 0);
+
+  const {GoogleAuth} = React.useContext(isLogin);
+
   const {
     register,
     // handleSubmit,
@@ -44,8 +47,14 @@ export const Login = () => {
 
 
   const userStorage = localStorage.getItem("items");
-  if(userStorage == undefined){
+  if(userStorage === undefined){
     localStorage.setItem("items",JSON.stringify([]));
+  }
+
+  const google = () => {     
+    localStorage.setItem("Google",JSON.stringify(true));
+    window.open("http://localhost:9999/google","_self")
+    GoogleAuth();
   }
 
   const handleSubmit = (e) => {
@@ -164,7 +173,7 @@ export const Login = () => {
             </div>
             <p className="or">or</p>
             <div className="frames">
-              <div className="frame-1">
+              <div className="frame-1" onClick={google}>
                 <div className="img-icon">
                   <FcGoogle size="0.5x" />
                 </div>

@@ -38,7 +38,30 @@ const Dashboard = () => {
     const getStarted = ()=>{
         navigate("/post");
     }
+    const dashboard = ()=>{
+        navigate("/dashboard");
+    }
    
+
+let input = document.getElementById("input_comment"); 
+useEffect(()=>{
+    setTimeout(()=>{
+        input.addEventListener("keypress", function(event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            const container = document.getElementById("comment");
+            let imgDiv = document.createElement("div");
+            imgDiv.setAttribute("className","comment_icon");
+            imgDiv.style.backgroundImage= UserData[0].profilePic;
+            let commentDiv = document.createElement("div");
+            commentDiv.textContent = input.value;
+            container.append(imgDiv,commentDiv);
+          }
+    },100)
+   
+    });
+},[input])
+
 
   return (
     <>
@@ -58,15 +81,15 @@ const Dashboard = () => {
                 </div>
                 <br />
                 <div className={Style.left_section_1_features}>
-                    <div className='circle_icons'><IoChatbubblesOutline/></div>
-                    <div className='circle_icons'><BsPencilSquare/></div>
-                    <div className='circle_icons'><IoSettingsOutline/></div>
+                    <div className={Style.circle_icons}><IoChatbubblesOutline/></div>
+                    <div className={Style.circle_icons} onClick={getStarted}><BsPencilSquare/></div>
+                    <div className={Style.circle_icons}><IoSettingsOutline/></div>
                 </div>
                
 
              </div>
              <div className={Style.left_section_2}>
-                   <div> <AiOutlineHome/>&nbsp;&nbsp;Home</div>
+                   <div onClick={dashboard}> <AiOutlineHome/>&nbsp;&nbsp;Home</div>
              </div>
              <div className={Style.left_section_3}>
                      <div><RiPagesLine/>&nbsp;&nbsp;Posts</div>
@@ -140,9 +163,10 @@ const Dashboard = () => {
                             <div className={Style.right_section_box_posts}>
                          <div className={Style.right_post_1}>
                              <strong>Your Posts are here</strong>
-                           {posts.forEach((post) =>(
+                           {posts.map((post) =>{
+                               return (
                                  <div className= {Style.posts}>
-                                 <div className={Style.post_time}>{post.time}</div>
+                                 <div className={Style.post_time}>{post.timestamp}</div>
                                  <div className={Style.post_description}>{post.description}</div>
                                  <div  className={Style.post_description}>
                                      <span><AiOutlineHeart /></span>
@@ -151,12 +175,18 @@ const Dashboard = () => {
                                      <span><RiPencilLine /></span>
                                      <span><BiPin /></span>
                                  </div>
+                                 <div className={Style.comments} id="comment">
+                                     
+                                 </div>
                                  <div className={Style.post_comments}>
                                      <div className={Style.comment_icon} style={{backgroundImage: `url(${UserData[0].profilePic})`}}></div>
-                                     <div><input type="text" placeholder='Join Conversation' className={Style.comment_input}  /></div>
+                                     <div><input type="text" placeholder='Join Conversation' className={Style.comment_input} id="input_comment"  /></div>
+                                                                            
+                                     
                                  </div>
                           </div>
-                           ))}
+                            )
+                            })}
                              
                          </div>
                          <br />
@@ -169,6 +199,7 @@ const Dashboard = () => {
 
          </div>
      </div>
+
      <div style={{height:"100px"}}></div>
     {/* <Footer /> */}
     </>

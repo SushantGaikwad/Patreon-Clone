@@ -24,10 +24,8 @@ import LoginNavbar from "./Components/LoginNavbar/LoginNavbar";
 
 
 function App() {
-
+  window.scrollTo(0, 0);
   const [login, setLogin] = React.useState(false);
-
-
   React.useEffect(()=>{
     const UserData = localStorage.getItem("items");
     if(UserData[0]){
@@ -63,13 +61,11 @@ const {isAuth} = React.useContext(isLogin)
         <Route path="/register" element={<Register />} />
         <Route path="/creators" element={<HomePage />} />
         <Route path="/profile" element = {<ProfilePage />} />       
-        <Route path="/dashboard" element={ !login ? <Navigate to="/login" /> : <Dashboard />} />       
+        <Route path="/dashboard" element={ <Dashboard />} />       
         <Route path="/post" element={ !login ? <Navigate to="/login" /> : <Post />} />       
         <Route path="/makePost" element={ <Text />}/>       
         <Route path="/contents" element={ !login ? <Navigate to="/login" /> : <Contents />} />    
-        <Route path="*" />   
-
-        
+        <Route path="*" />
         </Routes>
         <Footer/>
    

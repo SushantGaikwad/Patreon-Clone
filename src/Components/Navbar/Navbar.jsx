@@ -48,7 +48,7 @@ const Navbar = () => {
 
   const handleSearch = (key) => {
     console.log(key);
-    fetch(`http://localhost:3004/creators?q=${key}`)
+    fetch(`http://localhost:9999/users?q=${key}`)
       .then((res) => res.json())
       .then((res) => {
         // console.log(res);
@@ -243,10 +243,10 @@ const UserData = JSON.parse(localStorage.getItem("items"));
               {searchData.map((item, index) => {
                 return (
                   <div key={index}>
-                    <LinkWrapper to={`/${item.username}`}>
+                    <LinkWrapper to={`/${item.name}`}>
                       <div className="search_box_card">
                         <div className="search_box_card_img">
-                          <img src={item.img} alt="creator_photo" />
+                          <img src={item.profilePic} alt="creator_photo" />
                         </div>
                         <div id="search_box_card_text">
                           <span className="search_box_card_name_navbar">

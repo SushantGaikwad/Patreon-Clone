@@ -92,7 +92,7 @@ h2{
 
 }
 .text-about{
-    border:1px solid grey;
+    /* border:1px solid grey; */
     text-align:left;
     padding:20px;
     /* bottom: blur; */
