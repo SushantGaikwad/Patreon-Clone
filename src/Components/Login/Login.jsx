@@ -43,7 +43,10 @@ export const Login = () => {
   const [User, setUser] = React.useState(null);
 
 
-  
+  const userStorage = localStorage.getItem("items");
+  if(userStorage == undefined){
+    localStorage.setItem("items",JSON.stringify([]));
+  }
 
   const handleSubmit = (e) => {
     // console.log("login");
@@ -65,11 +68,11 @@ export const Login = () => {
     }).then((res) =>res.json())
     .then((res) =>{
       if(res.token){
-        // LoginAuth();
         console.log(res);
         let UserData = res.user
         setUser(UserData);
         console.log(User);
+        localStorage.setItem("Google",JSON.stringify(false));
         localStorage.setItem('items', JSON.stringify([UserData]));
         alert("Login Successfull");
         navigate("/profile");

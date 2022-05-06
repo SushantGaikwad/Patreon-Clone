@@ -10,7 +10,7 @@ export const AuthContextProvider = ({children}) =>{
     const navigate = useNavigate();
 
     const LoginAuth = (isAuth) =>{
-        setisAuth(false);   
+        setisAuth(!isAuth);   
     }
     const GoogleAuth = () =>{
         setGoogle(true);

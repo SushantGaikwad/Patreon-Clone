@@ -19,17 +19,35 @@ import Contents from './Components/Content/Content';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Post from './Components/Post/Post';
 import Text from './Components/Text/Text';
+import {isLogin} from "./ContextAPI/AuthContext";
+import LoginNavbar from "./Components/LoginNavbar/LoginNavbar";
 
 
-
- 
 function App() {
-  const [user,setUser]  = React.useState(null);
+
+  const [login, setLogin] = React.useState(false);
+
+
+  React.useEffect(()=>{
+    const UserData = localStorage.getItem("items");
+    if(UserData[0]){
+     setLogin(true);
+    }
+    console.log(login);
+  },[])
+
+const {isAuth} = React.useContext(isLogin)
+// localStorage.setItem("items",JSON.stringify([]));
+
 
   
   return (
     <div className="App">
+      {isAuth ?
+       <LoginNavbar />
+       :
        <Navbar />
+      }
         {/* <HomePage/> */} 
        
         <Routes>
@@ -44,11 +62,12 @@ function App() {
         <Route path="/payment" element={<Payment />} />
         <Route path="/register" element={<Register />} />
         <Route path="/creators" element={<HomePage />} />
-        <Route path="/profile" element={<ProfilePage />} />       
-        <Route path="/dashboard" element={<Dashboard />} />       
-        <Route path="/post" element={<Post />} />       
-        <Route path="/makePost" element={<Text />} />       
-        <Route path="/contents" element={<Contents />} />       
+        <Route path="/profile" element = {<ProfilePage />} />       
+        <Route path="/dashboard" element={ !login ? <Navigate to="/login" /> : <Dashboard />} />       
+        <Route path="/post" element={ !login ? <Navigate to="/login" /> : <Post />} />       
+        <Route path="/makePost" element={ <Text />}/>       
+        <Route path="/contents" element={ !login ? <Navigate to="/login" /> : <Contents />} />    
+        <Route path="*" />   
 
         
         </Routes>

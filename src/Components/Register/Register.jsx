@@ -78,9 +78,10 @@ const [user,setUser] = React.useState("");
 
   }
 
-   const goToGoogle = () => {
+   const goToGoogle = () => {     
+     localStorage.setItem("Google",JSON.stringify(true));
+     window.open("http://localhost:9999/google","_self")
      GoogleAuth();
-    window.open("http://localhost:9999/google","_self")
    }
 
   return (

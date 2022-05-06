@@ -20,6 +20,7 @@ import {
   IoChevronDown,
 } from "react-icons/io5";
 import { isLogin } from "../../ContextAPI/AuthContext";
+import LoginNavbar from "../LoginNavbar/LoginNavbar"
 
 const LinkWrapper = styled(Link)`
   color: black;
@@ -56,9 +57,10 @@ const Navbar = () => {
       })
       .catch((err) => console.log(err));
   };
+const UserData = JSON.parse(localStorage.getItem("items"));
 
 
-  return (
+  return !UserData[0] ? (   
     <div className="navbar">
       <div className="logo">
         <Link to="/">
@@ -281,7 +283,7 @@ const Navbar = () => {
         }
       </div>
     </div>
-  );
-};
+  ): <LoginNavbar />
+} 
 
 export default Navbar;

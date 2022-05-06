@@ -1,33 +1,57 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Style from'./Dashboard.module.css';
 import { IoChatbubblesOutline,IoSettingsOutline } from "react-icons/io5";
 import {BsPencilSquare} from "react-icons/bs";
-import {RiHome4Fill,RiPagesLine,RiContactsLine,RiPagesFill} from "react-icons/ri";
-import {AiOutlineHome} from "react-icons/ai";
+import {RiHome4Fill,RiPagesLine,RiContactsLine,RiPagesFill,RiPencilLine} from "react-icons/ri";
+import {AiOutlineHome, AiOutlineHeart,AiOutlineUpload,AiOutlineDelete} from "react-icons/ai";
+import {BiPin} from "react-icons/bi";
 import {FaBullhorn,FaCoins} from "react-icons/fa";
 import Footer from '../Footer/Footer';
 import { useNavigate } from 'react-router-dom';
 
 // import Style from "style.module.css";
+
+
 const Dashboard = () => {
     const navigate = useNavigate();
+    const  UserData = JSON.parse(localStorage.getItem("items"));
+    const [posts, setPost] = React.useState([]);
+
+    useEffect(()=>{
+          fetch("http://localhost:9999/getposts", {
+          method: "GET",
+          headers: {
+                userId : UserData[0]._id
+          },
+        })
+        .then((response) => response.json())
+        .then((response) =>{
+            let posts = response.posts;
+            setPost(posts)
+            console.log(posts);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },[]);
 
     const getStarted = ()=>{
         navigate("/post");
     }
+   
 
   return (
     <>
-    <div style={{height:"70px"}}></div>
+    <div style={{height:"66px"}}></div>
      <div className={Style.maincontent_dashboard}>
          <div className={Style.left_maincontent_dashboard}>
              <div className={Style.left_section1}>
-                <div className={Style.left_section_1_img}>
+                <div className={Style.left_section_1_img} style={{backgroundImage: `url(${UserData[0].profilePic})`}}>
 
                 </div>
                
                 <div className={Style.left_section_1_user_name}>
-                    Ambesh Mishra
+                    {UserData[0].name}
                 </div>
                 <div className={Style.left_section_1_creator}>
                     Creator account
@@ -75,9 +99,10 @@ const Dashboard = () => {
              </div>
              <div className={Style.right_section_3}>
                  <div className={Style.left_right_section_3}>
-                     <div className={Style.circle_image_3}></div> <br />
+                     <div className={Style.circle_image_3} style={{backgroundImage: `url(${UserData[0].profilePic})`}}>
+                         </div> <br />
                      <div className={Style.text_right_section_3}>
-                         Ambesh Mishra
+                         {UserData[0].name}
                      </div> 
                      <div className={Style.text_right_section_4}>
                          is creating videos
@@ -96,6 +121,7 @@ const Dashboard = () => {
                          <br />
                          Posts
                      </div>
+                     { !posts[0] ? <>
                      <div className={Style.right_section_box_posts}>
                          <div className={Style.right_post_1}>
                              <strong>You haven't posted anything yet!</strong>
@@ -109,6 +135,35 @@ const Dashboard = () => {
                          </div>
                          <br />
                      </div>
+                     </>
+                     : <>
+                            <div className={Style.right_section_box_posts}>
+                         <div className={Style.right_post_1}>
+                             <strong>Your Posts are here</strong>
+                           {posts.forEach((post) =>(
+                                 <div className= {Style.posts}>
+                                 <div className={Style.post_time}>{post.time}</div>
+                                 <div className={Style.post_description}>{post.description}</div>
+                                 <div  className={Style.post_description}>
+                                     <span><AiOutlineHeart /></span>
+                                     <span><AiOutlineUpload /></span>
+                                     <span><AiOutlineDelete /></span>
+                                     <span><RiPencilLine /></span>
+                                     <span><BiPin /></span>
+                                 </div>
+                                 <div className={Style.post_comments}>
+                                     <div className={Style.comment_icon} style={{backgroundImage: `url(${UserData[0].profilePic})`}}></div>
+                                     <div><input type="text" placeholder='Join Conversation' className={Style.comment_input}  /></div>
+                                 </div>
+                          </div>
+                           ))}
+                             
+                         </div>
+                         <br />
+                         
+                     </div>
+                     </>
+                     }
                  </div>
              </div>
 

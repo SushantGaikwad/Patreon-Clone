@@ -13,24 +13,70 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Text = () => {
+
+    const [UserData, setUserData] =  React.useState(null);
+    const [postDetail, setPostDetail] = React.useState({
+        title: "",
+        description: "",
+        tags: "",
+    });
+    React.useEffect(()=>{
+      setTimeout(()=>{
+        setUserData(JSON.parse(localStorage.getItem("items")));
+        console.log(UserData[0]);
+    },1)
+    },[])
+    
     const navigate = useNavigate();
-    const getPublish = ()=>{
-        navigate("/dashboard");
+
+    const handleChange = (e)=>{
+        const {name, value} = e.target;
+
+        setPostDetail({
+            ...postDetail,
+            [name]: value
+        })
     }
-  return (
 
+    const getPublish = (e)=>{
+      
+        e.preventDefault();
+        console.log("userId : ", UserData[0]._id);
 
-    <>
-    <div style={{height:"70px"}}></div>
+        fetch(`http://localhost:9999/post`,{
+            method: "POST",
+            body: JSON.stringify(postDetail),
+            headers: {
+                "Content-Type":"application/json",
+                userId : UserData[0]._id
+            }
+        })
+        .then((res)=>res.json())
+        .then((res)=>{
+            if(res.status == "Error"){
+                alert("Please Fill up All Fields");            
+            }
+            else{
+             console.log(res);
+            navigate("/dashboard");
+            }
+        })
+        .catch((err)=> console.log(err));
+        
+    }
+
+  return  UserData &&  (
+   <>
+    <div style={{height:"68px"}}></div>
      <div className={Style.maincontent_dashboard}>
          <div className={Style.left_maincontent_dashboard}>
              <div className={Style.left_section1}>
-                <div className={Style.left_section_1_img}>
+                <div className={Style.left_section_1_img}  style={{backgroundImage: `url(${UserData[0].profilePic})`}}>
 
                 </div>
                
                 <div className={Style.left_section_1_user_name}>
-                    Ambesh Mishra
+                    {UserData[0].name}
                 </div>
                 <div className={Style.left_section_1_creator}>
                     Creator account
@@ -77,7 +123,7 @@ const Text = () => {
                  
                  </div>
                  <div className={Styled.input_1}>
-                 <TextField fullWidth label="&nbsp; &nbsp; &nbsp; Post title (required)" id="fullWidth"  />
+                 <TextField  fullWidth label="&nbsp; &nbsp; &nbsp; Post title (required)" id="fullWidth" name='title' onChange={handleChange} />
 
                  </div>
                  <div className={Styled.input_2}>
@@ -86,7 +132,8 @@ const Text = () => {
                     label="&nbsp; &nbsp; &nbsp; Enter your post..."
                     multiline={true}
                     maxRows={8}
-                    
+                    name='description' 
+                    onChange={handleChange}
                     fullWidth
                     size='large'
                     
@@ -109,7 +156,7 @@ const Text = () => {
                     </div>
                     <br />
                     <div>
-                   &nbsp;&nbsp; <TextField  label="Add tags.."  />
+                   &nbsp;&nbsp; <TextField  label="Add tags.."  name='tags' onChange={handleChange} />
 
                     </div>
 
@@ -133,9 +180,6 @@ const Text = () => {
 
 
      </div>
-    
-    
-    
     </>
   )
 }

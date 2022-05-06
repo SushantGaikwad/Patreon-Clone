@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ProfilePageNavbar from './ProfilePageNavbar';
 import './ProfilePage.css';
 import Footer from '../Footer/Footer';
@@ -15,7 +15,11 @@ const ProfilePage = () => {
     console.log("Dashboard");
     navigate("/contents")
   }
+    const localGoogle = JSON.parse(localStorage.getItem("Google"));
+  console.log(localGoogle);
 
+  
+  React.useEffect(()=>{
   const getUser = () => {
     fetch("http://localhost:9999/login/success", {
     method: "GET",
@@ -28,7 +32,7 @@ const ProfilePage = () => {
   })
   .then((response) => response.json())
   .then((response) =>{
-      //  console.log(response.user);
+       console.log("User : ",response.user);
       const UserData = response.user
       localStorage.setItem("items",JSON.stringify([UserData]));
       console.log(UserData);
@@ -38,15 +42,26 @@ const ProfilePage = () => {
   });
   // console.log(user);
 };
-isGoogle && getUser();
+
+console.log("Google :",localGoogle);
+if(localGoogle)
+{
+  getUser()
+}
+},[])
+
+const [UserData, setUserData] =  React.useState(null);
+useEffect(()=>{
+  setTimeout(()=>{
+    setUserData(JSON.parse(localStorage.getItem("items")));
+    console.log(UserData[0]);
+},500)
+},[])
 
 
-const UserData = JSON.parse(localStorage.getItem("items"));
-let userid = UserData[0]._id;
-console.log(userid);
 
 
-  return (
+  return UserData &&  (
     <div>
         <Navbar/> <br /><br /> <br /><br /><br /><br />
         <div className="style_main_page">
@@ -60,7 +75,7 @@ console.log(userid);
                    <div>SUPPORTING</div>
                 </div>
                 <div className="style_profile_creator_section">
-                  <div>Pratik Borade</div>
+                <div>You aren't supporting any <br/> creators yet.</div>
                 </div>
             </div>
             <div className="style_second_half">
@@ -70,25 +85,15 @@ console.log(userid);
                     <div className="all_creators">Showing: All Creators &nbsp; &nbsp; &nbsp;<IoChevronDown/></div>
                 </div>
                 <div className="post_of_creators">
-                    <div className='heading_style'>Post from Pratik Borade..</div><br />
-                <span >संक्षेप में जानकारी -</span>
-                  <br /> <br />
-                  <div>
-                  दोस्तों, जैसा की आप सब जानते हैं हमारे यूट्यूब चैनल पर हम मूवीज़ और वेब सिरीज के रिव्यू करते हैं, जिनमे बॉलीवुड, हॉलीवुड के साथ ही सभी प्रकार की भारतीय रीजनल फिल्म इंडस्ट्रीज की फिल्मों का भी समावेश होता हैं !
+                  <div className="text_post"> <b>Support</b> or <b>follow</b> creators to see posts in your feed.
+                    <br />
+                    <br />
+                    <div className="button_post">
+                          Find creators you love
+                    </div>                  
                   </div>
-                  <br />
-                  <div>
-                  बॉलीवुड और हॉलीवुड की नई रिलीज हुई फिल्मों का रीव्यू शनिवार तक जितना जल्दी हो सके मैं करता हूं, इसके साथ ही जो रीजनल फिल्म नई रिलीज होती हैं उनमें से भी ज्यादा से ज्यादा फिल्मों के रीव्यू मैं करने की कोशिश करता हूं।
-                  </div>
-                  <br />
-                  <div>
-                  इसके अलावा बीच बीच में हम हमारे चैनल पर कुछ पुरानी फिल्मों के भी रीव्यू करते रहते हैं।
-                  </div>
-                  <br />
-                  <div>
-                  अभी तक हमने -
-मराठी, गुजराती, कन्नडा, तमिल, तेलुगु, मलयालम, बंगाली, पंजाबी, आसामी ऐसी कुछ भारतीय रीजनल फिल्म के रीव्यू किए हैं !
-                  </div>
+                  <img src="https://c5.patreon.com/external/home/empty-stream-illustration.png" alt="patreon" />
+                    
                 </div>
 
             </div>
@@ -115,6 +120,8 @@ console.log(userid);
         <br />
     </div>
   )
+
+
 }
 
 export default ProfilePage
