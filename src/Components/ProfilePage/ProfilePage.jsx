@@ -52,7 +52,7 @@ useEffect(()=>{
   setTimeout(()=>{
     setUserData(JSON.parse(localStorage.getItem("items")));
     console.log(UserData[0]);
-},500)
+},1000)
 },[])
 
 
