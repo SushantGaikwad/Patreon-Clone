@@ -41,11 +41,9 @@ const {isAuth} = React.useContext(isLogin)
   
   return (
     <div className="App">
-      {isAuth ?
-       <LoginNavbar />
-       :
+  
        <Navbar />
-      }
+      
         {/* <HomePage/> */} 
        
         <Routes>
@@ -62,9 +60,9 @@ const {isAuth} = React.useContext(isLogin)
         <Route path="/creators" element={<HomePage />} />
         <Route path="/profile" element = {<ProfilePage />} />       
         <Route path="/dashboard" element={ <Dashboard />} />       
-        <Route path="/post" element={ !login ? <Navigate to="/login" /> : <Post />} />       
+        <Route path="/post" element={<Post />} />       
         <Route path="/makePost" element={ <Text />}/>       
-        <Route path="/contents" element={ !login ? <Navigate to="/login" /> : <Contents />} />    
+        <Route path="/contents" element={<Contents />} />    
         <Route path="*" />
         </Routes>
         <Footer/>

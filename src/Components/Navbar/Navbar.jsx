@@ -57,6 +57,10 @@ const Navbar = () => {
       })
       .catch((err) => console.log(err));
   };
+const data = JSON.parse(localStorage.getItem("items"));
+if(data === undefined || data === null){
+  localStorage.setItem("items", JSON.stringify([]));
+}
 const UserData = JSON.parse(localStorage.getItem("items"));
 
 

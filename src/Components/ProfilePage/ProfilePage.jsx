@@ -35,7 +35,7 @@ const [UserData, setUserData] =  React.useState();
   .then((response) =>{
       console.log("User : ",response.user);
       const user = response.user
-      localStorage.setItem('items', JSON.stringify([user]))
+      localStorage.setItem("items", JSON.stringify([user]));
       console.log(UserData);
   })
   .catch((err) => {
