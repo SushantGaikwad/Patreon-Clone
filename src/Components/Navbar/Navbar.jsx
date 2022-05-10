@@ -48,7 +48,7 @@ const Navbar = () => {
 
   const handleSearch = (key) => {
     console.log(key);
-    fetch(`http://localhost:9999/users?q=${key}`)
+    fetch(`https://patreondatabase.herokuapp.com/users?q=${key}`)
       .then((res) => res.json())
       .then((res) => {
         // console.log(res);

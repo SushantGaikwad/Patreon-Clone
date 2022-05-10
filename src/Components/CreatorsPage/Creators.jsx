@@ -23,7 +23,7 @@ const Creators = () => {
     console.log(username);
 
     useEffect(()=>{
-        fetch(`http://localhost:9999/users?q=${username}`)
+        fetch(`https://patreondatabase.herokuapp.com/users?q=${username}`)
         .then((res) => res.json())
         .then((res) => setCreator(res));
 
@@ -34,7 +34,7 @@ const Creators = () => {
 
     useEffect(()=>{
         setTimeout(()=>{
-            fetch("http://localhost:9999/getposts", {
+            fetch("https://patreondatabase.herokuapp.com/getposts", {
                 method: "GET",
                 headers: {
                       userId : creator[0]._id

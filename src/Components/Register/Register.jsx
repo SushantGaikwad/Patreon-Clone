@@ -53,7 +53,7 @@ const [user,setUser] = React.useState("");
         
         console.log("obj" + JSON.stringify(obj));
         
-        fetch(`http://localhost:9999/signUp`,{
+        fetch(`https://patreondatabase.herokuapp.com/signUp`,{
             method: "POST",
             body: JSON.stringify(obj),
             headers: {"Content-Type":"application/json" }
@@ -80,7 +80,7 @@ const [user,setUser] = React.useState("");
 
    const goToGoogle = () => {     
      localStorage.setItem("Google",JSON.stringify(true));
-     window.open("http://localhost:9999/google","_self")
+     window.open("https://patreondatabase.herokuapp.com/google","_self")
      GoogleAuth();
    }
 
