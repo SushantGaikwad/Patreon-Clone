@@ -43,7 +43,7 @@ const Text = () => {
         e.preventDefault();
         console.log("userId : ", UserData[0]._id);
 
-        fetch(`http://localhost:9999/post`,{
+        fetch(`https://patreon-team-13-masai.netlify.app/post`,{
             method: "POST",
             body: JSON.stringify(postDetail),
             headers: {

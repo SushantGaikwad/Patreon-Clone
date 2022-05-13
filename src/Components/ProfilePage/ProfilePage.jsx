@@ -22,15 +22,7 @@ const [UserData, setUserData] =  React.useState();
 
   React.useEffect(()=>{
  const getData = ()=>{
-    fetch("https://patreondatabase.herokuapp.com/login/success", {
-    method: "GET",
-    credentials: "include",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Credentials": true,
-    },
-  })
+    fetch("https://patreondatabase.herokuapp.com/login/success")
   .then((response) => response.json())
   .then((response) =>{
       console.log("User : ",response.user);
