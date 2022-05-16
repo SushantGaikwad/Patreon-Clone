@@ -1,25 +1,70 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ProfilePageNavbar from './ProfilePageNavbar';
 import './ProfilePage.css';
 import Footer from '../Footer/Footer';
 import { IoChevronDown} from "react-icons/io5";
 import Navbar from '../Navbar/Navbar';
+import { useNavigate } from 'react-router-dom';
+import { isLogin } from '../../ContextAPI/AuthContext';
 
 const ProfilePage = () => {
-  return (
+  const navigate = useNavigate();
+  const {isAuth, isGoogle} =React.useContext(isLogin);
+
+  const getStarted = ()=>{
+    console.log("Dashboard");
+    navigate("/contents")
+  }
+const localGoogle = JSON.parse(localStorage.getItem("Google"));
+console.log(localGoogle);
+const [UserData, setUserData] =  React.useState();
+  
+
+  React.useEffect(()=>{
+ const getData = ()=>{
+    fetch("https://patreondatabase.herokuapp.com/login/success")
+  .then((response) => response.json())
+  .then((response) =>{
+      console.log("User : ",response.user);
+      const user = response.user
+      localStorage.setItem("items", JSON.stringify([user]));
+      console.log(UserData);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+  // console.log(user);
+ }
+ localGoogle && getData();
+},[])
+
+
+
+useEffect(()=>{
+  setTimeout(()=>{
+    setUserData(JSON.parse(localStorage.getItem("items")));
+    console.log(UserData[0]);
+},1000)
+},[])
+
+
+
+
+  return UserData && (
     <div>
         <Navbar/> <br /><br /> <br /><br /><br /><br />
         <div className="style_main_page">
             <div className="style_first_half">
                 <div className="style_profile_image_section">
-                    <div className="circle_profile"></div> <br />
-                    <div className="name_user">Sushant Gaikwad</div>
+                    <div className="circle_profile"  style={{backgroundImage: `url(${UserData[0].profilePic})`}}> </div><br />
+                 
+                    <div className="name_user">{UserData[0].name}</div>
                 </div>
                 <div className="style_profile_support_section">
                    <div>SUPPORTING</div>
                 </div>
                 <div className="style_profile_creator_section">
-                  <div>Pratik Borade</div>
+                <div>You aren't supporting any <br/> creators yet.</div>
                 </div>
             </div>
             <div className="style_second_half">
@@ -29,25 +74,15 @@ const ProfilePage = () => {
                     <div className="all_creators">Showing: All Creators &nbsp; &nbsp; &nbsp;<IoChevronDown/></div>
                 </div>
                 <div className="post_of_creators">
-                    <div className='heading_style'>Post from Pratik Borade..</div><br />
-                <span >संक्षेप में जानकारी -</span>
-                  <br /> <br />
-                  <div>
-                  दोस्तों, जैसा की आप सब जानते हैं हमारे यूट्यूब चैनल पर हम मूवीज़ और वेब सिरीज के रिव्यू करते हैं, जिनमे बॉलीवुड, हॉलीवुड के साथ ही सभी प्रकार की भारतीय रीजनल फिल्म इंडस्ट्रीज की फिल्मों का भी समावेश होता हैं !
+                  <div className="text_post"> <b>Support</b> or <b>follow</b> creators to see posts in your feed.
+                    <br />
+                    <br />
+                    <div className="button_post">
+                          Find creators you love
+                    </div>                  
                   </div>
-                  <br />
-                  <div>
-                  बॉलीवुड और हॉलीवुड की नई रिलीज हुई फिल्मों का रीव्यू शनिवार तक जितना जल्दी हो सके मैं करता हूं, इसके साथ ही जो रीजनल फिल्म नई रिलीज होती हैं उनमें से भी ज्यादा से ज्यादा फिल्मों के रीव्यू मैं करने की कोशिश करता हूं।
-                  </div>
-                  <br />
-                  <div>
-                  इसके अलावा बीच बीच में हम हमारे चैनल पर कुछ पुरानी फिल्मों के भी रीव्यू करते रहते हैं।
-                  </div>
-                  <br />
-                  <div>
-                  अभी तक हमने -
-मराठी, गुजराती, कन्नडा, तमिल, तेलुगु, मलयालम, बंगाली, पंजाबी, आसामी ऐसी कुछ भारतीय रीजनल फिल्म के रीव्यू किए हैं !
-                  </div>
+                  <img src="https://c5.patreon.com/external/home/empty-stream-illustration.png" alt="patreon" />
+                    
                 </div>
 
             </div>
@@ -57,7 +92,7 @@ const ProfilePage = () => {
                 </div>
                 <div className="style_profile_support_section_1">
                    <div>Build a membership for your <br /> fans and get paid to create on <br/>your own terms.</div> <br />
-                   <div className="button_1_support">Get Started</div>
+                   <div className="button_1_support"  onClick={getStarted}>Get Started</div>
                 </div>
                 {/* <hr /> */}
                 <div className="style_profile_support_section">
@@ -74,6 +109,8 @@ const ProfilePage = () => {
         <br />
     </div>
   )
+
+
 }
 
 export default ProfilePage

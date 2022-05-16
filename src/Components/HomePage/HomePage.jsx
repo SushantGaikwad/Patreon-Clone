@@ -6,15 +6,22 @@ import { MdArrowForwardIos } from "react-icons/md";
 import { Link } from "react-router-dom";
 import styled from "styled-components"
 
+
 const LinkWrapper = styled(Link)`
   color: black;
   text-decoration:none
 `;
 
 
+
+
 const HomePage = () => {
   const [modal, setModal] = useState(false);
   const[searchData, setSearchData] =useState([]);
+  const [user, setUser] = useState(null);
+
+
+
   let searchBoxref = useRef();
 
   const toggleModal = () => {
@@ -102,9 +109,9 @@ const HomePage = () => {
                     fill="white"
                     d="M29.5 26.917L53.25 38 29.5 49.083V26.917z"
                     data-stroke="1"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   ></path>
                 </svg>
               </span>

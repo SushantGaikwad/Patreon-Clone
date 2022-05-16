@@ -23,9 +23,9 @@ const Footer = () => {
           <div className='H1'>Currency : USD</div>
           </div>
          </div>
-         <div className='Col'>
+         {/* <div className='Col' style={{width:"10%"}}>
          
-         </div>
+         </div> */}
 
 
          <div className='Col'>

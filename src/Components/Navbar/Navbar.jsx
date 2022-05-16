@@ -20,6 +20,7 @@ import {
   IoChevronDown,
 } from "react-icons/io5";
 import { isLogin } from "../../ContextAPI/AuthContext";
+import LoginNavbar from "../LoginNavbar/LoginNavbar"
 
 const LinkWrapper = styled(Link)`
   color: black;
@@ -47,7 +48,7 @@ const Navbar = () => {
 
   const handleSearch = (key) => {
     console.log(key);
-    fetch(`http://localhost:3004/creators?q=${key}`)
+    fetch(`https://patreondatabase.herokuapp.com/users?q=${key}`)
       .then((res) => res.json())
       .then((res) => {
         // console.log(res);
@@ -56,10 +57,14 @@ const Navbar = () => {
       })
       .catch((err) => console.log(err));
   };
+const data = JSON.parse(localStorage.getItem("items"));
+if(data === undefined || data === null){
+  localStorage.setItem("items", JSON.stringify([]));
+}
+const UserData = JSON.parse(localStorage.getItem("items"));
 
-console.log("isAUth: ", isAuth);
 
-  return (
+  return !UserData[0] ? (   
     <div className="navbar">
       <div className="logo">
         <Link to="/">
@@ -71,7 +76,7 @@ console.log("isAUth: ", isAuth);
         </Link>
       </div>
       <div className="options">
-        <div class="dropdown">
+        <div className="dropdown">
           <div className="dropdown_title">
             Product
             <div className="drop">
@@ -110,7 +115,7 @@ console.log("isAUth: ", isAuth);
           </div>
         </div>
 
-        <div class="dropdown">
+        <div className="dropdown">
           <div className="dropdown_title">
             For Creators{" "}
             <div className="drop-1">
@@ -188,7 +193,7 @@ console.log("isAUth: ", isAuth);
         {/* for pricing */}
         <a className="atag_decoration" href="https://www.patreon.com/pricing"><div className="Pricing">Pricing</div></a>
         {/* <div>Resources</div> */}
-        <div class="dropdown">
+        <div className="dropdown">
           <div className="dropdown_title">
             <a className="atag_decoration" href="">
               Resources{" "}
@@ -242,10 +247,10 @@ console.log("isAUth: ", isAuth);
               {searchData.map((item, index) => {
                 return (
                   <div key={index}>
-                    <LinkWrapper to={`/${item.username}`}>
+                    <LinkWrapper to={`/${item.name}`}>
                       <div className="search_box_card">
                         <div className="search_box_card_img">
-                          <img src={item.img} alt="creator_photo" />
+                          <img src={item.profilePic} alt="creator_photo" />
                         </div>
                         <div id="search_box_card_text">
                           <span className="search_box_card_name_navbar">
@@ -282,7 +287,7 @@ console.log("isAUth: ", isAuth);
         }
       </div>
     </div>
-  );
-};
+  ): <LoginNavbar />
+} 
 
 export default Navbar;
