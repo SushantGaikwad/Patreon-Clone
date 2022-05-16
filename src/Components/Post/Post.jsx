@@ -18,10 +18,8 @@ const Post = () => {
     const [UserData, setUserData] =  React.useState(null);
  
     React.useEffect(()=>{
-      setTimeout(()=>{
         setUserData(JSON.parse(localStorage.getItem("items")));
-        console.log(UserData[0]);
-    },1)
+        console.log(UserData);  
     },[])
 
 
@@ -38,12 +36,12 @@ const Post = () => {
     <div className={Style.maincontent_dashboard}>
          <div className={Style.left_maincontent_dashboard}>
              <div className={Style.left_section1}>
-                <div className={Style.left_section_1_img} style={{backgroundImage: `url(${UserData[0].profilePic})`}}>
+                <div className={Style.left_section_1_img} style={{backgroundImage: `url(${UserData.profilePic})`}}>
 
                 </div>
                
                 <div className={Style.left_section_1_user_name}>
-                    {UserData[0].name}
+                    {UserData.name}
                 </div>
                 <div className={Style.left_section_1_creator}>
                     Creator account

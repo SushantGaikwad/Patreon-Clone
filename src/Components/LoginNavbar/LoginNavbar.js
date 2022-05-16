@@ -17,8 +17,8 @@ const navigate = useNavigate();
             navigate("/dashboard")
     }
 const logout = ()=>{
-    UserData.pop();
-    localStorage.setItem("items",JSON.stringify(UserData));
+    localStorage.removeItem("items");
+    // localStorage.setItem("items",JSON.stringify(UserData));
     navigate("/");
 }
   return (
@@ -44,7 +44,7 @@ const logout = ()=>{
            
            <div class={Style.dropdown}>
           <div className={Style.dropdown_title}>
-          <div className={Style.div_circle_icon} style={{backgroundImage: `url(${UserData[0].profilePic})`}}>
+          <div className={Style.div_circle_icon} style={{backgroundImage: `url(${UserData.profilePic})`}}>
 
           </div>
             {/* <div className="drop">
@@ -55,7 +55,7 @@ const logout = ()=>{
             <br />
             <div className={Style.inside_dropdown}>
              
-                {UserData[0].name}
+                {UserData.name}
                 
             
             </div>

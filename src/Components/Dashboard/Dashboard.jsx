@@ -21,7 +21,7 @@ const Dashboard = () => {
           fetch("https://patreondatabase.herokuapp.com/getposts", {
           method: "GET",
           headers: {
-                userId : UserData[0]._id
+                userId : UserData._id
           },
         })
         .then((response) => response.json())
@@ -43,38 +43,38 @@ const Dashboard = () => {
     }
    
 
-let input = document.getElementById("input_comment"); 
-useEffect(()=>{
-    setTimeout(()=>{
-        input.addEventListener("keypress", function(event) {
-          if (event.key === "Enter") {
-            event.preventDefault();
-            const container = document.getElementById("comment");
-            let imgDiv = document.createElement("div");
-            imgDiv.setAttribute("className","comment_icon");
-            imgDiv.style.backgroundImage= UserData[0].profilePic;
-            let commentDiv = document.createElement("div");
-            commentDiv.textContent = input.value;
-            container.append(imgDiv,commentDiv);
-          }
-    },100)
+// let input = document.getElementById("input_comment"); 
+// useEffect(()=>{
+//     setTimeout(()=>{
+//         input.addEventListener("keypress", function(event) {
+//           if (event.key === "Enter") {
+//             event.preventDefault();
+//             const container = document.getElementById("comment");
+//             let imgDiv = document.createElement("div");
+//             imgDiv.setAttribute("className","comment_icon");
+//             imgDiv.style.backgroundImage= UserData[0].profilePic;
+//             let commentDiv = document.createElement("div");
+//             commentDiv.textContent = input.value;
+//             container.append(imgDiv,commentDiv);
+//           }
+//     },100)
    
-    });
-},[input])
+//     });
+// },[input])
 
 
-  return (
+  return posts && (
     <>
     <div style={{height:"66px"}}></div>
      <div className={Style.maincontent_dashboard}>
          <div className={Style.left_maincontent_dashboard}>
              <div className={Style.left_section1}>
-                <div className={Style.left_section_1_img} style={{backgroundImage: `url(${UserData[0].profilePic})`}}>
+                <div className={Style.left_section_1_img} style={{backgroundImage: `url(${UserData.profilePic})`}}>
 
                 </div>
                
                 <div className={Style.left_section_1_user_name}>
-                    {UserData[0].name}
+                    {UserData.name}
                 </div>
                 <div className={Style.left_section_1_creator}>
                     Creator account
@@ -122,10 +122,10 @@ useEffect(()=>{
              </div>
              <div className={Style.right_section_3}>
                  <div className={Style.left_right_section_3}>
-                     <div className={Style.circle_image_3} style={{backgroundImage: `url(${UserData[0].profilePic})`}}>
+                     <div className={Style.circle_image_3} style={{backgroundImage: `url(${UserData.profilePic})`}}>
                          </div> <br />
                      <div className={Style.text_right_section_3}>
-                         {UserData[0].name}
+                         {UserData.name}
                      </div> 
                      <div className={Style.text_right_section_4}>
                          is creating videos
@@ -179,7 +179,7 @@ useEffect(()=>{
                                      
                                  </div>
                                  <div className={Style.post_comments}>
-                                     <div className={Style.comment_icon} style={{backgroundImage: `url(${UserData[0].profilePic})`}}></div>
+                                     <div className={Style.comment_icon} style={{backgroundImage: `url(${UserData.profilePic})`}}></div>
                                      <div><input type="text" placeholder='Join Conversation' className={Style.comment_input} id="input_comment"  /></div>
                                                                             
                                      

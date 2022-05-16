@@ -21,10 +21,8 @@ const Text = () => {
         tags: "",
     });
     React.useEffect(()=>{
-      setTimeout(()=>{
         setUserData(JSON.parse(localStorage.getItem("items")));
-        console.log(UserData[0]);
-    },1)
+        console.log(UserData);
     },[])
     
     const navigate = useNavigate();
@@ -41,14 +39,14 @@ const Text = () => {
     const getPublish = (e)=>{
       
         e.preventDefault();
-        console.log("userId : ", UserData[0]._id);
+        console.log("userId : ", UserData._id);
 
         fetch(`https://patreondatabase.herokuapp.com/post`,{
             method: "POST",
             body: JSON.stringify(postDetail),
             headers: {
                 "Content-Type":"application/json",
-                userId : UserData[0]._id
+                userId : UserData._id
             }
         })
         .then((res)=>res.json())
@@ -71,12 +69,12 @@ const Text = () => {
      <div className={Style.maincontent_dashboard}>
          <div className={Style.left_maincontent_dashboard}>
              <div className={Style.left_section1}>
-                <div className={Style.left_section_1_img}  style={{backgroundImage: `url(${UserData[0].profilePic})`}}>
+                <div className={Style.left_section_1_img}  style={{backgroundImage: `url(${UserData.profilePic})`}}>
 
                 </div>
                
                 <div className={Style.left_section_1_user_name}>
-                    {UserData[0].name}
+                    {UserData.name}
                 </div>
                 <div className={Style.left_section_1_creator}>
                     Creator account

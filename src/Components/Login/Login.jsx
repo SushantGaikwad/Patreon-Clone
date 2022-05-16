@@ -5,8 +5,9 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import { BsFacebook, BsApple } from "react-icons/bs";
 import { isLogin } from "../../ContextAPI/AuthContext";
-
+import GoogleLogin from "react-google-login";
 import { Nav } from "../Nav-Blog/Nav";
+
 export const Login = () => {
   window.scrollTo(0, 0);
 
@@ -46,10 +47,10 @@ export const Login = () => {
   const [User, setUser] = React.useState(null);
 
 
-  const userStorage = localStorage.getItem("items");
-  if(userStorage === undefined){
-    localStorage.setItem("items",JSON.stringify([]));
-  }
+  // const userStorage = localStorage.getItem("items");
+  // if(userStorage === undefined){
+  //   localStorage.setItem("items",JSON.stringify([]));
+  // }
 
   const google = () => {     
     localStorage.setItem("Google",JSON.stringify(true));
@@ -81,8 +82,7 @@ export const Login = () => {
         let UserData = res.user
         setUser(UserData);
         console.log(User);
-        localStorage.setItem("Google",JSON.stringify(false));
-        localStorage.setItem('items', JSON.stringify([UserData]));
+        localStorage.setItem('items', JSON.stringify(UserData));
         alert("Login Successfull");
         navigate("/profile");
       }
@@ -102,6 +102,60 @@ export const Login = () => {
     // });
   };
   const { userEmail, userPassword } = state;
+
+  const responseGoogle = (response)=>{
+    const payload = {
+			email: response.profileObj.email,
+			name: response.profileObj.name,
+			profilePic: response.profileObj.imageUrl,
+			password: "ThisisOurPassword1234",
+		};
+		console.log(payload.email);
+		fetch("https://patreondatabase.herokuapp.com/signUp", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(payload),
+		})
+			.then((res) => {
+				return res.json();
+			})
+			.then((data) => {
+          console.log("SignUp : ",data);			
+					const payload = {
+						email: response.profileObj.email,
+						password: "ThisisOurPassword1234",
+					};
+					fetch(`https://patreondatabase.herokuapp.com/login`, {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify(payload),
+					})
+						.then((res) => {
+							return res.json();
+						})
+						.then((data) => {			
+              if(data.status === 200){
+							alert("Successfull");
+              localStorage.setItem("isLogIn", "true");
+							localStorage.setItem("token", JSON.stringify(data.token));
+							localStorage.setItem("items", JSON.stringify(data.user));
+							navigate("/profile");
+							// window.location.reload();		
+              }else{
+                alert(data.Message);
+              }					
+						})
+			}) 
+      .catch((err)=>()=>{
+        alert("Something Went Wrong");
+        console.log(err);
+      })     
+		
+   }
 
   return (
     <>
@@ -173,12 +227,32 @@ export const Login = () => {
             </div>
             <p className="or">or</p>
             <div className="frames">
-              <div className="frame-1" onClick={google}>
+
+            <GoogleLogin
+              clientId= "655945767641-k9akt8q6lrebn0624j50d6igpumvvvmj.apps.googleusercontent.com"
+              render={(renderProps) => (
+                          <button
+                              className="frame-1"
+                              onClick={renderProps.onClick}
+                              disabled={renderProps.disabled}
+                            >                  
+                              <div className='img-icon' ><FcGoogle size="0.5x" /></div>
+                              <p style={{color:"rgb(36, 30, 18)", fontWeight:"550"}}>Continue with Google</p>
+                            </button> 
+              )}
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+              cookiePolicy={'single_host_origin'}
+            />
+
+
+
+              {/* <div className="frame-1" onClick={google}>
                 <div className="img-icon">
                   <FcGoogle size="0.5x" />
                 </div>
                 <p>Continue with Google</p>
-              </div>
+              </div> */}
 
               <div className="frame-2">
                 <div className="img-icon">

@@ -83,6 +83,7 @@
 }
 .form .frame-1,.frame-2,.frame-3 {
     display: flex;
+    width: 100%;
     text-align: center;
     justify-content: center;
     border: 1px solid rgb(177, 172, 163);
@@ -90,6 +91,7 @@
     color: rgb(36, 30, 18) !important;
     border-radius: 9999px;
     margin-bottom: 1rem;
+    background-color: white;
 }
 .frame-3:hover{
     background-color: rgb(245, 244, 242);

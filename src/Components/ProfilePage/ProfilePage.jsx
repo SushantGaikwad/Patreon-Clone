@@ -16,49 +16,43 @@ const ProfilePage = () => {
     navigate("/contents")
   }
 const localGoogle = JSON.parse(localStorage.getItem("Google"));
-console.log(localGoogle);
-const [UserData, setUserData] =  React.useState();
+const [UserData, setUserData] =  React.useState(null);
   
 
-  React.useEffect(()=>{
- const getData = ()=>{
-    fetch("https://patreondatabase.herokuapp.com/login/success")
-  .then((response) => response.json())
-  .then((response) =>{
-      console.log("User : ",response.user);
-      const user = response.user
-      localStorage.setItem("items", JSON.stringify([user]));
-      console.log(UserData);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-  // console.log(user);
- }
- localGoogle && getData();
-},[])
-
+//   React.useEffect(()=>{
+//  const getData = ()=>{
+//     fetch("https://patreondatabase.herokuapp.com/login/success")
+//   .then((response) => response.json())
+//   .then((response) =>{
+//       console.log("User : ",response.user);
+//       const user = response.user
+//       localStorage.setItem("items", JSON.stringify([user]));
+//       console.log(UserData);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+//   // console.log(user);
+//  }
+//  localGoogle && getData();
+// },[])
 
 
 useEffect(()=>{
-  setTimeout(()=>{
-    setUserData(JSON.parse(localStorage.getItem("items")));
-    console.log(UserData[0]);
-},1000)
+  let data = JSON.parse(localStorage.getItem("items"));
+  setUserData(data);
 },[])
 
 
-
-
   return UserData && (
-    <div>
+    <div>  
         <Navbar/> <br /><br /> <br /><br /><br /><br />
         <div className="style_main_page">
             <div className="style_first_half">
                 <div className="style_profile_image_section">
-                    <div className="circle_profile"  style={{backgroundImage: `url(${UserData[0].profilePic})`}}> </div><br />
+                    <div className="circle_profile"  style={{backgroundImage: `url(${UserData.profilePic})`}}> </div><br />
                  
-                    <div className="name_user">{UserData[0].name}</div>
+                    <div className="name_user">{UserData.name}</div>
                 </div>
                 <div className="style_profile_support_section">
                    <div>SUPPORTING</div>

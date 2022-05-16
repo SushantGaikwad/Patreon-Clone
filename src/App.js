@@ -28,7 +28,7 @@ function App() {
   const [login, setLogin] = React.useState(false);
   React.useEffect(()=>{
     const UserData = localStorage.getItem("items");
-    if(UserData[0]){
+    if(UserData){
      setLogin(true);
     }
     console.log(login);

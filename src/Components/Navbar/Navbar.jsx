@@ -57,14 +57,11 @@ const Navbar = () => {
       })
       .catch((err) => console.log(err));
   };
-const data = JSON.parse(localStorage.getItem("items"));
-if(data === undefined || data === null){
-  localStorage.setItem("items", JSON.stringify([]));
-}
+
 const UserData = JSON.parse(localStorage.getItem("items"));
 
 
-  return !UserData[0] ? (   
+  return !UserData ? (   
     <div className="navbar">
       <div className="logo">
         <Link to="/">

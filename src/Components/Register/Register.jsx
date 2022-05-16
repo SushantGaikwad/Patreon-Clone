@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { BsFacebook,  BsApple} from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { isLogin } from '../../ContextAPI/AuthContext';
+import GoogleLogin from "react-google-login"
 
 import { Nav } from '../Nav-Blog/Nav'
 import { registerInitiate } from '../../Redux/action';
@@ -84,6 +85,60 @@ const [user,setUser] = React.useState("");
      GoogleAuth();
    }
 
+   const responseGoogle = (response)=>{
+    const payload = {
+			email: response.profileObj.email,
+			name: response.profileObj.name,
+			profilePic: response.profileObj.imageUrl,
+			password: "ThisisOurPassword1234",
+		};
+		console.log(payload.email);
+		fetch("https://patreondatabase.herokuapp.com/signUp", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(payload),
+		})
+			.then((res) => {
+				return res.json();
+			})
+			.then((data) => {
+          console.log("SignUp : ",data);			
+					const payload = {
+						email: response.profileObj.email,
+						password: "ThisisOurPassword1234",
+					};
+					fetch(`https://patreondatabase.herokuapp.com/login`, {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify(payload),
+					})
+						.then((res) => {
+							return res.json();
+						})
+						.then((data) => {			
+              if(data.status === 200){
+							alert("Successfull");
+              localStorage.setItem("isLogIn", "true");
+							localStorage.setItem("token", JSON.stringify(data.token));
+							localStorage.setItem("items", JSON.stringify(data.user));
+							navigate("/profile");
+							// window.location.reload();		
+              }else{
+                alert(data.Message);
+              }					
+						})
+			}) 
+      .catch((err)=>()=>{
+        alert("Something Went Wrong");
+        console.log(err);
+      })     
+		
+   }
+
   return (
     <>
     <Nav />
@@ -94,17 +149,34 @@ const [user,setUser] = React.useState("");
     <form className='form'  onSubmit={handleSubmit}>
       <br />
     <div className='frames'>
-          <div className='frame-1' onClick={goToGoogle}>
+    <GoogleLogin
+    clientId= "655945767641-k9akt8q6lrebn0624j50d6igpumvvvmj.apps.googleusercontent.com"
+    render={(renderProps) => (
+           
+      
+                <button
+										className="frame-1"
+										onClick={renderProps.onClick}
+										disabled={renderProps.disabled}
+									>                  
+										<div className='img-icon' ><FcGoogle size="0.5x" /></div>
+                    <p style={{color:"rgb(36, 30, 18)", fontWeight:"550"}}>Continue with Google</p>
+                    
+									</button> 
+ 
+    )}
+    onSuccess={responseGoogle}
+    onFailure={responseGoogle}
+    cookiePolicy={'single_host_origin'}
+  />
 
-          <div className='img-icon' ><FcGoogle size="0.5x" /></div>
-            <p>Continue with Google</p>
-          </div>
+          
 
          
 
           <div className='frame-3'>
           <div className='img-icon' ><BsFacebook  size="0.5x" color='blue' /></div>
-            <p>Continue With Facebook</p>
+            <p style={{color:"rgb(36, 30, 18)", fontWeight:"700"}}>Continue With Facebook</p>
           </div>
         </div>
         <div className='space-y-8'>
