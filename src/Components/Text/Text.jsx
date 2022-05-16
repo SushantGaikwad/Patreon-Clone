@@ -43,7 +43,7 @@ const Text = () => {
         e.preventDefault();
         console.log("userId : ", UserData[0]._id);
 
-        fetch(`https://patreon-team-13-masai.netlify.app/post`,{
+        fetch(`https://patreondatabase.herokuapp.com/post`,{
             method: "POST",
             body: JSON.stringify(postDetail),
             headers: {

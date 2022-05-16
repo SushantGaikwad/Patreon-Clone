@@ -18,7 +18,7 @@ const Dashboard = () => {
     const [posts, setPost] = React.useState([]);
 
     useEffect(()=>{
-          fetch("http://localhost:9999/getposts", {
+          fetch("https://patreondatabase.herokuapp.com/getposts", {
           method: "GET",
           headers: {
                 userId : UserData[0]._id
